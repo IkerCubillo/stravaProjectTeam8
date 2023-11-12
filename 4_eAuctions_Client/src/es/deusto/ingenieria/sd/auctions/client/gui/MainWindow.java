@@ -1,10 +1,13 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
@@ -44,34 +47,36 @@ public class MainWindow {
 		return TrainingSessions;		
 	}
 	
-	public boolean setupDistanceChallenge() {
+	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
 		System.out.println(" - Setting up distance challenge ...");
 		
-		boolean confirmation = this.controller.setupDistanceChallenge();
+		boolean confirmation = this.controller.setupDistanceChallenge(name, start, end, metric, sportType);
 		
 		return confirmation;
 		
 	}
 	
-	public boolean setupActivityTimeChallenge() {
+	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) {
 		System.out.println(" - Setting up activity time challenge ...");
 		
-		boolean confirmation = this.controller.setupActivityTimeChallenge();
+		boolean confirmation = this.controller.setupActivityTimeChallenge(name, start, end, metric, sportType);
 		
 		return confirmation;
 		
 	}
 	
-	public void acceptChallenge() {
+	public boolean acceptChallenge(Challenge c) {
 		System.out.println(" - Accepting challenge ...");
 		
-		this.controller.acceptChallenge();
+		boolean confirmation = this.controller.acceptChallenge(c);
+		
+		return confirmation;
 	}
 	
-	public void createSession() {
+	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
 		System.out.println(" - Creating session ...");
 		
-		this.controller.createSession();
+		this.controller.createSession(title, sport, distance, startDate, timeStart, duration);
 	}
 	
 }

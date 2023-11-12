@@ -1,64 +1,79 @@
 package es.deusto.ingenieria.sd.auctions.client.controller;
 
 import java.rmi.RemoteException;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 
-import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ArticleDTO;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.CategoryDTO;
+
+import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
+import es.deusto.ingenieria.sd.auctions.server.remote.IRemoteFacade;
+import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
 
 //This class implements Controller pattern.
-public class MainController {
+public class MainController{
 	
 	//Reference to the Service Locator
-	private ServiceLocator serviceLocator;
+	private RemoteFacade RemoteFacade;
 	
-	public BidController(ServiceLocator serviceLocator) {
-		this.serviceLocator = serviceLocator; 
+	public MainController(RemoteFacade RemoteFacade) {
+		this.RemoteFacade = RemoteFacade; 
 	}
 
-	public List<CategoryDTO> getCategories() {
+	public List<ChallengeDTO> getChallenges() {
 		try {
-			return this.serviceLocator.getService().getCategories();
+			return this.RemoteFacade.getChallenges();
 		} catch (RemoteException e) {
-			System.out.println("# Error getting all categories: " + e);
+			System.out.println("# Error getting all challenges: " + e);
 			return null;
 		}
 	}
 
-	public List<ArticleDTO> getArticles(String category) {
+	public List<TrainingSessionDTO> getTrainingSessions() {
 		try {
-			return this.serviceLocator.getService().getArticles(category);
+			return this.RemoteFacade.getTrainingSessions();
 		} catch (RemoteException e) {
 			System.out.println("# Error getting articles of a category: " + e);
 			return null;
 		}
 	}
 
-	public boolean makeBid(long token, int article, float bid) {
+	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
 		try {
-			return this.serviceLocator.getService().makeBid(token, article, bid);
+			return this.RemoteFacade.setupDistanceChallenge(name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error making a bid: " + e);
 			return false;
 		}
 	}
 	
-	public float getUSDRate() {
+	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) {
 		try {
-			return this.serviceLocator.getService().getUSDRate();
+			return this.RemoteFacade.setupActivityTimeChallenge(name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error getting USD rate: " + e);
-			return -1;
+			return false;
 		}
 	}
 	
-	public float getGBPRate() {
+	public boolean acceptChallenge(Challenge c) {
 		try {
-			return this.serviceLocator.getService().getGBPRate();
+			return this.RemoteFacade.acceptChallenge(c);
 		} catch (RemoteException e) {
-			System.err.println("# Error getting GBP rate: " + e);
-			return -1;
+			System.err.println("# Error getting GBP rate: " + e);	
+			return false;
 		}
 	}
+	
+	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+		try {
+			this.RemoteFacade.createSession(title, sport, distance, startDate, timeStart, duration);
+		} catch (RemoteException e) {
+			System.err.println("# Error getting GBP rate: " + e);
+		}
+	}
+
+	
 }

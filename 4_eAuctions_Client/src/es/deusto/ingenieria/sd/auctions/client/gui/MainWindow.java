@@ -8,6 +8,7 @@ import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
@@ -15,6 +16,8 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 public class MainWindow {
 	
 	private MainController controller;
+	private Challenge c;
+	private TrainingSession t;
 	
 
 	
@@ -47,25 +50,25 @@ public class MainWindow {
 		return TrainingSessions;		
 	}
 	
-	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
+	public boolean setupDistanceChallenge() {
 		System.out.println(" - Setting up distance challenge ...");
 		
-		boolean confirmation = this.controller.setupDistanceChallenge(name, start, end, metric, sportType);
+		boolean confirmation = this.controller.setupDistanceChallenge(c.getName(), c.getStart(), c.getEnd(), c.getMetric(), c.getSportType());
 		
 		return confirmation;
 		
 	}
 	
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) {
+	public boolean setupActivityTimeChallenge() {
 		System.out.println(" - Setting up activity time challenge ...");
 		
-		boolean confirmation = this.controller.setupActivityTimeChallenge(name, start, end, metric, sportType);
+		boolean confirmation = this.controller.setupActivityTimeChallenge(c.getName(), c.getStart(), c.getEnd(), c.getMetric(), c.getSportType());
 		
 		return confirmation;
 		
 	}
 	
-	public boolean acceptChallenge(Challenge c) {
+	public boolean acceptChallenge() {
 		System.out.println(" - Accepting challenge ...");
 		
 		boolean confirmation = this.controller.acceptChallenge(c);
@@ -73,10 +76,10 @@ public class MainWindow {
 		return confirmation;
 	}
 	
-	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+	public void createSession() {
 		System.out.println(" - Creating session ...");
 		
-		this.controller.createSession(title, sport, distance, startDate, timeStart, duration);
+		this.controller.createSession(t.getTitle(), t.getSport(), t.getDistance(), t.getStartDate(), t.getStartTime(), t.getDuration());
 	}
 	
 }

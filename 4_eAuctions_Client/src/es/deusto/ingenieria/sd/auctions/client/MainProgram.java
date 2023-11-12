@@ -20,12 +20,7 @@ public class MainProgram {
 	public static void main(String[] args) throws RemoteException {	
 		ServiceLocator serviceLocator = new ServiceLocator();
 		RemoteFacade remoteFacade = new RemoteFacade();
-		String name = null;
-		Date start = null;
-		Date end = null;
-		float metric = 0;
-		String sportType = null;
-		Challenge c = null;
+
 		
 		//args[0] = RMIRegistry IP
 		//args[1] = RMIRegistry Port
@@ -47,16 +42,10 @@ public class MainProgram {
 		for (TrainingSessionDTO TrainingSession : trainingSessions) {
 			System.out.println("\t* " + TrainingSession.getTitle());
 		}
-		mainWindow.setupDistanceChallenge(name, start, end, metric, sportType);
-		mainWindow.setupActivityTimeChallenge(name, start, end, metric, sportType);
-		mainWindow.acceptChallenge(c);
-		String title = null;
-		String sport = null;
-		float distance = 0;
-		Date startDate = null;
-		Time timeStart = null;
-		float duration = 0;
-		mainWindow.createSession(title, sport, distance, startDate, timeStart, duration);
+		mainWindow.setupDistanceChallenge();
+		mainWindow.setupActivityTimeChallenge();
+		mainWindow.acceptChallenge();
+		mainWindow.createSession();
 		//Logout
 		loginDialog.logout();
 	}

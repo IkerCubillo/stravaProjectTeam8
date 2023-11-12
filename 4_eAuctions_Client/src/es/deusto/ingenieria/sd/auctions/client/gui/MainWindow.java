@@ -1,11 +1,9 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
-import java.text.DateFormat;
-import java.text.NumberFormat;
-import java.util.List;
-import java.util.Locale;
 
-import es.deusto.ingenieria.sd.auctions.client.controller.BidController;
+import java.util.List;
+
+
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
@@ -15,9 +13,7 @@ public class MainWindow {
 	
 	private MainController controller;
 	
-	//This attributes are user for formatting currencies and dates
-	private static NumberFormat CURRENCY_FORMATTER = NumberFormat.getCurrencyInstance(Locale.getDefault());
-	private static DateFormat DATE_FORMATTER = DateFormat.getDateTimeInstance();
+
 	
 	public MainWindow(MainController main) {
 		this.controller = main;
@@ -38,7 +34,7 @@ public class MainWindow {
 	public List<TrainingSessionDTO> getTrainingSession() { 		
 		System.out.println(" - Getting training sessions '" + "' ...");
 		
-		List<TrainingSessionDTO> TrainingSessions = this.controller.getTrainingSession();
+		List<TrainingSessionDTO> TrainingSessions = this.controller.getTrainingSessions();
 		
 		for (TrainingSessionDTO TrainingSession : TrainingSessions) {
 			System.out.println("\t* " + TrainingSession.getTitle());
@@ -75,7 +71,7 @@ public class MainWindow {
 	public void createSession() {
 		System.out.println(" - Creating session ...");
 		
-		this.controller.creatingSession();
+		this.controller.createSession();
 	}
 	
 }

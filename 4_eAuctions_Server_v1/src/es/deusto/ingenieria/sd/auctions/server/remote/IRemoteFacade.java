@@ -7,8 +7,6 @@ import java.sql.Time;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ArticleDTO;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.CategoryDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 

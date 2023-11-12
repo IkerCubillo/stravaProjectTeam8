@@ -1,8 +1,6 @@
 package es.deusto.ingenieria.sd.auctions.client;
 
 import java.rmi.RemoteException;
-import java.sql.Date;
-import java.sql.Time;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -10,7 +8,6 @@ import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.gui.MainWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;

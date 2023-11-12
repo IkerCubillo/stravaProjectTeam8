@@ -1,8 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 
-import java.sql.Date;
-import java.sql.Time;
+
 import java.util.List;
 
 

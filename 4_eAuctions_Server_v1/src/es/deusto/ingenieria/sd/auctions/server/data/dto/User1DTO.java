@@ -1,6 +1,6 @@
 package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
-import java.sql.Date;
+
 
 public class User1DTO {
 	private String email;

@@ -199,7 +199,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 		// TODO Auto-generated method stub
 
-Challenge distCha = new Challenge();
+		Challenge distCha = new Challenge();
 
 		
 

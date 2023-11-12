@@ -5,7 +5,7 @@ import java.util.List;
 import es.deusto.ingenieria.sd.auctions.client.controller.BidController;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.gui.BidWindow;
-import es.deusto.ingenieria.sd.auctions.client.gui.LoginDialog;
+import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ArticleDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.CategoryDTO;
@@ -21,7 +21,7 @@ public class MainProgram {
 		serviceLocator.setService(args[0], args[1], args[2]);
 		
 		LoginController loginController = new LoginController(serviceLocator);
-		LoginDialog loginDialog = new LoginDialog(loginController);			
+		LoginWindow loginDialog = new LoginWindow(loginController);			
 		BidController bidController = new BidController(serviceLocator);			
 		BidWindow bidWindow = new BidWindow(bidController);
 		

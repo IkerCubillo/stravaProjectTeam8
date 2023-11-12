@@ -26,6 +26,10 @@ public class Challenge implements Serializable {
 		this.sportType = sportType;
 	}
 	
+	public Challenge() {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}

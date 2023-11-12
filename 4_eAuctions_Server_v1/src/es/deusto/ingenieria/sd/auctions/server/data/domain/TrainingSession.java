@@ -23,6 +23,10 @@ public class TrainingSession implements Serializable {
 		this.duration = duration;
 	}
 	
+	public TrainingSession() {
+		
+	}
+	
 	public String getTitle() {
 		return title;
 	}

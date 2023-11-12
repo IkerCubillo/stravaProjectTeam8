@@ -27,6 +27,10 @@ public class User1 {
 		this.mBPM = mBPM;
 		this.bpm = bpm;
 	}
+	
+	public User1() {
+		
+	}
 
 	public String getEmail() {
 		return email;

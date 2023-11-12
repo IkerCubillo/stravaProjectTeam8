@@ -3,6 +3,7 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 import java.io.Serializable;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -16,6 +17,15 @@ public class Challenge implements Serializable {
 	private Date end;
 	private float metric;
 	private String sportType;
+	private ArrayList<Challenge> challenges = new ArrayList<Challenge>();
+	
+	public Challenge(String name, Date start, Date end, float metric, String sportType) {
+		this.name = name;
+		this.start = start;
+		this.end = end;
+		this.metric = metric;
+		this.sportType = sportType;
+	}
 	
 	public String getName() {
 		return name;
@@ -58,21 +68,12 @@ public class Challenge implements Serializable {
 	}
 	
 	//base methods to be filled in
-	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
-		
-		return true;
-	}
-	
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) {
-		return true;
-	}
-	
 	public List<Challenge> dowloadActiveChallenges() {
 		return null;
 	}
 	
-	public void acceptChallenge(Challenge c) {
-		
+	public void addChallenge(Challenge c) {
+		challenges.add(c);
 	}
 	
 	@Override

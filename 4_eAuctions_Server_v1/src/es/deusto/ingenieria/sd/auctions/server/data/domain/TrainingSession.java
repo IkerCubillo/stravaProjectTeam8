@@ -14,6 +14,15 @@ public class TrainingSession implements Serializable {
 	private Time startTime;
 	private float duration;
 	
+	public TrainingSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+		this.title = title;
+		this.sport = sport;
+		this.distance = distance;
+		this.startDate = startDate;
+		this.startTime = timeStart;
+		this.duration = duration;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -49,11 +58,6 @@ public class TrainingSession implements Serializable {
 	}
 	public void setDuration(float duration) {
 		this.duration = duration;
-	}
-	
-	//to be updated
-	public void createSession(String title, String sport, float Distance, Date startDate, Time timeStart, float duration) {
-		
 	}
 	
 	@Override

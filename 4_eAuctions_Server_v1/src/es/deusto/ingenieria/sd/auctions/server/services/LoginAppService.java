@@ -20,4 +20,11 @@ public class LoginAppService {
 			return null;
 		}
 	}
+	
+	public LoginAppService getInstance() {
+
+		LoginAppService appSer = new LoginAppService();
+
+		return appSer;
+	}
 }

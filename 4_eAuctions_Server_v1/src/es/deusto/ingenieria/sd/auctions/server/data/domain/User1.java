@@ -3,6 +3,7 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.List;
 
 public class User1 {
 	private String email;
@@ -15,6 +16,17 @@ public class User1 {
 	private int bpm;
 	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
+	
+	public User1(String account, String password, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
+		this.email = email;
+		this.password = password;
+		this.account = account;
+		this.birthDate = birthDate;
+		this.weight = weight;
+		this.height = height;
+		this.mBPM = mBPM;
+		this.bpm = bpm;
+	}
 
 	public String getEmail() {
 		return email;
@@ -80,10 +92,6 @@ public class User1 {
 		this.bpm = bpm;
 	}
 
-	public void createUserProfile(String account, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
-		
-	}
-
 	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
 		userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
 	}
@@ -91,9 +99,13 @@ public class User1 {
 	public void acceptChallenge(Challenge c) {
 		userChallenges.add(c);
 	}
+	
+	public List<Challenge> dowloadActiveChallenges() {
+		return userChallenges;
+	}
 
 	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
-
+		
 		return true;
 	}
 

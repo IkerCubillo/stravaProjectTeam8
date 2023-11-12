@@ -17,7 +17,6 @@ public class Challenge implements Serializable {
 	private Date end;
 	private float metric;
 	private String sportType;
-	private ArrayList<Challenge> challenges = new ArrayList<Challenge>();
 	
 	public Challenge(String name, Date start, Date end, float metric, String sportType) {
 		this.name = name;
@@ -65,15 +64,6 @@ public class Challenge implements Serializable {
 
 	public void setSportType(String sportType) {
 		this.sportType = sportType;
-	}
-	
-	//base methods to be filled in
-	public List<Challenge> dowloadActiveChallenges() {
-		return null;
-	}
-	
-	public void addChallenge(Challenge c) {
-		challenges.add(c);
 	}
 	
 	@Override

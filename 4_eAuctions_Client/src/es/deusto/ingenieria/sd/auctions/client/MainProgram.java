@@ -39,15 +39,16 @@ public class MainProgram {
 		
 		//Login
 		loginDialog.login();		
-		//Get Categories
 		List<ChallengeDTO> challenges = mainWindow.getChallenges();
-		//Get Articles of a category (first category is selected)
+		for (ChallengeDTO challenge : challenges) {
+			System.out.println("\t* " + challenge.getName());
+		}
 		List<TrainingSessionDTO> trainingSessions = mainWindow.getTrainingSession();
-		//Convert currency to GBP
+		for (TrainingSessionDTO TrainingSession : trainingSessions) {
+			System.out.println("\t* " + TrainingSession.getTitle());
+		}
 		mainWindow.setupDistanceChallenge(name, start, end, metric, sportType);
-		//Convert currency to USD
 		mainWindow.setupActivityTimeChallenge(name, start, end, metric, sportType);
-		//Place a bid (first article of the category is selected; the token is stored in the BidController)
 		mainWindow.acceptChallenge(c);
 		String title = null;
 		String sport = null;

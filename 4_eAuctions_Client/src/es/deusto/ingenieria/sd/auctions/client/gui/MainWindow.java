@@ -6,20 +6,21 @@ import java.util.List;
 import java.util.Locale;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.BidController;
+import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
 //This clase simulates the GUI of the Bid use case
 public class MainWindow {
 	
-	private BidController controller;
+	private MainController controller;
 	
 	//This attributes are user for formatting currencies and dates
 	private static NumberFormat CURRENCY_FORMATTER = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	private static DateFormat DATE_FORMATTER = DateFormat.getDateTimeInstance();
 	
-	public MainWindow(BidController bid) {
-		this.controller = bid;
+	public MainWindow(MainController main) {
+		this.controller = main;
 	}
 
 	public List<ChallengeDTO> getChallenges() {

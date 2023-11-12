@@ -51,6 +51,8 @@ public class TrainingSessionDTO implements Serializable {
 		this.duration = duration;
 	}
 	
+	
+	
 	@Override
 	public String toString() {
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-YY - hh:mm");

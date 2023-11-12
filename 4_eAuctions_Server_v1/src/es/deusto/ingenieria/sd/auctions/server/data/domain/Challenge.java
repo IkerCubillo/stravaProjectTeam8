@@ -59,6 +59,7 @@ public class Challenge implements Serializable {
 	
 	//base methods to be filled in
 	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
+		
 		return true;
 	}
 	

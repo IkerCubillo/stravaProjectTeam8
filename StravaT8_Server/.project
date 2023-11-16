@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>StravaT8_Server</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>bin</name>
+			<type>2</type>
+			<location>C:/Soft.Labs/SD/StudentStrava/stravaProjectTeam8/4_eAuctions_Server_v1/bin</location>
+		</link>
+		<link>
+			<name>src</name>
+			<type>2</type>
+			<location>C:/Soft.Labs/SD/StudentStrava/stravaProjectTeam8/4_eAuctions_Server_v1/src</location>
+		</link>
+	</linkedResources>
+</projectDescription>

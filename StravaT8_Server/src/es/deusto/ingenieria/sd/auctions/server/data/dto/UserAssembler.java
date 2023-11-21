@@ -3,14 +3,14 @@ package es.deusto.ingenieria.sd.auctions.server.data.dto;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User1;
 
 //This class is part of the DTO pattern. It also implements Singleton Pattern.
-public class User1Assembler {
-	private static User1Assembler instance;
+public class UserAssembler {
+	private static UserAssembler instance;
 
-	private User1Assembler() { }
+	private UserAssembler() { }
 	
-	public static User1Assembler getInstance() {
+	public static UserAssembler getInstance() {
 		if (instance == null) {
-			instance = new User1Assembler();
+			instance = new UserAssembler();
 		}
 
 		return instance;

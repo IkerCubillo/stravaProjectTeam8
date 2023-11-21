@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
 
 
-public class User1DTO {
+public class UserDTO {
 	private String email;
 	private String account;
 	
@@ -18,5 +18,9 @@ public class User1DTO {
 	}
 	public void setAccount(String account) {
 		this.account = account;
+	}
+	public void setNickname(String account2) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="C:/Soft.Labs/SD/StudentStrava/stravaProjectTeam8/4_eAuctions_Server_v1/bin"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.15.jar"/>
+	<classpathentry kind="lib" path="lib/CurrencyExchange.jar"/>
+	<classpathentry kind="lib" path="lib/eAuctions.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

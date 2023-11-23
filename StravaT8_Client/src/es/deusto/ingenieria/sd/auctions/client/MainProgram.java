@@ -10,13 +10,11 @@ import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
-import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
 
 public class MainProgram {
 
 	public static void main(String[] args) throws RemoteException {	
 		ServiceLocator serviceLocator = new ServiceLocator();
-		RemoteFacade remoteFacade = new RemoteFacade();
 
 		
 		//args[0] = RMIRegistry IP
@@ -26,7 +24,7 @@ public class MainProgram {
 		
 		LoginController loginController = new LoginController(serviceLocator);
 		LoginWindow loginDialog = new LoginWindow(loginController);			
-		MainController mainController = new MainController(remoteFacade);			
+		MainController mainController = new MainController(serviceLocator);			
 		MainWindow mainWindow = new MainWindow(mainController);
 		
 		//Login

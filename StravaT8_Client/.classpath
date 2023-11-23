@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.15.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/StravaT8_Server"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

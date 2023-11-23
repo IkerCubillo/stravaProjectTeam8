@@ -66,7 +66,6 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 	
-	@Override
 	public void register(String account, String email, String name, Date birthDate, float weight, float height,
 			int mBPM, int bpm) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -95,9 +94,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	@Override
-
-	public boolean acceptChallenge(Challenge c) throws RemoteException {
+	public boolean acceptChallenge(ChallengeDTO c) throws RemoteException {
 
 		// TODO Auto-generated method stub
 
@@ -116,8 +113,6 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 
 
-
-	@Override
 
 	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart,
 
@@ -144,8 +139,6 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 
 
-
-	@Override
 
 	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType)
 
@@ -182,8 +175,6 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 
 
-
-	@Override
 
 	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType)
 

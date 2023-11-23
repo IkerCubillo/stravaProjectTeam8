@@ -15,7 +15,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 public class MainWindow {
 	
 	private MainController controller;
-	private Challenge c;
+	private ChallengeDTO c;
 	private TrainingSession t;
 	
 

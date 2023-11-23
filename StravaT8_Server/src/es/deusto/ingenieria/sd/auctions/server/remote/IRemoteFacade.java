@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 import java.util.List;
 
@@ -23,7 +23,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		public List<TrainingSessionDTO> getTrainingSessions() throws RemoteException;
 		
-		public boolean acceptChallenge(Challenge c) throws RemoteException;
+		public boolean acceptChallenge(ChallengeDTO c) throws RemoteException;
 		
 		public void createSession(String title, String sport, float Distance, Date startDate, Time timeStart, float duration) throws RemoteException;
 		

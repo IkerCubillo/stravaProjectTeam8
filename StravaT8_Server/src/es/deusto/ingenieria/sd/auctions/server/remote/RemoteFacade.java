@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 import java.util.Calendar;
 import java.util.HashMap;

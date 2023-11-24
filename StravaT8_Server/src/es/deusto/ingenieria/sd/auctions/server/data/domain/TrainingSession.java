@@ -3,7 +3,7 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 import java.io.Serializable;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
-import java.sql.Date;
+import java.util.Date;
 
 public class TrainingSession implements Serializable {
 	private static final long serialVersionUID = 1L;

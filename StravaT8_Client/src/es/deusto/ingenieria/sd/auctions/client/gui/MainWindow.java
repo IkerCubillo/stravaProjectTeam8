@@ -1,7 +1,5 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
-
-
 import java.util.List;
 
 

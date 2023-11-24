@@ -1,7 +1,5 @@
 package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
-
-
 public class UserDTO {
 	private String email;
 	private String account;

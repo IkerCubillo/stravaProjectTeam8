@@ -1,17 +1,10 @@
 package es.deusto.ingenieria.sd.auctions.server.services;
 
-
-
-import java.sql.Date;
-
+import java.util.Date;
 import java.sql.Time;
-
 import java.util.List;
 
-
-
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
-
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;

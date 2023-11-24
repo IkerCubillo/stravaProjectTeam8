@@ -2,6 +2,9 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+
+import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+
 import java.sql.Date;
 
 
@@ -21,6 +24,14 @@ public class Challenge implements Serializable {
 		this.end = end;
 		this.metric = metric;
 		this.sportType = sportType;
+	}
+	
+	public Challenge(ChallengeDTO c) {
+		this.name = c.getName();
+		this.start = c.getStart();
+		this.end = c.getEnd();
+		this.metric = c.getMetric();
+		this.sportType = c.getSportType();
 	}
 	
 	public Challenge() {

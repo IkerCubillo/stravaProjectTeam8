@@ -6,8 +6,6 @@ import java.util.List;
 
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
@@ -16,7 +14,7 @@ public class MainWindow {
 	
 	private MainController controller;
 	private ChallengeDTO c;
-	private TrainingSession t;
+	private TrainingSessionDTO t;
 	
 
 	

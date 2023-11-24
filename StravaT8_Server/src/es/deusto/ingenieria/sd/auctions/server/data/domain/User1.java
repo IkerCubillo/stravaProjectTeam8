@@ -5,6 +5,8 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+
 public class User1 {
 	private String email;
 	private String password;
@@ -100,8 +102,12 @@ public class User1 {
 		userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
 	}
 
-	public void acceptChallenge(Challenge c) {
-		userChallenges.add(c);
+	//takes in DTO converts it to challenge and adds it if the user doesn't already have it
+	public void acceptChallenge(ChallengeDTO c) {
+		Challenge temp = new Challenge(c);
+		if(!userChallenges.contains(temp)) {
+			userChallenges.add(temp);
+		}
 	}
 	
 	public List<Challenge> dowloadActiveChallenges() {

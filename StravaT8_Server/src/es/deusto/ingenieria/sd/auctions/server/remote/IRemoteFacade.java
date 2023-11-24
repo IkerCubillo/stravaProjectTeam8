@@ -2,11 +2,10 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.Date;
+import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 

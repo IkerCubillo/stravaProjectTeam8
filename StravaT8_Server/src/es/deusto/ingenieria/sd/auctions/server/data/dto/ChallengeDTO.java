@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 //This class implements DTO pattern
 public class ChallengeDTO implements Serializable {

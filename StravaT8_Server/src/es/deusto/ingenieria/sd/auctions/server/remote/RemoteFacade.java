@@ -3,7 +3,7 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -114,7 +114,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart,
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart,
 
 			float duration) throws RemoteException {
 

@@ -1,7 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,7 +98,7 @@ public class User1 {
 		this.bpm = bpm;
 	}
 
-	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
 	}
 

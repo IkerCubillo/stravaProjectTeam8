@@ -1,7 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.io.Serializable;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -11,10 +11,10 @@ public class TrainingSession implements Serializable {
 	private String sport;
 	private float distance;
 	private Date startDate;
-	private Time startTime;
+	private LocalTime startTime;
 	private float duration;
 	
-	public TrainingSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		this.title = title;
 		this.sport = sport;
 		this.distance = distance;
@@ -51,10 +51,10 @@ public class TrainingSession implements Serializable {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	public Time getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(Time startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
 	public float getDuration() {

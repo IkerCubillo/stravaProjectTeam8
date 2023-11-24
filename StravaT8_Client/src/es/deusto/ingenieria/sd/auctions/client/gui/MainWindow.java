@@ -2,7 +2,6 @@ package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.util.List;
 
-
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;

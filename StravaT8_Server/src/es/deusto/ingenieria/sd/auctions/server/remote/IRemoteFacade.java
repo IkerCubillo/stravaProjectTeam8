@@ -3,7 +3,7 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
@@ -24,7 +24,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		public boolean acceptChallenge(ChallengeDTO c) throws RemoteException;
 		
-		public void createSession(String title, String sport, float Distance, Date startDate, Time timeStart, float duration) throws RemoteException;
+		public void createSession(String title, String sport, float Distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException;
 		
 		public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) throws RemoteException;
 		

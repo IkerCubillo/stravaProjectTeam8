@@ -1,7 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.server.data.dto;
 
 import java.io.Serializable;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -11,7 +11,7 @@ public class TrainingSessionDTO implements Serializable {
 	private String sport;
 	private float distance;
 	private Date startDate;
-	private Time startTime;
+	private LocalTime startTime;
 	private float duration;
 	
 	public String getTitle() {
@@ -38,10 +38,10 @@ public class TrainingSessionDTO implements Serializable {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	public Time getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(Time startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
 	public float getDuration() {

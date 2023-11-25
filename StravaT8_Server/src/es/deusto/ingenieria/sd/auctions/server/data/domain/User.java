@@ -7,7 +7,7 @@ import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
-public class User1 {
+public class User {
 	private String email;
 	private String password;
 	private String account;
@@ -19,7 +19,7 @@ public class User1 {
 	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
 	
-	public User1(String account, String password, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
+	public User(String account, String password, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
 		this.email = email;
 		this.password = password;
 		this.account = account;
@@ -30,7 +30,7 @@ public class User1 {
 		this.bpm = bpm;
 	}
 	
-	public User1() {
+	public User() {
 		
 	}
 

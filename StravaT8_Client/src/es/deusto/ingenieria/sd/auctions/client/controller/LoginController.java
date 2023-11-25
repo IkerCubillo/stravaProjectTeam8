@@ -43,7 +43,12 @@ public class LoginController {
 
 	public boolean register(String account, String email, String name, Date birthdate, float weight, float height,
 			int mbpm, int bpm) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			this.serviceLocator.getService().register(account, email, name, birthdate, weight, height, mbpm, bpm);
+			return true;
+		} catch (RemoteException e) {
+			System.out.println("# Error during registration: " + e);
+			return false;
+		}
 	}
 }

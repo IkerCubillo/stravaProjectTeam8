@@ -43,7 +43,7 @@ public class LoginWindow {
 				+ "' - '" + this.name + "' - '" + this.birthdate + "' - '" + this.weight + "' - '" + this.height + "' - '" + this.mbpm 
 				+ "' - '" + this.bpm + "' ...");
 		this.controller.register(account, email, name, birthdate, weight, height, mbpm, bpm);
-		System.out.println("\t* Register success!");
+		System.out.println("\t* Registration success!");
 		
 	}
 }

@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client;
 
 import java.rmi.RemoteException;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -29,6 +31,12 @@ public class MainProgram {
 		
 		//Login
 		loginDialog.login();		
+		
+		mainWindow.setupDistanceChallenge("olympics", new Date(), new Date(), (float)1000, "flying");
+		mainWindow.setupActivityTimeChallenge("xGames", new Date(), new Date(), (float)60, "breath holding");
+		//System.out.println("Challenge accepted: " + mainWindow.acceptChallenge());
+		mainWindow.createSession("First Run", "running", (float)20, new Date(), LocalTime.now(), (float)10);
+		
 //		List<ChallengeDTO> challenges = mainWindow.getChallenges();
 //		for (ChallengeDTO challenge : challenges) {
 //			System.out.println("\t* " + challenge.getName());
@@ -37,11 +45,8 @@ public class MainProgram {
 //		for (TrainingSessionDTO TrainingSession : trainingSessions) {
 //			System.out.println("\t* " + TrainingSession.getTitle());
 //		}
-//		mainWindow.setupDistanceChallenge();
-//		mainWindow.setupActivityTimeChallenge();
-//		mainWindow.acceptChallenge();
-//		mainWindow.createSession();
+		
 		//Logout
-//		loginDialog.logout();
+		loginDialog.logout();
 	}
 }

@@ -1,5 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -44,19 +46,19 @@ public class MainWindow {
 		return TrainingSessions;		
 	}
 	
-	public boolean setupDistanceChallenge() {
+	public boolean setupDistanceChallenge(String name, Date start, Date end, Float metric, String sportType ) {
 		System.out.println(" - Setting up distance challenge ...");
 		
-		boolean confirmation = this.controller.setupDistanceChallenge(c.getName(), c.getStart(), c.getEnd(), c.getMetric(), c.getSportType());
+		boolean confirmation = this.controller.setupDistanceChallenge(name, start, end, metric, sportType);
 		
 		return confirmation;
 		
 	}
 	
-	public boolean setupActivityTimeChallenge() {
+	public boolean setupActivityTimeChallenge(String name, Date start, Date end, Float metric, String sportType) {
 		System.out.println(" - Setting up activity time challenge ...");
 		
-		boolean confirmation = this.controller.setupActivityTimeChallenge(c.getName(), c.getStart(), c.getEnd(), c.getMetric(), c.getSportType());
+		boolean confirmation = this.controller.setupActivityTimeChallenge(name, start, end, metric, sportType);
 		
 		return confirmation;
 		
@@ -65,15 +67,16 @@ public class MainWindow {
 	public boolean acceptChallenge() {
 		System.out.println(" - Accepting challenge ...");
 		
-		boolean confirmation = this.controller.acceptChallenge(c);
+		//for now, hay que cambiar a challenge eligido
+		boolean confirmation = this.controller.acceptChallenge(getChallenges().get(0));
 		
 		return confirmation;
 	}
 	
-	public void createSession() {
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		System.out.println(" - Creating session ...");
 		
-		this.controller.createSession(t.getTitle(), t.getSport(), t.getDistance(), t.getStartDate(), t.getStartTime(), t.getDuration());
+		this.controller.createSession(title, sport, distance, startDate, timeStart, duration);
 	}
 	
 }

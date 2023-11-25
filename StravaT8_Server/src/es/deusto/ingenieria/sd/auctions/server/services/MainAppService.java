@@ -1,15 +1,13 @@
 package es.deusto.ingenieria.sd.auctions.server.services;
 
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
-
-
 
 public class MainAppService {
 
@@ -121,7 +119,7 @@ public class MainAppService {
 
 	
 
-	public void createSesion(String title, String sport, float distance, Date startDate, Time startTime, int duration) {
+	public void createSesion(String title, String sport, float distance, Date startDate, LocalTime startTime, int duration) {
 
 		
 

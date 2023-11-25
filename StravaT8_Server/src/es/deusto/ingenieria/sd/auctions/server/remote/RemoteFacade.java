@@ -3,7 +3,7 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.User1;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 import es.deusto.ingenieria.sd.auctions.server.services.LoginAppService;
@@ -21,7 +21,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private static final long serialVersionUID = 1L;
 
 	//Data structure for manage Server State
-	private Map<Long, User1> serverState = new HashMap<>();
+	private Map<Long, User> serverState = new HashMap<>();
 	private List<ChallengeDTO> challengesDTO;
 
 	private List<TrainingSessionDTO> trainingsDTO;
@@ -37,7 +37,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		System.out.println(" * RemoteFacade login(): " + email + " / " + password);
 				
 		//Perform login() using LoginAppService
-		User1 user = loginService.login(email, password);
+		User user = loginService.login(email, password);
 			
 		//If login() success user is stored in the Server State
 		if (user != null) {
@@ -114,7 +114,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart,
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart,
 
 			float duration) throws RemoteException {
 

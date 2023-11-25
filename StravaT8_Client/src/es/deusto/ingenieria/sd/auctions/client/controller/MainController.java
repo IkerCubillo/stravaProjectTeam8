@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.client.controller;
 
 import java.rmi.RemoteException;
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 
@@ -65,7 +65,7 @@ public class MainController{
 		}
 	}
 	
-	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		try {
 			this.ServiceLocator.getService().createSession(title, sport, distance, startDate, timeStart, duration);;
 		} catch (RemoteException e) {

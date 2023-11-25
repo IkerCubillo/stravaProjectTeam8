@@ -1,5 +1,6 @@
 package es.deusto.ingenieria.sd.auctions.server.services;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.time.LocalTime;
 import java.util.List;
@@ -17,7 +18,7 @@ public class MainAppService {
 		this.initilizeData();
 	};
 
-	public List<Challenge> listChallenges;
+	public List<Challenge> listChallenges = new ArrayList<Challenge>();
 
 	// TODO: remove when DAO Pattern is implemented
 	private void initilizeData() {

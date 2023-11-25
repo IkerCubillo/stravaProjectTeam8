@@ -1,13 +1,13 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.util.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
-public class User1 {
+public class User {
 	private String email;
 	private String password;
 	private String account;
@@ -19,7 +19,7 @@ public class User1 {
 	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
 	
-	public User1(String account, String password, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
+	public User(String account, String password, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
 		this.email = email;
 		this.password = password;
 		this.account = account;
@@ -30,7 +30,7 @@ public class User1 {
 		this.bpm = bpm;
 	}
 	
-	public User1() {
+	public User() {
 		
 	}
 
@@ -98,7 +98,7 @@ public class User1 {
 		this.bpm = bpm;
 	}
 
-	public void createSession(String title, String sport, float distance, Date startDate, Time timeStart, float duration) {
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
 	}
 

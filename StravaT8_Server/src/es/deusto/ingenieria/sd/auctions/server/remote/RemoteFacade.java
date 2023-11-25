@@ -13,9 +13,12 @@ import java.util.Map;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeAssembler;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionAssembler;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 import es.deusto.ingenieria.sd.auctions.server.services.LoginAppService;
+import es.deusto.ingenieria.sd.auctions.server.services.MainAppService;
 
 public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {	
 	private static final long serialVersionUID = 1L;
@@ -27,6 +30,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private List<TrainingSessionDTO> trainingsDTO;
 	//TODO: Remove this instances when Singleton Pattern is implemented
 	private LoginAppService loginService = new LoginAppService(); // To create on server services
+	private MainAppService mainService = new MainAppService();
 
 	public RemoteFacade() throws RemoteException {
 		super();		
@@ -74,9 +78,17 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	public List<ChallengeDTO> getChallenges() throws RemoteException {
 
-		// TODO Auto-generated method stub
+		System.out.println(" * RemoteFacade getCategories()");
+		
+		List<Challenge> challenges = mainService.getChallenges();
+		
+		if (challenges != null) {
+			//Convert domain object to DTO
+			return ChallengeAssembler.getInstance().challengeToDTO(challenges);
+		} else {
+			throw new RemoteException("getChallenges() fails!");
+		}
 
-		return challengesDTO;
 
 	}
 
@@ -86,9 +98,16 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	public List<TrainingSessionDTO> getTrainingSessions() throws RemoteException {
 
-		// TODO Auto-generated method stub
-
-		return trainingsDTO;
+		System.out.println(" * RemoteFacade getArticle()");
+		
+		List<TrainingSession> trainingSession = mainService.getTrainingSessions();
+		
+		if (trainingSession != null) {
+			//Convert domain object to DTO
+			return TrainingSessionAssembler.getInstance().trainingSessionToDTO(trainingSession);
+		} else {
+			throw new RemoteException("getTrainingSession() fails!");
+		}
 
 	}
 

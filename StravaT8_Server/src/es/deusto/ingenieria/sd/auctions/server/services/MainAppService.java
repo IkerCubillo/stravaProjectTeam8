@@ -5,6 +5,7 @@ import java.util.Date;
 import java.time.LocalTime;
 import java.util.List;
 
+import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
@@ -32,6 +33,7 @@ public class MainAppService {
 		user0.setHeight(180);
 		user0.setmBPM(100);
 		user0.setBpm(100);
+		userMap.put(user0.getEmail(), user0);
 
 		User user1 = new User();
 		user1.setEmail("kerman@opendeusto.com");
@@ -42,7 +44,8 @@ public class MainAppService {
 		user1.setHeight(180);
 		user1.setmBPM(100);
 		user1.setBpm(100);
-
+		userMap.put(user1.getEmail(), user0);
+		
 		User user2 = new User();
 		user2.setEmail("cubillo@opendeusto.com");
 		user2.setPassword("password");
@@ -52,7 +55,8 @@ public class MainAppService {
 		user2.setHeight(180);
 		user2.setmBPM(100);
 		user2.setBpm(100);
-
+		userMap.put(user2.getEmail(), user0);
+		
 		// challenges
 		Challenge cha1 = new Challenge();
 		cha1.setName("Test1");

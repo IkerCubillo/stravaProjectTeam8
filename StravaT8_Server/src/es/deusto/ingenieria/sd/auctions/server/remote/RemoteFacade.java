@@ -25,7 +25,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	//Data structure for manage Server State
 	private Map<Long, User> serverState = new HashMap<>();
-
+	public Map<String, User> userMap = new HashMap<>();
+	
 	
 	//TODO: Remove this instances when Singleton Pattern is implemented
 	private LoginAppService loginService = new LoginAppService(); // To create on server services
@@ -71,8 +72,34 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	
 	public void register(String account, String email, String name, Date birthDate, float weight, float height,
 			int mBPM, int bpm) throws RemoteException {
-		// TODO Auto-generated method stub
+		System.out.println(" * RemoteFacade register(): " + account + "' - '" + email 
+				+ "' - '" + name + "' - '" + birthDate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
+				+ "' - '" + bpm);
 		
+		//Perform register() using LoginAppService
+		User user = loginService.login(email, account);
+		
+		// creating user
+		try {
+			user.setAccount(account);
+			user.setEmail(email);
+			user.setName(name);
+			user.setBirthDate(birthDate);
+			user.setWeight(weight);
+			user.setHeight(height);
+			user.setmBPM(mBPM);
+			user.setBpm(bpm);
+			
+		} catch (Exception e) {
+			throw new RemoteException("Register fails!");
+		}
+		
+		// checking user exists in user map
+		if (!this.userMap.containsKey(user.getEmail())) {	
+			this.userMap.put(user.getEmail(), user);
+		} else {
+			throw new RemoteException("Email already on use!");
+		}
 	}
 
 	public List<ChallengeDTO> getChallenges() throws RemoteException {

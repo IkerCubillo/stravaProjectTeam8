@@ -39,7 +39,7 @@ public class LoginWindow {
 	}
 
 	public void register() {
-		System.out.println(" - Registering into the server: '" + this.account + "' - '" + this.email + "' - '" + this.password 
+		System.out.println(" - Registering into the server: '" + this.account + "' - '" + this.email
 				+ "' - '" + this.name + "' - '" + this.birthdate + "' - '" + this.weight + "' - '" + this.height + "' - '" + this.mbpm 
 				+ "' - '" + this.bpm + "' ...");
 		this.controller.register(account, email, name, birthdate, weight, height, mbpm, bpm);

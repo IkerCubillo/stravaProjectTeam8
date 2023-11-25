@@ -10,6 +10,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 public class User {
 	private String email;
 	private String password;
+	private String name;
 	private String account;
 	private Date birthDate;
 	private float weight;
@@ -21,6 +22,7 @@ public class User {
 	
 	public User(String account, String password, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
 		this.email = email;
+		this.name = name;
 		this.password = password;
 		this.account = account;
 		this.birthDate = birthDate;
@@ -33,7 +35,11 @@ public class User {
 	public User() {
 		
 	}
-
+	
+	public String getName() {
+		return name;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -69,7 +75,11 @@ public class User {
 	public float getWeight() {
 		return weight;
 	}
-
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}

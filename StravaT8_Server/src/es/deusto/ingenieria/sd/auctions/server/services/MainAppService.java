@@ -6,8 +6,6 @@ import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
 public class MainAppService {
 
@@ -17,9 +15,9 @@ public class MainAppService {
 
 	public MainAppService() {};
 
-	public List<ChallengeDTO> listaDistCha;
+	public List<Challenge> listaDistCha;
 
-	public List<TrainingSessionDTO> listaTrainingSession;
+	public List<TrainingSession> listaTrainingSession;
 
 	
 
@@ -93,7 +91,7 @@ public class MainAppService {
 
 	
 
-	public List<ChallengeDTO> getChallenges() {
+	public List<Challenge> getChallenges() {
 
 		return listaDistCha;
 
@@ -143,7 +141,7 @@ public class MainAppService {
 
 	
 
-	public List<TrainingSessionDTO> getTrainingSessions() {
+	public List<TrainingSession> getTrainingSessions() {
 
 		return listaTrainingSession;
 

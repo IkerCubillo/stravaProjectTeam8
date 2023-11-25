@@ -42,11 +42,8 @@ public class LoginWindow {
 		System.out.println(" - Registering into the server: '" + this.account + "' - '" + this.email + "' - '" + this.password 
 				+ "' - '" + this.name + "' - '" + this.birthdate + "' - '" + this.weight + "' - '" + this.height + "' - '" + this.mbpm 
 				+ "' - '" + this.bpm + "' ...");
-		String sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex(password);
-		System.out.println("\t* Password hash: " + sha1);
-		boolean result = this.controller.register(account, email, name, birthdate, weight, height, mbpm, bpm);
-		System.out.println("\t* Login result: " + result);
-		System.out.println("\t* Token: " + this.controller.getToken());
+		this.controller.register(account, email, name, birthdate, weight, height, mbpm, bpm);
+		System.out.println("\t* Register success!");
 		
 	}
 }

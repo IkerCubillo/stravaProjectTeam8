@@ -79,20 +79,19 @@ public class Challenge implements Serializable {
 	
 	@Override
 	public String toString() {
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-YY - hh:mm");
 
 		StringBuffer result = new StringBuffer();
 		
 		result.append("Challenge Name: ");
 		result.append(this.name);
 		result.append("| Start: ");
-		result.append(dateFormatter.format(this.start));
+		result.append(this.start);
 		result.append("| End: ");
-		result.append(dateFormatter.format(this.end));
+		result.append(this.end);
 		result.append("| Goal: ");
-		result.append(dateFormatter.format(this.metric));
+		result.append(this.metric);
 		result.append("| Sport: ");
-		result.append(dateFormatter.format(this.sportType));
+		result.append(this.sportType);
 		
 		return result.toString();
 	}

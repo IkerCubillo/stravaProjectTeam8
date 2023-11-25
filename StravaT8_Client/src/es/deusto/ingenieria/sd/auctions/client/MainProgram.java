@@ -29,19 +29,19 @@ public class MainProgram {
 		
 		//Login
 		loginDialog.login();		
-		List<ChallengeDTO> challenges = mainWindow.getChallenges();
-		for (ChallengeDTO challenge : challenges) {
-			System.out.println("\t* " + challenge.getName());
-		}
-		List<TrainingSessionDTO> trainingSessions = mainWindow.getTrainingSession();
-		for (TrainingSessionDTO TrainingSession : trainingSessions) {
-			System.out.println("\t* " + TrainingSession.getTitle());
-		}
-		mainWindow.setupDistanceChallenge();
-		mainWindow.setupActivityTimeChallenge();
-		mainWindow.acceptChallenge();
-		mainWindow.createSession();
+//		List<ChallengeDTO> challenges = mainWindow.getChallenges();
+//		for (ChallengeDTO challenge : challenges) {
+//			System.out.println("\t* " + challenge.getName());
+//		}
+//		List<TrainingSessionDTO> trainingSessions = mainWindow.getTrainingSession();
+//		for (TrainingSessionDTO TrainingSession : trainingSessions) {
+//			System.out.println("\t* " + TrainingSession.getTitle());
+//		}
+//		mainWindow.setupDistanceChallenge();
+//		mainWindow.setupActivityTimeChallenge();
+//		mainWindow.acceptChallenge();
+//		mainWindow.createSession();
 		//Logout
-		loginDialog.logout();
+//		loginDialog.logout();
 	}
 }

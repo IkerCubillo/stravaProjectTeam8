@@ -1,12 +1,13 @@
-package es.deusto.ingenieria.sd.auctions.server;
+package es.deusto.ingenieria.sd.auctions.client;
 
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JButton;
+
 
 public class MainProgramWindow extends JFrame {
 

@@ -33,10 +33,10 @@ public class MainWindow {
 		return challenges;
 	}
 
-	public List<TrainingSessionDTO> getTrainingSession() { 		
+	public List<TrainingSessionDTO> getTrainingSession(long token) { 		
 		System.out.println(" - Getting training sessions '" + "' ...");
 		
-		List<TrainingSessionDTO> TrainingSessions = this.controller.getTrainingSessions();
+		List<TrainingSessionDTO> TrainingSessions = this.controller.getTrainingSessions(token);
 		
 		for (TrainingSessionDTO TrainingSession : TrainingSessions) {
 			System.out.println("\t* " + TrainingSession.getTitle());
@@ -46,37 +46,37 @@ public class MainWindow {
 		return TrainingSessions;		
 	}
 	
-	public boolean setupDistanceChallenge(String name, Date start, Date end, Float metric, String sportType ) {
+	public boolean setupDistanceChallenge(long token, String name, Date start, Date end, Float metric, String sportType ) {
 		System.out.println(" - Setting up distance challenge ...");
 		
-		boolean confirmation = this.controller.setupDistanceChallenge(name, start, end, metric, sportType);
+		boolean confirmation = this.controller.setupDistanceChallenge(token, name, start, end, metric, sportType);
 		
 		return confirmation;
 		
 	}
 	
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, Float metric, String sportType) {
+	public boolean setupActivityTimeChallenge(long token, String name, Date start, Date end, Float metric, String sportType) {
 		System.out.println(" - Setting up activity time challenge ...");
 		
-		boolean confirmation = this.controller.setupActivityTimeChallenge(name, start, end, metric, sportType);
+		boolean confirmation = this.controller.setupActivityTimeChallenge(token, name, start, end, metric, sportType);
 		
 		return confirmation;
 		
 	}
 	
-	public boolean acceptChallenge() {
+	public boolean acceptChallenge(long token) {
 		System.out.println(" - Accepting challenge ...");
 		
 		//for now, hay que cambiar a challenge eligido
-		boolean confirmation = this.controller.acceptChallenge(getChallenges().get(0));
+		boolean confirmation = this.controller.acceptChallenge(token, getChallenges().get(0));
 		
 		return confirmation;
 	}
 	
-	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
+	public void createSession(long token, String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		System.out.println(" - Creating session ...");
 		
-		this.controller.createSession(title, sport, distance, startDate, timeStart, duration);
+		this.controller.createSession(token, title, sport, distance, startDate, timeStart, duration);
 	}
 	
 }

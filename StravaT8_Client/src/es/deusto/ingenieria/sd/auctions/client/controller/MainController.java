@@ -29,45 +29,45 @@ public class MainController{
 		}
 	}
 
-	public List<TrainingSessionDTO> getTrainingSessions() {
+	public List<TrainingSessionDTO> getTrainingSessions(long token) {
 		try {
-			return this.ServiceLocator.getService().getTrainingSessions();
+			return this.ServiceLocator.getService().getTrainingSessions(token);
 		} catch (RemoteException e) {
 			System.out.println("# Error getting all training sessions: " + e);
 			return null;
 		}
 	}
 
-	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
+	public boolean setupDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) {
 		try {
-			return this.ServiceLocator.getService().setupDistanceChallenge(name, start, end, metric, sportType);
+			return this.ServiceLocator.getService().setupDistanceChallenge(token, name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error setting up distance challenge: " + e);
 			return false;
 		}
 	}
 	
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) {
+	public boolean setupActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) {
 		try {
-			return this.ServiceLocator.getService().setupActivityTimeChallenge(name, start, end, metric, sportType);
+			return this.ServiceLocator.getService().setupActivityTimeChallenge(token, name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error setting up activity challenge: " + e);
 			return false;
 		}
 	}
 	
-	public boolean acceptChallenge(ChallengeDTO c) {
+	public boolean acceptChallenge(long token, ChallengeDTO c) {
 		try {
-			return this.ServiceLocator.getService().acceptChallenge(c);
+			return this.ServiceLocator.getService().acceptChallenge(token, c);
 		} catch (RemoteException e) {
 			System.err.println("# Error accepting challenge: " + e);	
 			return false;
 		}
 	}
 	
-	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
+	public void createSession(long token, String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
 		try {
-			this.ServiceLocator.getService().createSession(title, sport, distance, startDate, timeStart, duration);;
+			this.ServiceLocator.getService().createSession(token, title, sport, distance, startDate, timeStart, duration);;
 		} catch (RemoteException e) {
 			System.err.println("# Error creating training session: " + e);
 		}

@@ -88,128 +88,78 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 			throw new RemoteException("getChallenges() fails!");
 		}
 
-
 	}
 
 
 
 	@Override
 
-	public List<TrainingSessionDTO> getTrainingSessions() throws RemoteException {
+	public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException {
 
-		System.out.println(" * RemoteFacade getTrainingSession()");
-		
-		List<TrainingSession> trainingSession = mainService.getTrainingSessions();
-		
-		if (trainingSession != null) {
-			//Convert domain object to DTO
-			return TrainingSessionAssembler.getInstance().trainingSessionToDTO(trainingSession);
+		if (this.serverState.containsKey(token)) {						
+				return TrainingSessionAssembler.getInstance().trainingSessionToDTO(mainService.getTrainingSessions(this.serverState.get(token)));
 		} else {
-			throw new RemoteException("getTrainingSession() fails!");
+			throw new RemoteException("You must be logged in to see training sessions");
 		}
-
 	}
 
 
 
-	public boolean acceptChallenge(ChallengeDTO c) throws RemoteException {
+	public boolean acceptChallenge(long token, ChallengeDTO c) throws RemoteException {
 
-		// TODO Auto-generated method stub
-
-		
-
-		if (c.getName() == null || c.getStart() == null || c.getEnd() == null || c.getSportType() == null) {
-
-			return false;
-
+		if (this.serverState.containsKey(token)) {						
+			if (mainService.acceptChallenge(this.serverState.get(token), new Challenge(c))) {
+				return true;
+			} else {
+				throw new RemoteException("acceptChallenge() fails!");
+			}
 		} else {
-
-			return true;
-
+			throw new RemoteException("You must be logged in to accept a challenge");
 		}
-
 	}
 
 
 
-	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException {
+	public boolean createSession(long token, String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException {
 
-		// TODO Auto-generated method stub
-
-		TrainingSession trainSes = new TrainingSession();
-
-		
-
-		trainSes.setTitle(title);
-
-		trainSes.setSport(sport);
-
-		trainSes.setDistance(distance);
-
-		trainSes.setDuration(duration);
-
-		trainSes.setStartDate(startDate);
-
-		trainSes.setStartTime(timeStart);
-
+		if (this.serverState.containsKey(token)) {						
+			if (mainService.createSession(this.serverState.get(token), title, sport, distance, startDate, timeStart, duration)) {
+				return true;
+			} else {
+				throw new RemoteException("createSession() fails!");
+			}
+		} else {
+			throw new RemoteException("You must be logged in to create a session");
+		}
 	}
 
 
 
-	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) throws RemoteException {
-		// TODO Auto-generated method stub
-		
-		Challenge distCha = new Challenge();
+	public boolean setupDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
-		distCha.setName(name);
-
-		distCha.setStart(start);
-
-		distCha.setEnd(end);
-
-		distCha.setMetric(metric);
-
-		distCha.setSportType(sportType);
-
-		
-		if(distCha.getName() == null || distCha.getStart() == null || distCha.getEnd() == null || distCha.getSportType() == null) {
-
-			return false;
-
+		if (this.serverState.containsKey(token)) {						
+			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType)) {
+				return true;
+			} else {
+				throw new RemoteException("setupDistanceTimeChallenge() fails!");
+			}
 		} else {
-
-			return true;
-
+			throw new RemoteException("You must be logged in to make an distance challenge");
 		}
-
 	}
 
 
 
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) throws RemoteException {
+	public boolean setupActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
-		// TODO Auto-generated method stub
-
-		Challenge distCha = new Challenge();
-
-		
-
-		distCha.setName(name);
-
-		distCha.setStart(start);
-
-		distCha.setEnd(end);
-
-		distCha.setMetric(metric);
-
-		distCha.setSportType(sportType);
-
-		
-		if(distCha.getName() == null || distCha.getStart() == null || distCha.getEnd() == null || distCha.getSportType() == null) {
-			return false;
+		if (this.serverState.containsKey(token)) {						
+			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType)) {
+				return true;
+			} else {
+				throw new RemoteException("setupActivityTimeChallenge() fails!");
+			}
 		} else {
-			return true;
+			throw new RemoteException("You must be logged in to make an activity time challenge");
 		}
-
 	}
 }

@@ -98,29 +98,24 @@ public class User {
 		this.bpm = bpm;
 	}
 
-	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
-		userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
+	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
+		return userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
+	}
+	
+	public List<TrainingSession> getSessions() {
+		return userSessions;
 	}
 
 	//takes in DTO converts it to challenge and adds it if the user doesn't already have it
-	public void acceptChallenge(ChallengeDTO c) {
-		Challenge temp = new Challenge(c);
-		if(!userChallenges.contains(temp)) {
-			userChallenges.add(temp);
+	public boolean acceptChallenge(Challenge c) {
+		if(!userChallenges.contains(c)) {
+			return userChallenges.add(c);
+		} else {
+			return false;
 		}
 	}
 	
 	public List<Challenge> dowloadActiveChallenges() {
 		return userChallenges;
 	}
-
-	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) {
-		
-		return true;
-	}
-
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) {
-		return true;
-	}
-
 }

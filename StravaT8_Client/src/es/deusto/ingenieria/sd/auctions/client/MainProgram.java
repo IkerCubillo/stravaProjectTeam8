@@ -33,19 +33,19 @@ public class MainProgram {
 		//Login
 		loginDialog.login();		
 		
-		mainWindow.setupDistanceChallenge("olympics", new Date(), new Date(), (float)1000, "flying");
-		mainWindow.setupActivityTimeChallenge("xGames", new Date(), new Date(), (float)60, "breath holding");
-		//System.out.println("Challenge accepted: " + mainWindow.acceptChallenge());
-		mainWindow.createSession("First Run", "running", (float)20, new Date(), LocalTime.now(), (float)10);
+		mainWindow.setupDistanceChallenge(loginController.getToken(), "olympics", new Date(), new Date(), (float)1000, "flying");
+		mainWindow.setupActivityTimeChallenge(loginController.getToken(), "xGames", new Date(), new Date(), (float)60, "breath holding");
+		System.out.println("Challenge accepted: " + mainWindow.acceptChallenge(loginController.getToken()));
+		mainWindow.createSession(loginController.getToken(), "First Run", "running", (float)20, new Date(), LocalTime.now(), (float)10);
 		
-//		List<ChallengeDTO> challenges = mainWindow.getChallenges();
-//		for (ChallengeDTO challenge : challenges) {
-//			System.out.println("\t* " + challenge.getName());
-//		}
-//		List<TrainingSessionDTO> trainingSessions = mainWindow.getTrainingSession();
-//		for (TrainingSessionDTO TrainingSession : trainingSessions) {
-//			System.out.println("\t* " + TrainingSession.getTitle());
-//		}
+		List<ChallengeDTO> challenges = mainWindow.getChallenges();
+		for (ChallengeDTO challenge : challenges) {
+			System.out.println("\t* " + challenge.getName());
+		}
+		List<TrainingSessionDTO> trainingSessions = mainWindow.getTrainingSession(loginController.getToken());
+		for (TrainingSessionDTO TrainingSession : trainingSessions) {
+			System.out.println("\t* " + TrainingSession.getTitle());
+		}
 		
 		//Logout
 		loginDialog.logout();

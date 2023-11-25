@@ -1,6 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.client.controller;
 
 import java.rmi.RemoteException;
+import java.util.Date;
 
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
@@ -38,5 +39,11 @@ public class LoginController {
 
 	public long getToken() {
 		return token;
+	}
+
+	public boolean register(String account, String email, String name, Date birthdate, float weight, float height,
+			int mbpm, int bpm) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

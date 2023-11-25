@@ -29,6 +29,7 @@ public class MainProgram {
 		MainController mainController = new MainController(serviceLocator);			
 		MainWindow mainWindow = new MainWindow(mainController);
 		
+		loginDialog.register();
 		//Login
 		loginDialog.login();		
 		

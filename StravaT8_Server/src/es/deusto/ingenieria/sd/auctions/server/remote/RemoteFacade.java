@@ -132,9 +132,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart,
-
-			float duration) throws RemoteException {
+	public void createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException {
 
 		// TODO Auto-generated method stub
 
@@ -158,15 +156,10 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType)
-
-			throws RemoteException {
-
+	public boolean setupDistanceChallenge(String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 		// TODO Auto-generated method stub
-
-		Challenge distCha = new Challenge();
-
 		
+		Challenge distCha = new Challenge();
 
 		distCha.setName(name);
 
@@ -179,7 +172,6 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		distCha.setSportType(sportType);
 
 		
-
 		if(distCha.getName() == null || distCha.getStart() == null || distCha.getEnd() == null || distCha.getSportType() == null) {
 
 			return false;
@@ -194,9 +186,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType)
-
-			throws RemoteException {
+	public boolean setupActivityTimeChallenge(String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
 		// TODO Auto-generated method stub
 
@@ -215,17 +205,10 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		distCha.setSportType(sportType);
 
 		
-
-		
-
 		if(distCha.getName() == null || distCha.getStart() == null || distCha.getEnd() == null || distCha.getSportType() == null) {
-
 			return false;
-
 		} else {
-
 			return true;
-
 		}
 
 	}

@@ -99,8 +99,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public List<TrainingSessionDTO> getTrainingSessions() throws RemoteException {
 
 		System.out.println(" * RemoteFacade getArticle()");
-
-		//Get Articles using BidAppService
+		
 		List<TrainingSession> trainingSession = mainService.getTrainingSessions();
 		
 		if (trainingSession != null) {

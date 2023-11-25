@@ -25,9 +25,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	//Data structure for manage Server State
 	private Map<Long, User> serverState = new HashMap<>();
-	private List<ChallengeDTO> challengesDTO;
 
-	private List<TrainingSessionDTO> trainingsDTO;
+	
 	//TODO: Remove this instances when Singleton Pattern is implemented
 	private LoginAppService loginService = new LoginAppService(); // To create on server services
 	private MainAppService mainService = new MainAppService();
@@ -78,7 +77,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	public List<ChallengeDTO> getChallenges() throws RemoteException {
 
-		System.out.println(" * RemoteFacade getCategories()");
+		System.out.println(" * RemoteFacade getChallenges()");
 		
 		List<Challenge> challenges = mainService.getChallenges();
 		
@@ -98,7 +97,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	public List<TrainingSessionDTO> getTrainingSessions() throws RemoteException {
 
-		System.out.println(" * RemoteFacade getArticle()");
+		System.out.println(" * RemoteFacade getTrainingSession()");
 		
 		List<TrainingSession> trainingSession = mainService.getTrainingSessions();
 		

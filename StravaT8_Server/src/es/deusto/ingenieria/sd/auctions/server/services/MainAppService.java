@@ -6,6 +6,7 @@ import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
 public class MainAppService {
 

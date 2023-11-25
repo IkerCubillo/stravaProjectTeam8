@@ -33,7 +33,7 @@ public class MainController{
 		try {
 			return this.ServiceLocator.getService().getTrainingSessions();
 		} catch (RemoteException e) {
-			System.out.println("# Error getting articles of a category: " + e);
+			System.out.println("# Error getting all training sessions: " + e);
 			return null;
 		}
 	}
@@ -42,7 +42,7 @@ public class MainController{
 		try {
 			return this.ServiceLocator.getService().setupDistanceChallenge(name, start, end, metric, sportType);
 		} catch (RemoteException e) {
-			System.out.println("# Error making a bid: " + e);
+			System.out.println("# Error setting up distance challenge: " + e);
 			return false;
 		}
 	}
@@ -51,7 +51,7 @@ public class MainController{
 		try {
 			return this.ServiceLocator.getService().setupActivityTimeChallenge(name, start, end, metric, sportType);
 		} catch (RemoteException e) {
-			System.out.println("# Error getting USD rate: " + e);
+			System.out.println("# Error setting up activity challenge: " + e);
 			return false;
 		}
 	}
@@ -60,7 +60,7 @@ public class MainController{
 		try {
 			return this.ServiceLocator.getService().acceptChallenge(c);
 		} catch (RemoteException e) {
-			System.err.println("# Error getting GBP rate: " + e);	
+			System.err.println("# Error accepting challenge: " + e);	
 			return false;
 		}
 	}
@@ -69,7 +69,7 @@ public class MainController{
 		try {
 			this.ServiceLocator.getService().createSession(title, sport, distance, startDate, timeStart, duration);;
 		} catch (RemoteException e) {
-			System.err.println("# Error getting GBP rate: " + e);
+			System.err.println("# Error creating training session: " + e);
 		}
 	}
 

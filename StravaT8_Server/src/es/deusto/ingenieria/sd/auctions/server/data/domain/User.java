@@ -107,13 +107,15 @@ public class User {
 		return userSessions;
 	}
 
-	//takes in DTO converts it to challenge and adds it if the user doesn't already have it
+	//takes in challenge and adds it if the user doesn't already have it
 	public boolean acceptChallenge(Challenge c) {
-		if(!userChallenges.contains(c)) {
-			return userChallenges.add(c);
-		} else {
-			return false;
+		for (Challenge temp : userChallenges) {
+			if (c.equals(temp)) {
+				return false;
+			}
 		}
+		userChallenges.add(c);
+		return true;
 	}
 	
 	public List<Challenge> dowloadActiveChallenges() {

@@ -95,4 +95,12 @@ public class Challenge implements Serializable {
 		
 		return result.toString();
 	}
+	
+	public boolean equals(Challenge c) {
+		if (this.getName().equals(c.getName()) && this.getStart().equals(c.getStart()) && this.getEnd().equals(c.getEnd()) && this.getMetric() == c.getMetric() && this.getSportType().equals(c.getSportType())) {
+			return true;
+		}
+		
+		return false;
+	}
 }

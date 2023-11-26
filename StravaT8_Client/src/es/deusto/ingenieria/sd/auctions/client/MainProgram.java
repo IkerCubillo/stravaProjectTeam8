@@ -36,6 +36,7 @@ public class MainProgram {
 		mainWindow.setupDistanceChallenge(loginController.getToken(), "olympics", new Date(), new Date(), (float)1000, "flying");
 		mainWindow.setupActivityTimeChallenge(loginController.getToken(), "xGames", new Date(), new Date(), (float)60, "breath holding");
 		System.out.println("Challenge accepted: " + mainWindow.acceptChallenge(loginController.getToken()));
+		System.out.println("Challenge accepted: " + mainWindow.acceptChallenge(loginController.getToken()));
 		mainWindow.createSession(loginController.getToken(), "First Run", "running", (float)20, new Date(), LocalTime.now(), (float)10);
 		
 		mainWindow.getChallenges();

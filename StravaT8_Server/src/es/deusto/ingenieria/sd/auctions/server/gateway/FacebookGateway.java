@@ -11,7 +11,7 @@ public class FacebookGateway {
 	
 	private FacebookGateway() {
 		try {		
-			String URL = "//127.0.0.1:1099/CurrencyExchange";
+			String URL = "//127.0.0.1:1099/Facebook";
 			this.facebookAuthorization = (IFacebookAuthorization) Naming.lookup(URL);
 		} catch (Exception ex) {
 			System.err.println("# Error locating remote facade: " + ex);
@@ -22,7 +22,6 @@ public class FacebookGateway {
 		if(instance == null) {
 			instance = new FacebookGateway();
 		}
-		
 		return instance;
 	}
 	

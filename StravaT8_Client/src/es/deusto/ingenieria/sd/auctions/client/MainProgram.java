@@ -22,7 +22,6 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
 	public static void main(String[] args) throws RemoteException {	
 		
-		
 		//args[0] = RMIRegistry IP
 		//args[1] = RMIRegistry Port
 		//args[2] = Service Name
@@ -30,7 +29,5 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		MainProgramWindow mpw = new MainProgramWindow();
 		mpw.setVisible(true);
-		
-		
 	}
 }

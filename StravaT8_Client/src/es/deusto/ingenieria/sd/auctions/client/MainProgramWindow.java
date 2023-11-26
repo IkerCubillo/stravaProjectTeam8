@@ -113,7 +113,7 @@ public class MainProgramWindow extends JFrame {
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Accept Challenge");
-		btnNewButton_4.setLocation(33, 204);
+		btnNewButton_4.setLocation(33, 190);
 		btnNewButton_4.setSize(123, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
@@ -122,7 +122,7 @@ public class MainProgramWindow extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Create session");
-		btnNewButton_5.setLocation(269, 204);
+		btnNewButton_5.setLocation(269, 190);
 		btnNewButton_5.setSize(155, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
@@ -130,5 +130,21 @@ public class MainProgramWindow extends JFrame {
 					sessionWindow.setVisible(true);
 			});
 		contentPane.add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("Get challenges");
+		btnNewButton_6.addActionListener(
+				(e) -> {
+					mainWindow.getChallenges();
+			});
+		btnNewButton_6.setBounds(33, 221, 123, 23);
+		contentPane.add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("Get training sessions");
+		btnNewButton_7.addActionListener(
+				(e) -> {
+					mainWindow.getTrainingSession(loginController.getToken());
+			});
+		btnNewButton_7.setBounds(269, 221, 155, 23);
+		contentPane.add(btnNewButton_7);
 	}
 }

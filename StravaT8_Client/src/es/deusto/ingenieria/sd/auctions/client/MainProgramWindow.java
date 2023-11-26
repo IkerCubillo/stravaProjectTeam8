@@ -49,6 +49,11 @@ public class MainProgramWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public MainProgramWindow() {
+		registerWindow.setVisible(false);
+		loginWindow.setVisible(false);
+		distanceChallengeWindow.setVisible(false);
+		activityTimeChallengeWindow.setVisible(false);
+		sessionWindow.setVisible(false);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

@@ -2,6 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.services;
 
 
 import es.deusto.ingenieria.sd.auctions.server.gateway.FacebookGateway;
+import es.deusto.ingenieria.sd.auctions.server.gateway.GoogleGateway;
 
 //TODO: Implement Singleton Pattern
 public class LoginAppService {
@@ -10,7 +11,7 @@ public class LoginAppService {
 		//TODO: Get User using DAO and check 
 		//Password always correct
 		if(account.equals("Google")) {
-			return true;
+			return googlePasswordValidation(email, password);
 		} else if(account.equals("Facebook")) {
 			return facebookPasswordValidation(email, password);
 		} else {
@@ -22,7 +23,7 @@ public class LoginAppService {
 		//Check user email exists in service (Google and Facebook always exists
 		
 		if(account.equals("Google")) {
-			return true;
+			return googleUserValidation(email);
 		} else if(account.equals("Facebook")) {
 			return facebookUserValidation(email);
 		} else {
@@ -38,6 +39,16 @@ public class LoginAppService {
 	public boolean facebookPasswordValidation(String email, String password) {
 		//Get conversion rate from Service Gateway
 		return FacebookGateway.getInstance().facebookPasswordValidation(email, password);
+	}
+	
+	public boolean googleUserValidation(String email) {
+		//Get conversion rate from Service Gateway
+		return GoogleGateway.getInstance().googleUserValidation(email);
+	}
+
+	public boolean googlePasswordValidation(String email, String password) {
+		//Get conversion rate from Service Gateway
+		return GoogleGateway.getInstance().googlePasswordValidation(email, password);
 	}
 	
 	public LoginAppService getInstance() {

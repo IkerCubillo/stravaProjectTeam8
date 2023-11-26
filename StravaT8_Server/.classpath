@@ -4,5 +4,20 @@
 	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.15.jar"/>
 	<classpathentry kind="lib" path="lib/Facebook.jar"/>
+	<classpathentry kind="lib" path="/Users/fletchergunderson/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.13/c374fcaf34d82d735a1dcf2c496f064488aa2b20/spring-web-6.0.13.jar" sourcepath="/Users/fletchergunderson/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.13/fad075294ad1d15c24c75663272be8c648130c7d/spring-web-6.0.13-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/fletchergunderson/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.9/b69e7fff6c473d3ed2b489cdfd673a091fd94226/byte-buddy-1.14.9.jar" sourcepath="/Users/fletchergunderson/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.9/6c36f86b91c864d5aabf4033324a4756bc72f99a/byte-buddy-1.14.9-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/fletchergunderson/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.13/5b205c9f2fb07c1367db144ce7ab305f94300604/spring-beans-6.0.13.jar" sourcepath="/Users/fletchergunderson/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.13/1ad4ca909bbbb21b99524de49e6c2398e6f13afc/spring-beans-6.0.13-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

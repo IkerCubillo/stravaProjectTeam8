@@ -117,10 +117,6 @@ public class User {
 		userChallenges.add(c);
 		return true;
 	}
-	
-	public List<Challenge> dowloadActiveChallenges() {
-		return userChallenges;
-	}
 
 	public String getPassword() {
 		return password;

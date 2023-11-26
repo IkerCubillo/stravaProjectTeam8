@@ -38,7 +38,7 @@ public class FacebookAuthorizationService extends UnicastRemoteObject implements
 	@Override
 	public boolean facebookUserValidation(String email) throws RemoteException {
 		if (this.userMap.containsKey(email)) {
-			System.out.println("validated");
+			System.out.println("validated: " + email);
 			return true;
 		}
 		return false;

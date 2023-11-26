@@ -18,6 +18,7 @@ public class DistanceChallengeWindow extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -56,15 +57,15 @@ public class DistanceChallengeWindow extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Start");
-		lblNewLabel_2.setBounds(47, 82, 46, 14);
+		lblNewLabel_2.setBounds(47, 123, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("End");
-		lblNewLabel_3.setBounds(47, 123, 46, 14);
+		lblNewLabel_3.setBounds(47, 164, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Sport type");
-		lblNewLabel_4.setBounds(47, 164, 57, 14);
+		lblNewLabel_4.setBounds(47, 205, 57, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		textField = new JTextField();
@@ -73,24 +74,32 @@ public class DistanceChallengeWindow extends JFrame {
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(177, 82, 160, 20);
+		textField_1.setBounds(177, 123, 160, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(178, 123, 160, 20);
+		textField_2.setBounds(178, 164, 160, 20);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Running", "Cycling", "Both"}));
 		comboBox.setMaximumRowCount(3);
-		comboBox.setBounds(177, 164, 160, 20);
+		comboBox.setBounds(177, 205, 160, 20);
 		contentPane.add(comboBox);
 		
 		JButton btnNewButton = new JButton("Set up");
-		btnNewButton.setBounds(250, 206, 89, 23);
+		btnNewButton.setBounds(250, 240, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel("Distance");
+		lblNewLabel_5.setBounds(47, 82, 46, 14);
+		contentPane.add(lblNewLabel_5);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(177, 82, 160, 20);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
 	}
-
 }

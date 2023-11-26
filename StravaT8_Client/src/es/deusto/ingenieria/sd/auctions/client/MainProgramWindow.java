@@ -7,12 +7,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import es.deusto.ingenieria.sd.auctions.client.gui.RegisterWindow;
 
 
 public class MainProgramWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private RegisterWindow registerWindow; 
 
 	/**
 	 * Launch the application.
@@ -48,6 +50,11 @@ public class MainProgramWindow extends JFrame {
 		
 		JButton btnNewButton = new JButton("Register");
 		btnNewButton.setBounds(81, 70, 89, 23);
+		btnNewButton.addActionListener(
+				(e) -> {
+					this.dispose();
+					registerWindow.setVisible(true);
+			});
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Login");

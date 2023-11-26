@@ -93,27 +93,25 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		
 		//TODO: Perform register() using LoginAppService
 		User user = new User();
+		user.setAccount(account);
+		user.setEmail(email);
+		user.setName(name);
+		user.setBirthDate(birthDate);
+		user.setWeight(weight);
+		user.setHeight(height);
+		user.setmBPM(mBPM);
+		user.setBpm(bpm);
 		
 		// creating user
 		try {
-			user.setAccount(account);
-			user.setEmail(email);
-			user.setName(name);
-			user.setBirthDate(birthDate);
-			user.setWeight(weight);
-			user.setHeight(height);
-			user.setmBPM(mBPM);
-			user.setBpm(bpm);
-			
+			loginService.register(email, account);
 		} catch (Exception e) {
-			throw new RemoteException("Register fails!");
+			throw new RemoteException("Account email invalid");
 		}
 		
 		// checking user exists in user map
 		if (!this.userMap.containsKey(user.getEmail())) {	
 			this.userMap.put(user.getEmail(), user);
-			
-			System.out.println(this.userMap);
 		} else {
 			throw new RemoteException("Email already on use!");
 		}

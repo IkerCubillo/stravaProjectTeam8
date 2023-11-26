@@ -15,7 +15,6 @@ import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
-import es.deusto.ingenieria.sd.auctions.client.gui.AcceptChallengeWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.SessionWindow;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
@@ -28,7 +27,6 @@ public class MainProgramWindow extends JFrame {
 	private LoginWindow2 loginWindow;
 	private DistanceChallengeWindow distanceChallengeWindow; 
 	private ActivityTimeChallengeWindow activityTimeChallengeWindow;
-	private AcceptChallengeWindow acceptChallengeWindow; 
 	private SessionWindow sessionWindow;
 
 	/**

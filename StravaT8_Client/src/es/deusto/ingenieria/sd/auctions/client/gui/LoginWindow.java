@@ -21,11 +21,11 @@ public class LoginWindow {
 	}
 	
 	//temporarily uses predefined user
-	public boolean login(String email, String password) {		
-		System.out.println(" - Login into the server: '" + email + "' - '" + password + "' ...");
+	public boolean login(String account, String email, String password) {		
+		System.out.println(" - Login into the server: '" + account + "' - '" + email + "' - '" + password + "' ...");
 //		String sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex(password);
 //		System.out.println("\t* Password hash: " + sha1);		
-		boolean result = this.controller.login(email, password);
+		boolean result = this.controller.login(account, email, password);
 		System.out.println("\t* Login result: " + result);
 		System.out.println("\t* Token: " + this.controller.getToken());
 

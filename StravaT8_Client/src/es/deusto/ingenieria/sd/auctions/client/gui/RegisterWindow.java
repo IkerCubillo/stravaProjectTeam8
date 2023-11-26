@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.ingenieria.sd.auctions.client.MainProgram;
 import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
@@ -51,10 +52,7 @@ public class RegisterWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RegisterWindow() {
-		ServiceLocator serviceLocator = new ServiceLocator();
-		LoginController loginController = new LoginController(serviceLocator);
-		LoginWindow loginDialog = new LoginWindow(loginController);
+public RegisterWindow() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -162,7 +160,7 @@ public class RegisterWindow extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					loginDialog.register(comboAccount.getSelectedItem().toString(), emailField.getText(), nameField.getText(), 
+					MainProgram.loginDialog.register(comboAccount.getSelectedItem().toString(), emailField.getText(), nameField.getText(), 
 							bd, w, h, m, b);
 					this.dispose();
 					mpw.setVisible(true);

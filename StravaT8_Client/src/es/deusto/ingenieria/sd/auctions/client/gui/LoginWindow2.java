@@ -1,12 +1,17 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -16,8 +21,8 @@ public class LoginWindow2 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField emailField;
+	private JTextField passwordField;
 	private MainProgramWindow mpw;
 	/**
 	 * Launch the application.
@@ -39,6 +44,9 @@ public class LoginWindow2 extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginWindow2() {
+		ServiceLocator serviceLocator = new ServiceLocator();
+		LoginController loginController = new LoginController(serviceLocator);
+		LoginWindow loginDialog = new LoginWindow(loginController);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -59,17 +67,23 @@ public class LoginWindow2 extends JFrame {
 		lblNewLabel_2.setBounds(73, 90, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		textField = new JTextField();
-		textField.setBounds(169, 41, 161, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		emailField = new JTextField();
+		emailField.setBounds(169, 41, 161, 20);
+		contentPane.add(emailField);
+		emailField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(169, 90, 161, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		passwordField = new JTextField();
+		passwordField.setBounds(169, 90, 161, 20);
+		contentPane.add(passwordField);
+		passwordField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Login");
+		btnNewButton.addActionListener(
+				(e) -> {
+					loginDialog.login(emailField.getText(), passwordField.getText());
+					this.dispose();
+					mpw.setVisible(true);
+			});
 		btnNewButton.setBounds(242, 146, 89, 23);
 		contentPane.add(btnNewButton);
 		

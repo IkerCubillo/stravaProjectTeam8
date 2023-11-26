@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -33,28 +34,42 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private MainAppService mainService = new MainAppService();
 
 	public RemoteFacade() throws RemoteException {
-		super();		
+		super();	
+		this.initilizeData();
+	}
+
+	// TODO: remove when DAO Pattern is implemented
+	private void initilizeData() throws RemoteException {
+		// Create Users
+		
+		register("Facebook", "asier@opendeusto.com", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Google", "kerman@opendeusto.com", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "cubillo@opendeusto.com", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
 	}
 	
 	@Override
 	public synchronized long login(String email, String password) throws RemoteException {
 		System.out.println(" * RemoteFacade login(): " + email + " / " + password);
 				
-		//Perform login() using LoginAppService
-		User user = loginService.login(email, password);
-			
 		//If login() success user is stored in the Server State
-		if (user != null) {
-			//If user is not logged in 
-			if (!this.serverState.values().contains(user)) {
-				Long token = Calendar.getInstance().getTimeInMillis();		
-				this.serverState.put(token, user);		
-				return(token);
+		if (!this.userMap.containsKey(email)) {
+			User user = this.userMap.get(email);
+			// Check if password is correct
+			boolean correctPassword = loginService.login(email, password);
+			if(correctPassword) {
+				//If user is not logged in 
+				if (!this.serverState.values().contains(user)) {
+					Long token = Calendar.getInstance().getTimeInMillis();		
+					this.serverState.put(token, user);		
+					return(token);
+				} else {
+					throw new RemoteException("User is already logged in!");
+				}
 			} else {
-				throw new RemoteException("User is already logged in!");
-			}
+				throw new RemoteException("Password is not correct!");
+			}			
 		} else {
-			throw new RemoteException("Login fails!");
+			throw new RemoteException("User doesn't exist! Try different email");
 		}
 	}
 	
@@ -77,7 +92,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 				+ "' - '" + bpm);
 		
 		//Perform register() using LoginAppService
-		User user = loginService.login(email, account);
+		User user = new User();
 		
 		// creating user
 		try {

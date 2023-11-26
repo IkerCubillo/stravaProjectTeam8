@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.ingenieria.sd.auctions.client.MainProgram;
 import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -51,11 +52,7 @@ public class SessionWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SessionWindow() {
-		ServiceLocator serviceLocator = new ServiceLocator();
-		LoginController loginController = new LoginController(serviceLocator);
-		MainController mainController = new MainController(serviceLocator);			
-		MainWindow mainWindow = new MainWindow(mainController);
+public SessionWindow() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -143,7 +140,7 @@ public class SessionWindow extends JFrame {
 					}
 					LocalTime stt = null;
 					stt = LocalTime.parse(startTime);
-					mainWindow.createSession(loginController.getToken(), titleField.getText(), 
+					MainProgram.mainWindow.createSession(MainProgram.loginController.getToken(), titleField.getText(), 
 							comboSport.getSelectedItem().toString(), dist, st, stt, dur);
 					this.dispose();
 					mpw.setVisible(true);

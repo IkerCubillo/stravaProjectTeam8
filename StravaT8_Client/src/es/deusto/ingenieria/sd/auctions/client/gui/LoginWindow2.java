@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.ingenieria.sd.auctions.client.MainProgram;
 import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
@@ -16,6 +17,7 @@ import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 public class LoginWindow2 extends JFrame {
 
@@ -59,30 +61,36 @@ public class LoginWindow2 extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Email");
-		lblNewLabel_1.setBounds(73, 41, 46, 14);
+		lblNewLabel_1.setBounds(73, 88, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Password");
-		lblNewLabel_2.setBounds(73, 90, 46, 14);
+		lblNewLabel_2.setBounds(73, 132, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		emailField = new JTextField();
-		emailField.setBounds(169, 41, 161, 20);
+		emailField.setBounds(169, 85, 161, 20);
 		contentPane.add(emailField);
 		emailField.setColumns(10);
 		
 		passwordField = new JTextField();
-		passwordField.setBounds(169, 90, 161, 20);
+		passwordField.setBounds(169, 129, 161, 20);
 		contentPane.add(passwordField);
 		passwordField.setColumns(10);
+		
+		JComboBox comboAccount = new JComboBox();
+		comboAccount.addItem("Google");
+		comboAccount.addItem("Facebook");
+		comboAccount.setBounds(169, 44, 161, 20);
+		contentPane.add(comboAccount);
 		
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(
 				(e) -> {
-					loginDialog.login(emailField.getText(), passwordField.getText());
+					MainProgram.loginDialog.login(comboAccount.getSelectedItem().toString(), emailField.getText(), passwordField.getText());
 					this.dispose();
 			});
-		btnNewButton.setBounds(242, 146, 89, 23);
+		btnNewButton.setBounds(241, 199, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Back");
@@ -90,8 +98,13 @@ public class LoginWindow2 extends JFrame {
 				(e) -> {
 					this.dispose();
 			});
-		btnNewButton_1.setBounds(73, 146, 89, 23);
+		btnNewButton_1.setBounds(73, 199, 89, 23);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("Account");
+		lblNewLabel_3.setBounds(73, 44, 46, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		
 	}
-
 }

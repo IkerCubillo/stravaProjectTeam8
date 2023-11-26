@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.ingenieria.sd.auctions.client.MainProgram;
 import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -50,11 +51,8 @@ public class DistanceChallengeWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DistanceChallengeWindow() {
-		ServiceLocator serviceLocator = new ServiceLocator();
-		LoginController loginController = new LoginController(serviceLocator);
-		MainController mainController = new MainController(serviceLocator);			
-		MainWindow mainWindow = new MainWindow(mainController);
+public DistanceChallengeWindow() {
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -128,7 +126,7 @@ public class DistanceChallengeWindow extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					mainWindow.setupDistanceChallenge(loginController.getToken(), nameField.getText(), 
+					MainProgram.mainWindow.setupDistanceChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
 							st, en, dist, comboSport.getSelectedItem().toString());
 					this.dispose();
 					mpw.setVisible(true);

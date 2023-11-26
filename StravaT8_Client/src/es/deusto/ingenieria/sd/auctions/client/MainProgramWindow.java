@@ -50,12 +50,7 @@ public class MainProgramWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MainProgramWindow() {
-		ServiceLocator serviceLocator = new ServiceLocator();
-		LoginController loginController = new LoginController(serviceLocator);
-		LoginWindow loginDialog = new LoginWindow(loginController);
-		MainController mainController = new MainController(serviceLocator);			
-		MainWindow mainWindow = new MainWindow(mainController);
+public MainProgramWindow() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -82,7 +77,7 @@ public class MainProgramWindow extends JFrame {
 		btnNewButton_8.setBounds(313, 70, 89, 23);
 		btnNewButton_8.addActionListener(
 				(e) -> {
-					loginDialog.logout();
+					MainProgram.loginDialog.logout();
 					this.dispose();
 			});
 		contentPane.add(btnNewButton_8);
@@ -129,7 +124,7 @@ public class MainProgramWindow extends JFrame {
 		btnNewButton_4.setSize(123, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
-					mainWindow.acceptChallenge(loginController.getToken());
+					MainProgram.mainWindow.acceptChallenge(MainProgram.loginController.getToken());
 			});
 		contentPane.add(btnNewButton_4);
 		
@@ -146,7 +141,7 @@ public class MainProgramWindow extends JFrame {
 		JButton btnNewButton_6 = new JButton("Get challenges");
 		btnNewButton_6.addActionListener(
 				(e) -> {
-					mainWindow.getChallenges();
+					MainProgram.mainWindow.getChallenges();
 			});
 		btnNewButton_6.setBounds(33, 221, 123, 23);
 		contentPane.add(btnNewButton_6);
@@ -154,7 +149,7 @@ public class MainProgramWindow extends JFrame {
 		JButton btnNewButton_7 = new JButton("Get training sessions");
 		btnNewButton_7.addActionListener(
 				(e) -> {
-					mainWindow.getTrainingSession(loginController.getToken());
+					MainProgram.mainWindow.getTrainingSession(MainProgram.loginController.getToken());
 			});
 		btnNewButton_7.setBounds(269, 221, 155, 23);
 		contentPane.add(btnNewButton_7);

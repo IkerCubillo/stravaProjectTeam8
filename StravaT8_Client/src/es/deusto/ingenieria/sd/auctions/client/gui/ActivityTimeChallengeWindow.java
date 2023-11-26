@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.ingenieria.sd.auctions.client.MainProgram;
 import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -48,11 +49,7 @@ public class ActivityTimeChallengeWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ActivityTimeChallengeWindow() {
-		ServiceLocator serviceLocator = new ServiceLocator();
-		LoginController loginController = new LoginController(serviceLocator);
-		MainController mainController = new MainController(serviceLocator);			
-		MainWindow mainWindow = new MainWindow(mainController);
+public ActivityTimeChallengeWindow() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -125,7 +122,7 @@ public class ActivityTimeChallengeWindow extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					mainWindow.setupActivityTimeChallenge(loginController.getToken(), nameField.getText(), 
+					MainProgram.mainWindow.setupActivityTimeChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
 							st, en, time, comboSport.getSelectedItem().toString());
 					this.dispose();
 					mpw.setVisible(true);

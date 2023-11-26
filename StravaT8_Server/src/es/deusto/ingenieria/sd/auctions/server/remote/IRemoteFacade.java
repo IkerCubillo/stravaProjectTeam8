@@ -16,7 +16,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		public void logout(long token) throws RemoteException;
 		
-		public void register(String account, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) throws RemoteException;
+		public void register(String account, String email, String password, String name, Date birthDate, float weight, float height, int mBPM, int bpm) throws RemoteException;
 		
 		public List<ChallengeDTO> getChallenges() throws RemoteException;
 		

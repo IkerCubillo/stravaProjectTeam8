@@ -11,6 +11,7 @@ public class User {
 	private String email;
 	private String name;
 	private String account;
+	private String password;
 	private Date birthDate;
 	private float weight;
 	private float height;
@@ -117,5 +118,13 @@ public class User {
 	
 	public List<Challenge> dowloadActiveChallenges() {
 		return userChallenges;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

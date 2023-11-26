@@ -42,9 +42,9 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private void initilizeData() throws RemoteException {
 		// Create Users
 		
-		register("Facebook", "asier@opendeusto.com", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Google", "kerman@opendeusto.com", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Facebook", "cubillo@opendeusto.com", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "asier@opendeusto.com", "password1", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Google", "kerman@opendeusto.com", "password2",  "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "cubillo@opendeusto.com", "password3",  "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		System.out.println(" * RemoteFacade login(): " + email + " / " + password);
 				
 		//If login() success user is stored in the Server State
-		if (!this.userMap.containsKey(email)) {
+		if (this.userMap.containsKey(email)) {
 			User user = this.userMap.get(email);
 			// Check if password is correct
 			boolean correctPassword = loginService.login(email, password);
@@ -85,19 +85,20 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 	
-	public void register(String account, String email, String name, Date birthDate, float weight, float height,
+	public void register(String account, String email, String password, String name, Date birthDate, float weight, float height,
 			int mBPM, int bpm) throws RemoteException {
 		System.out.println(" * RemoteFacade register(): " + account + "' - '" + email 
-				+ "' - '" + name + "' - '" + birthDate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
+				+ "' - '" + password + "' - '" + name + "' - '" + birthDate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
 				+ "' - '" + bpm);
 		
-		//Perform register() using LoginAppService
+		//TODO: Perform register() using LoginAppService
 		User user = new User();
 		
 		// creating user
 		try {
 			user.setAccount(account);
 			user.setEmail(email);
+			user.setPassword(password);
 			user.setName(name);
 			user.setBirthDate(birthDate);
 			user.setWeight(weight);
@@ -112,6 +113,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		// checking user exists in user map
 		if (!this.userMap.containsKey(user.getEmail())) {	
 			this.userMap.put(user.getEmail(), user);
+			
+			System.out.println(this.userMap);
 		} else {
 			throw new RemoteException("Email already on use!");
 		}

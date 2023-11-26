@@ -68,7 +68,7 @@ public class MainWindow {
 		System.out.println(" - Accepting challenge ...");
 		
 		//for now, hay que cambiar a challenge eligido
-		boolean confirmation = this.controller.acceptChallenge(token, getChallenges().get(0));
+		boolean confirmation = this.controller.acceptChallenge(token, this.controller.getChallenges().get(0));
 		
 		return confirmation;
 	}

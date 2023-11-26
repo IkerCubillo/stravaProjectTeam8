@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -85,11 +87,15 @@ public class LoginWindow2 extends JFrame {
 		contentPane.add(comboAccount);
 		
 		JButton btnNewButton = new JButton("Login");
-		btnNewButton.addActionListener(
-				(e) -> {
-					MainProgram.loginDialog.login(comboAccount.getSelectedItem().toString(), emailField.getText(), passwordField.getText());
-					this.dispose();
-			});
+		btnNewButton.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  MainProgram.loginDialog.login(comboAccount.getSelectedItem().toString(), emailField.getText(), passwordField.getText());
+		    	  dispose();
+		      }
+
+		});
+		
 		btnNewButton.setBounds(241, 199, 89, 23);
 		contentPane.add(btnNewButton);
 		

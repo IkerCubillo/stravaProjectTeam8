@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,11 +25,6 @@ public class MainProgramWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private RegisterWindow registerWindow = new RegisterWindow();
-	private LoginWindow2 loginWindow = new LoginWindow2();
-	private DistanceChallengeWindow distanceChallengeWindow = new DistanceChallengeWindow();
-	private ActivityTimeChallengeWindow activityTimeChallengeWindow = new ActivityTimeChallengeWindow();
-	private SessionWindow sessionWindow = new SessionWindow();
 
 	/**
 	 * Launch the application.
@@ -49,11 +46,6 @@ public class MainProgramWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public MainProgramWindow() {
-		registerWindow.setVisible(false);
-		loginWindow.setVisible(false);
-		distanceChallengeWindow.setVisible(false);
-		activityTimeChallengeWindow.setVisible(false);
-		sessionWindow.setVisible(false);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -69,29 +61,40 @@ public class MainProgramWindow extends JFrame {
 		
 		JButton btnNewButton = new JButton("Register");
 		btnNewButton.setBounds(33, 70, 89, 23);
-		btnNewButton.addActionListener(
-				(e) -> {
-					registerWindow.setVisible(true);
-			});
+		btnNewButton.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  RegisterWindow registerWindow = new RegisterWindow();
+				registerWindow.setVisible(true);
+		      }
+
+		});
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_8 = new JButton("Logout");
 		btnNewButton_8.setBounds(313, 70, 89, 23);
-		btnNewButton_8.addActionListener(
-				(e) -> {
-					MainProgram.loginDialog.logout();
-					this.dispose();
-			});
+		btnNewButton_8.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  MainProgram.loginDialog.logout();
+		    	  dispose();
+		      }
+
+		});
 		contentPane.add(btnNewButton_8);
 		btnNewButton_8.setVisible(false);
 		
 		JButton btnNewButton_1 = new JButton("Login");
 		btnNewButton_1.setBounds(173, 70, 89, 23);
-		btnNewButton_1.addActionListener(
-				(e) -> {
-					btnNewButton_8.setVisible(true);
-					loginWindow.setVisible(true);
-			});
+		btnNewButton_1.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  btnNewButton_8.setVisible(true);
+		    	  LoginWindow2 loginWindow = new LoginWindow2();
+		    	  loginWindow.setVisible(true);
+		      }
+
+		});
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("Account");
@@ -105,36 +108,54 @@ public class MainProgramWindow extends JFrame {
 		JButton btnNewButton_2 = new JButton("Distance Challenge");
 		btnNewButton_2.setLocation(33, 159);
 		btnNewButton_2.setSize(123, 23);
-		btnNewButton_2.addActionListener(
-				(e) -> {
-					distanceChallengeWindow.setVisible(true);
-			});
+		btnNewButton_2.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  DistanceChallengeWindow distanceChallengeWindow = new DistanceChallengeWindow();
+		    	  distanceChallengeWindow.setVisible(true);
+		      }
+
+		});
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Activity Time Challenge");
 		btnNewButton_3.setBounds(269, 159, 155, 23);
-		btnNewButton.addActionListener(
-				(e) -> {
-					activityTimeChallengeWindow.setVisible(true);
-			});
+		btnNewButton_3.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  ActivityTimeChallengeWindow activityTimeChallengeWindow = new ActivityTimeChallengeWindow();
+		    	  activityTimeChallengeWindow.setVisible(true);
+		      }
+
+		});
+		
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Accept Challenge");
 		btnNewButton_4.setLocation(33, 190);
 		btnNewButton_4.setSize(123, 23);
-		btnNewButton.addActionListener(
-				(e) -> {
-					MainProgram.mainWindow.acceptChallenge(MainProgram.loginController.getToken());
-			});
+		btnNewButton_4.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  MainProgram.mainWindow.acceptChallenge(MainProgram.loginController.getToken());
+		      }
+
+		});
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Create session");
 		btnNewButton_5.setLocation(269, 190);
 		btnNewButton_5.setSize(155, 23);
-		btnNewButton.addActionListener(
-				(e) -> {
-					sessionWindow.setVisible(true);
-			});
+		btnNewButton_5.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  
+		  					SessionWindow sessionWindow = new SessionWindow();
+		  					sessionWindow.setVisible(true);
+		  			
+		      }
+
+		});
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Get challenges");

@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -121,15 +123,16 @@ public SessionWindow() {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Create");
-		btnNewButton.addActionListener(
-				(e) -> {
-					String distance = distanceField.getText();
+		btnNewButton.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  String distance = textField_2.getText();
 					float dist = Float.parseFloat(distance);
-					String duration = durationField.getText();
+					String duration = textField_4.getText();
 					float dur = Float.parseFloat(duration);
 					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-					String startDate = startDateField.getText();
-					String startTime = startTimeField.getText();
+					String startDate = textField_1.getText();
+					String startTime = textField_3.getText();
 					Date st = null;
 					try {
 						st = formatter.parse(startDate);
@@ -141,8 +144,11 @@ public SessionWindow() {
 					stt = LocalTime.parse(startTime);
 					MainProgram.mainWindow.createSession(MainProgram.loginController.getToken(), titleField.getText(), 
 							comboSport.getSelectedItem().toString(), dist, st, stt, dur);
-					this.dispose();
-			});
+					dispose();
+		      }
+
+		});
+		
 		btnNewButton.setBounds(348, 100, 89, 23);
 		contentPane.add(btnNewButton);
 		

@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -140,19 +142,20 @@ public RegisterWindow() {
 		bpmField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Register");
-		btnNewButton.addActionListener(
-				(e) -> {
-					String weight = weightField.getText();
-					float w = Float.parseFloat(weight);
-					String height = heightField.getText();
-					float h = Float.parseFloat(height);
-					String mBPM = mbpmField.getText();
-					int m = Integer.parseInt(mBPM);
-					String BPM = bpmField.getText();
-					int b = Integer.parseInt(BPM);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-					String birthdate = birthdateField.getText();
-					Date bd = null;
+		btnNewButton.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  String weight = weightField.getText();
+		    	  float w = Float.parseFloat(weight);
+		    	  String height = heightField.getText();
+		    	  float h = Float.parseFloat(height);
+		    	  String mBPM = mbpmField.getText();
+		    	  int m = Integer.parseInt(mBPM);
+		    	  String BPM = bpmField.getText();
+		    	  int b = Integer.parseInt(BPM);
+		    	  SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		    	  String birthdate = birthdateField.getText();
+		    	  Date bd = null;
 					try {
 						bd = formatter.parse(birthdate);
 					} catch (ParseException e1) {
@@ -161,8 +164,11 @@ public RegisterWindow() {
 					}
 					MainProgram.loginDialog.register(comboAccount.getSelectedItem().toString(), emailField.getText(), nameField.getText(), 
 							bd, w, h, m, b);
-					this.dispose();
-			});
+					dispose();
+		      }
+
+		});
+		
 		btnNewButton.setBounds(270, 211, 89, 23);
 		contentPane.add(btnNewButton);
 		

@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -100,9 +102,10 @@ public ActivityTimeChallengeWindow() {
 		contentPane.add(comboSport);
 		
 		JButton btnNewButton = new JButton("Set up");
-		btnNewButton.addActionListener(
-				(e) -> {
-					String activityTime = timeField.getText();
+		btnNewButton.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  String activityTime = timeField.getText();
 					float time = Float.parseFloat(activityTime);
 					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
@@ -123,8 +126,11 @@ public ActivityTimeChallengeWindow() {
 					}
 					MainProgram.mainWindow.setupActivityTimeChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
 							st, en, time, comboSport.getSelectedItem().toString());
-					this.dispose();
-			});
+					dispose();
+		      }
+
+		});
+		
 		btnNewButton.setBounds(250, 240, 89, 23);
 		contentPane.add(btnNewButton);
 		

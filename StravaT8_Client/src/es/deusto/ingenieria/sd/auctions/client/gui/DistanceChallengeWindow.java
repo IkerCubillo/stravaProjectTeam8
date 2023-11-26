@@ -1,6 +1,8 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -104,9 +106,10 @@ public DistanceChallengeWindow() {
 		
 		JButton btnNewButton = new JButton("Set up");
 		btnNewButton.setBounds(250, 240, 89, 23);
-		btnNewButton.addActionListener(
-				(e) -> {
-					String distance = distanceField.getText();
+		btnNewButton.addActionListener(new ActionListener(){
+		      @Override
+		      public void actionPerformed(ActionEvent evt){
+		    	  String distance = distanceField.getText();
 					float dist = Float.parseFloat(distance);
 					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
@@ -127,8 +130,11 @@ public DistanceChallengeWindow() {
 					}
 					MainProgram.mainWindow.setupDistanceChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
 							st, en, dist, comboSport.getSelectedItem().toString());
-					this.dispose();
-			});
+					dispose();
+		      }
+
+		});
+		
 		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton);
 		

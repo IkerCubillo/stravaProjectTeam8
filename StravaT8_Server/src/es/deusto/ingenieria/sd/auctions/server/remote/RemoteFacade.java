@@ -48,8 +48,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 	
 	@Override
-	public synchronized long login(String email, String password, String account) throws RemoteException {
-		System.out.println(" * RemoteFacade login(): " + email + " / " + password);
+	public synchronized long login(String account, String email, String password) throws RemoteException {
+		System.out.println(" * RemoteFacade login(): " + account + " / " + email + " / " + password);
 				
 		//If login() success user is stored in the Server State
 		if (this.userMap.containsKey(email)) {

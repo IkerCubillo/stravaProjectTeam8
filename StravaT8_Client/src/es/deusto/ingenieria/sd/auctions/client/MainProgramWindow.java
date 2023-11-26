@@ -9,6 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import es.deusto.ingenieria.sd.auctions.client.gui.RegisterWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow2;
+import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.AcceptChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.SessionWindow;
 
 
 public class MainProgramWindow extends JFrame {
@@ -17,6 +21,10 @@ public class MainProgramWindow extends JFrame {
 	private JPanel contentPane;
 	private RegisterWindow registerWindow; 
 	private LoginWindow2 loginWindow;
+	private DistanceChallengeWindow distanceChallengeWindow; 
+	private ActivityTimeChallengeWindow activityTimeChallengeWindow;
+	private AcceptChallengeWindow acceptChallengeWindow; 
+	private SessionWindow sessionWindow;
 
 	/**
 	 * Launch the application.
@@ -77,19 +85,39 @@ public class MainProgramWindow extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton_2 = new JButton("Distance Challenge");
-		btnNewButton_2.setBounds(31, 150, 126, 23);
+		btnNewButton_2.addActionListener(
+				(e) -> {
+					this.dispose();
+					distanceChallengeWindow.setVisible(true);
+			});
+		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Activity Time Challenge");
-		btnNewButton_3.setBounds(265, 150, 159, 23);
+		btnNewButton.addActionListener(
+				(e) -> {
+					this.dispose();
+					activityTimeChallengeWindow.setVisible(true);
+			});
+		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Accept Challenge");
-		btnNewButton_4.setBounds(31, 195, 126, 23);
+		btnNewButton.addActionListener(
+				(e) -> {
+					this.dispose();
+					acceptChallengeWindow.setVisible(true);
+			});
+		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Create session");
-		btnNewButton_5.setBounds(265, 195, 159, 23);
+		btnNewButton.addActionListener(
+				(e) -> {
+					this.dispose();
+					sessionWindow.setVisible(true);
+			});
+		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_5);
 	}
 }

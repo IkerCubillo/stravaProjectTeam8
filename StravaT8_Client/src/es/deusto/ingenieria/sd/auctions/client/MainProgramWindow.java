@@ -11,6 +11,7 @@ import es.deusto.ingenieria.sd.auctions.client.gui.RegisterWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow2;
 import es.deusto.ingenieria.sd.auctions.client.gui.MainWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
@@ -52,6 +53,7 @@ public class MainProgramWindow extends JFrame {
 	public MainProgramWindow() {
 		ServiceLocator serviceLocator = new ServiceLocator();
 		LoginController loginController = new LoginController(serviceLocator);
+		LoginWindow loginDialog = new LoginWindow(loginController);
 		MainController mainController = new MainController(serviceLocator);			
 		MainWindow mainWindow = new MainWindow(mainController);
 		
@@ -68,7 +70,7 @@ public class MainProgramWindow extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Register");
-		btnNewButton.setBounds(81, 70, 89, 23);
+		btnNewButton.setBounds(33, 70, 89, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
 					this.dispose();
@@ -76,11 +78,21 @@ public class MainProgramWindow extends JFrame {
 			});
 		contentPane.add(btnNewButton);
 		
+		JButton btnNewButton_8 = new JButton("Logout");
+		btnNewButton_8.setBounds(313, 70, 89, 23);
+		btnNewButton_8.addActionListener(
+				(e) -> {
+					loginDialog.logout();
+					this.dispose();
+			});
+		contentPane.add(btnNewButton_8);
+		btnNewButton_8.setVisible(false);
+		
 		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.setBounds(273, 70, 89, 23);
+		btnNewButton_1.setBounds(173, 70, 89, 23);
 		btnNewButton_1.addActionListener(
 				(e) -> {
-					this.dispose();
+					btnNewButton_8.setVisible(true);
 					loginWindow.setVisible(true);
 			});
 		contentPane.add(btnNewButton_1);
@@ -146,5 +158,7 @@ public class MainProgramWindow extends JFrame {
 			});
 		btnNewButton_7.setBounds(269, 221, 155, 23);
 		contentPane.add(btnNewButton_7);
+		
+		
 	}
 }

@@ -23,7 +23,6 @@ public class LoginWindow2 extends JFrame {
 	private JPanel contentPane;
 	private JTextField emailField;
 	private JTextField passwordField;
-	private MainProgramWindow mpw;
 	/**
 	 * Launch the application.
 	 */
@@ -82,7 +81,6 @@ public class LoginWindow2 extends JFrame {
 				(e) -> {
 					loginDialog.login(emailField.getText(), passwordField.getText());
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton.setBounds(242, 146, 89, 23);
 		contentPane.add(btnNewButton);
@@ -91,7 +89,6 @@ public class LoginWindow2 extends JFrame {
 		btnNewButton_1.addActionListener(
 				(e) -> {
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton_1.setBounds(73, 146, 89, 23);
 		contentPane.add(btnNewButton_1);

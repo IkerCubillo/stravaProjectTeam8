@@ -148,8 +148,19 @@ public class SessionWindow extends JFrame {
 					this.dispose();
 					mpw.setVisible(true);
 			});
-		btnNewButton.setBounds(347, 137, 89, 23);
+		btnNewButton.setBounds(348, 100, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(
+				(e) -> {
+					this.dispose();
+					mpw.setVisible(true);
+			});
+		btnNewButton_1.setBounds(347, 198, 89, 23);
+		contentPane.add(btnNewButton_1);
 	}
+	
+	
 
 }

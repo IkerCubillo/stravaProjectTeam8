@@ -1,6 +1,9 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -11,14 +14,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
+import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
+
 public class ActivityTimeChallengeWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField nameField;
+	private JTextField startField;
+	private JTextField endField;
+	private JTextField timeField;
+	private MainProgramWindow mpw;
 
 	/**
 	 * Launch the application.
@@ -40,6 +49,11 @@ public class ActivityTimeChallengeWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public ActivityTimeChallengeWindow() {
+		ServiceLocator serviceLocator = new ServiceLocator();
+		LoginController loginController = new LoginController(serviceLocator);
+		MainController mainController = new MainController(serviceLocator);			
+		MainWindow mainWindow = new MainWindow(mainController);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -48,7 +62,7 @@ public class ActivityTimeChallengeWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Distance Challenge");
+		JLabel lblNewLabel = new JLabel("Activity Time Challenge");
 		lblNewLabel.setBounds(157, 11, 131, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -68,39 +82,65 @@ public class ActivityTimeChallengeWindow extends JFrame {
 		lblNewLabel_4.setBounds(47, 205, 57, 14);
 		contentPane.add(lblNewLabel_4);
 		
-		textField = new JTextField();
-		textField.setBounds(177, 41, 160, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		nameField = new JTextField();
+		nameField.setBounds(177, 41, 160, 20);
+		contentPane.add(nameField);
+		nameField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(177, 123, 160, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		startField = new JTextField();
+		startField.setBounds(177, 123, 160, 20);
+		contentPane.add(startField);
+		startField.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(178, 164, 160, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		endField = new JTextField();
+		endField.setBounds(178, 164, 160, 20);
+		contentPane.add(endField);
+		endField.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Running", "Cycling", "Both"}));
-		comboBox.setMaximumRowCount(3);
-		comboBox.setBounds(177, 205, 160, 20);
-		contentPane.add(comboBox);
+		JComboBox comboSport = new JComboBox();
+		comboSport.setModel(new DefaultComboBoxModel(new String[] {"Running", "Cycling", "Both"}));
+		comboSport.setMaximumRowCount(3);
+		comboSport.setBounds(177, 205, 160, 20);
+		contentPane.add(comboSport);
 		
 		JButton btnNewButton = new JButton("Set up");
+		btnNewButton.addActionListener(
+				(e) -> {
+					String activityTime = timeField.getText();
+					float time = Float.parseFloat(activityTime);
+					SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+					String start = startField.getText();
+					String end = endField.getText();
+					Date st = null;
+					try {
+						st = formatter.parse(start);
+					} catch (ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					Date en = null;
+					try {
+						en = formatter.parse(end);
+					} catch (ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					mainWindow.setupDistanceChallenge(loginController.getToken(), nameField.getText(), 
+							st, en, time, comboSport.getSelectedItem().toString());
+					this.dispose();
+					mpw.setVisible(true);
+			});
 		btnNewButton.setBounds(250, 240, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Distance");
+		JLabel lblNewLabel_5 = new JLabel("Time");
 		lblNewLabel_5.setBounds(47, 82, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(177, 81, 160, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		timeField = new JTextField();
+		timeField.setBounds(177, 81, 160, 20);
+		contentPane.add(timeField);
+		timeField.setColumns(10);
 	}
 
 }

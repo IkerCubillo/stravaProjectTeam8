@@ -145,7 +145,25 @@ public class RegisterWindow extends JFrame {
 		JButton btnNewButton = new JButton("Register");
 		btnNewButton.addActionListener(
 				(e) -> {
-					loginDialog.register();
+					String weight = weightField.getText();
+					float w = Float.parseFloat(weight);
+					String height = heightField.getText();
+					float h = Float.parseFloat(height);
+					String mBPM = mbpmField.getText();
+					int m = Integer.parseInt(mBPM);
+					String BPM = bpmField.getText();
+					int b = Integer.parseInt(BPM);
+					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+					String birthdate = birthdateField.getText();
+					Date bd = null;
+					try {
+						bd = formatter.parse(birthdate);
+					} catch (ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					loginDialog.register(comboAccount.getSelectedItem().toString(), emailField.getText(), nameField.getText(), 
+							bd, w, h, m, b);
 					this.dispose();
 					mpw.setVisible(true);
 			});

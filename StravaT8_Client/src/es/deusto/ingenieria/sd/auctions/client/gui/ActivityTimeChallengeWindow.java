@@ -108,7 +108,7 @@ public class ActivityTimeChallengeWindow extends JFrame {
 				(e) -> {
 					String activityTime = timeField.getText();
 					float time = Float.parseFloat(activityTime);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
 					String end = endField.getText();
 					Date st = null;

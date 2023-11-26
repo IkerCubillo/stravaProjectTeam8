@@ -40,11 +40,11 @@ public class LoginWindow {
 	}
 
 	//temporarily uses predefined user
-	public void register() {
-		System.out.println(" - Registering into the server: '" + this.account + "' - '" + this.email
-				+ "' - '" + this.password + "' - '" + this.name + "' - '" + this.birthdate + "' - '" + this.weight + "' - '" + this.height + "' - '" + this.mbpm 
-				+ "' - '" + this.bpm + "' ...");
-		this.controller.register(account, email, password, name, birthdate, weight, height, mbpm, bpm);
+	public void register(String account, String email, String name, Date birthdate, float weight, float height, int mBPM, int BPM) {
+		System.out.println(" - Registering into the server: '" + account + "' - '" + email
+				+ "' - '" + name + "' - '" + birthdate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
+				+ "' - '" + BPM + "' ...");
+		this.controller.register(account, email, name, birthdate, weight, height, mBPM, BPM);
 		System.out.println("\t* Registration success!");
 		
 	}

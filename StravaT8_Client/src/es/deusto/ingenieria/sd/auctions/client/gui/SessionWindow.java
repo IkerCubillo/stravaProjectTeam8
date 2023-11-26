@@ -131,7 +131,7 @@ public class SessionWindow extends JFrame {
 					float dist = Float.parseFloat(distance);
 					String duration = durationField.getText();
 					float dur = Float.parseFloat(duration);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String startDate = startDateField.getText();
 					String startTime = startTimeField.getText();
 					Date st = null;

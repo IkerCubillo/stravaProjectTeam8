@@ -111,7 +111,7 @@ public class DistanceChallengeWindow extends JFrame {
 				(e) -> {
 					String distance = distanceField.getText();
 					float dist = Float.parseFloat(distance);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
 					String end = endField.getText();
 					Date st = null;

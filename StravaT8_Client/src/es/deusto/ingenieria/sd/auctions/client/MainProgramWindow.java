@@ -9,10 +9,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import es.deusto.ingenieria.sd.auctions.client.gui.RegisterWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow2;
+import es.deusto.ingenieria.sd.auctions.client.gui.MainWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.client.gui.AcceptChallengeWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.SessionWindow;
+import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
 
 public class MainProgramWindow extends JFrame {
@@ -46,6 +50,11 @@ public class MainProgramWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public MainProgramWindow() {
+		ServiceLocator serviceLocator = new ServiceLocator();
+		LoginController loginController = new LoginController(serviceLocator);
+		MainController mainController = new MainController(serviceLocator);			
+		MainWindow mainWindow = new MainWindow(mainController);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -108,8 +117,7 @@ public class MainProgramWindow extends JFrame {
 		btnNewButton_4.setSize(123, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
-					this.dispose();
-					acceptChallengeWindow.setVisible(true);
+					mainWindow.acceptChallenge(loginController.getToken());
 			});
 		contentPane.add(btnNewButton_4);
 		

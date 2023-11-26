@@ -31,7 +31,7 @@ public class RegisterWindow extends JFrame {
 	private JTextField heightField;
 	private JTextField mbpmField;
 	private JTextField bpmField;
-	private MainProgramWindow mpw;
+	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.

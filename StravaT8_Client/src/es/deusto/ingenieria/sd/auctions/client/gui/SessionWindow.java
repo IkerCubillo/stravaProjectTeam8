@@ -31,7 +31,7 @@ public class SessionWindow extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private MainProgramWindow mpw;
+	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.

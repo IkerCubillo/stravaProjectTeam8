@@ -30,7 +30,7 @@ public class DistanceChallengeWindow extends JFrame {
 	private JTextField startField;
 	private JTextField endField;
 	private JTextField distanceField;
-	private MainProgramWindow mpw;
+	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.

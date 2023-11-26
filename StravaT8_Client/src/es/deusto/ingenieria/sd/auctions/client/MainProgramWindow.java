@@ -23,11 +23,11 @@ public class MainProgramWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private RegisterWindow registerWindow; 
-	private LoginWindow2 loginWindow;
-	private DistanceChallengeWindow distanceChallengeWindow; 
-	private ActivityTimeChallengeWindow activityTimeChallengeWindow;
-	private SessionWindow sessionWindow;
+	private RegisterWindow registerWindow = new RegisterWindow();
+	private LoginWindow2 loginWindow = new LoginWindow2();
+	private DistanceChallengeWindow distanceChallengeWindow = new DistanceChallengeWindow();
+	private ActivityTimeChallengeWindow activityTimeChallengeWindow = new ActivityTimeChallengeWindow();
+	private SessionWindow sessionWindow = new SessionWindow();
 
 	/**
 	 * Launch the application.

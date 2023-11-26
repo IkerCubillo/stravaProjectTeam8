@@ -21,8 +21,8 @@ public class LoginWindow {
 	}
 	
 	//temporarily uses predefined user
-	public boolean login() {		
-		System.out.println(" - Login into the server: '" + this.email + "' - '" + this.password + "' ...");
+	public boolean login(String email, String password) {		
+		System.out.println(" - Login into the server: '" + email + "' - '" + password + "' ...");
 //		String sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex(password);
 //		System.out.println("\t* Password hash: " + sha1);		
 		boolean result = this.controller.login(email, password);
@@ -40,11 +40,11 @@ public class LoginWindow {
 	}
 
 	//temporarily uses predefined user
-	public void register() {
-		System.out.println(" - Registering into the server: '" + this.account + "' - '" + this.email
-				+ "' - '" + this.password + "' - '" + this.name + "' - '" + this.birthdate + "' - '" + this.weight + "' - '" + this.height + "' - '" + this.mbpm 
-				+ "' - '" + this.bpm + "' ...");
-		this.controller.register(account, email, password, name, birthdate, weight, height, mbpm, bpm);
+	public void register(String account, String email, String name, Date birthdate, float weight, float height, int mBPM, int BPM) {
+		System.out.println(" - Registering into the server: '" + account + "' - '" + email
+				+ "' - '" + name + "' - '" + birthdate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
+				+ "' - '" + BPM + "' ...");
+		this.controller.register(account, email, name, birthdate, weight, height, mBPM, BPM);
 		System.out.println("\t* Registration success!");
 		
 	}

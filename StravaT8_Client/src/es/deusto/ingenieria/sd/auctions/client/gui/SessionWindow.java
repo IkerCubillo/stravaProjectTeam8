@@ -1,6 +1,10 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -9,17 +13,24 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
+import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
+
 import javax.swing.JButton;
 
 public class SessionWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField titleField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private MainProgramWindow mpw;
 
 	/**
 	 * Launch the application.
@@ -41,6 +52,11 @@ public class SessionWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public SessionWindow() {
+		ServiceLocator serviceLocator = new ServiceLocator();
+		LoginController loginController = new LoginController(serviceLocator);
+		MainController mainController = new MainController(serviceLocator);			
+		MainWindow mainWindow = new MainWindow(mainController);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -61,18 +77,18 @@ public class SessionWindow extends JFrame {
 		lblNewLabel_2.setBounds(47, 76, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Distance");
-		lblNewLabel_3.setBounds(47, 117, 46, 14);
-		contentPane.add(lblNewLabel_3);
+		JLabel distanceField = new JLabel("Distance");
+		distanceField.setBounds(47, 117, 46, 14);
+		contentPane.add(distanceField);
 		
-		JLabel lblNewLabel_4 = new JLabel("Start date");
-		lblNewLabel_4.setBounds(47, 158, 57, 14);
-		contentPane.add(lblNewLabel_4);
+		JLabel startDateField = new JLabel("Start date");
+		startDateField.setBounds(47, 158, 57, 14);
+		contentPane.add(startDateField);
 		
-		textField = new JTextField();
-		textField.setBounds(177, 35, 160, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		titleField = new JTextField();
+		titleField.setBounds(177, 35, 160, 20);
+		contentPane.add(titleField);
+		titleField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(177, 158, 160, 20);
@@ -84,19 +100,19 @@ public class SessionWindow extends JFrame {
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Running", "Cycling"}));
-		comboBox.setMaximumRowCount(3);
-		comboBox.setBounds(177, 76, 160, 20);
-		contentPane.add(comboBox);
+		JComboBox comboSport = new JComboBox();
+		comboSport.setModel(new DefaultComboBoxModel(new String[] {"Running", "Cycling"}));
+		comboSport.setMaximumRowCount(3);
+		comboSport.setBounds(177, 76, 160, 20);
+		contentPane.add(comboSport);
 		
-		JLabel lblNewLabel_5 = new JLabel("Start time");
-		lblNewLabel_5.setBounds(47, 199, 57, 14);
-		contentPane.add(lblNewLabel_5);
+		JLabel startTimeField = new JLabel("Start time");
+		startTimeField.setBounds(47, 199, 57, 14);
+		contentPane.add(startTimeField);
 		
-		JLabel lblNewLabel_6 = new JLabel("Duration");
-		lblNewLabel_6.setBounds(47, 240, 46, 14);
-		contentPane.add(lblNewLabel_6);
+		JLabel durationField = new JLabel("Duration");
+		durationField.setBounds(47, 240, 46, 14);
+		contentPane.add(durationField);
 		
 		textField_3 = new JTextField();
 		textField_3.setBounds(177, 199, 160, 20);
@@ -109,8 +125,42 @@ public class SessionWindow extends JFrame {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Create");
-		btnNewButton.setBounds(347, 137, 89, 23);
+		btnNewButton.addActionListener(
+				(e) -> {
+					String distance = distanceField.getText();
+					float dist = Float.parseFloat(distance);
+					String duration = durationField.getText();
+					float dur = Float.parseFloat(duration);
+					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+					String startDate = startDateField.getText();
+					String startTime = startTimeField.getText();
+					Date st = null;
+					try {
+						st = formatter.parse(startDate);
+					} catch (ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					LocalTime stt = null;
+					stt = LocalTime.parse(startTime);
+					mainWindow.createSession(loginController.getToken(), titleField.getText(), 
+							comboSport.getSelectedItem().toString(), dist, st, stt, dur);
+					this.dispose();
+					mpw.setVisible(true);
+			});
+		btnNewButton.setBounds(348, 100, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(
+				(e) -> {
+					this.dispose();
+					mpw.setVisible(true);
+			});
+		btnNewButton_1.setBounds(347, 198, 89, 23);
+		contentPane.add(btnNewButton_1);
 	}
+	
+	
 
 }

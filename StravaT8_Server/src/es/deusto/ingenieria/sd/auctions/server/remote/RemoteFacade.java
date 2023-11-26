@@ -42,9 +42,9 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private void initilizeData() throws RemoteException {
 		// Create Users
 		
-		register("Facebook", "asier@opendeusto.com", "password1", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Google", "kerman@opendeusto.com", "password2",  "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Facebook", "cubillo@opendeusto.com", "password3",  "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "asier@opendeusto.com", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Google", "kerman@opendeusto.com", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "cubillo@opendeusto.com", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
 	}
 	
 	@Override
@@ -85,10 +85,10 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 	
-	public void register(String account, String email, String password, String name, Date birthDate, float weight, float height,
+	public void register(String account, String email, String name, Date birthDate, float weight, float height,
 			int mBPM, int bpm) throws RemoteException {
 		System.out.println(" * RemoteFacade register(): " + account + "' - '" + email 
-				+ "' - '" + password + "' - '" + name + "' - '" + birthDate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
+				+ "' - '"  + name + "' - '" + birthDate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 
 				+ "' - '" + bpm);
 		
 		//TODO: Perform register() using LoginAppService
@@ -98,7 +98,6 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		try {
 			user.setAccount(account);
 			user.setEmail(email);
-			user.setPassword(password);
 			user.setName(name);
 			user.setBirthDate(birthDate);
 			user.setWeight(weight);

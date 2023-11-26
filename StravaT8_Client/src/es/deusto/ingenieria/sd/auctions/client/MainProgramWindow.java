@@ -85,39 +85,42 @@ public class MainProgramWindow extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton_2 = new JButton("Distance Challenge");
+		btnNewButton_2.setLocation(33, 159);
+		btnNewButton_2.setSize(123, 23);
 		btnNewButton_2.addActionListener(
 				(e) -> {
 					this.dispose();
 					distanceChallengeWindow.setVisible(true);
 			});
-		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Activity Time Challenge");
+		btnNewButton_3.setBounds(269, 159, 155, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
 					this.dispose();
 					activityTimeChallengeWindow.setVisible(true);
 			});
-		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Accept Challenge");
+		btnNewButton_4.setLocation(33, 204);
+		btnNewButton_4.setSize(123, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
 					this.dispose();
 					acceptChallengeWindow.setVisible(true);
 			});
-		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Create session");
+		btnNewButton_5.setLocation(269, 204);
+		btnNewButton_5.setSize(155, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
 					this.dispose();
 					sessionWindow.setVisible(true);
 			});
-		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_5);
 	}
 }

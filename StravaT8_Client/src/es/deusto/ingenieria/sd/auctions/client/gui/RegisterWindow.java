@@ -1,10 +1,19 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.awt.EventQueue;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
+import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
+import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
+
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -14,13 +23,14 @@ public class RegisterWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
+	private JTextField emailField;
+	private JTextField nameField;
+	private JTextField birthdateField;
+	private JTextField weightField;
+	private JTextField heightField;
+	private JTextField mbpmField;
+	private JTextField bpmField;
+	private MainProgramWindow mpw;
 
 	/**
 	 * Launch the application.
@@ -42,6 +52,10 @@ public class RegisterWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public RegisterWindow() {
+		ServiceLocator serviceLocator = new ServiceLocator();
+		LoginController loginController = new LoginController(serviceLocator);
+		LoginWindow loginDialog = new LoginWindow(loginController);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -86,49 +100,55 @@ public class RegisterWindow extends JFrame {
 		lblNewLabel_8.setBounds(38, 180, 46, 14);
 		contentPane.add(lblNewLabel_8);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.addItem("Google");
-		comboBox.addItem("Facebook");
-		comboBox.setMaximumRowCount(2);
-		comboBox.setBounds(174, 36, 185, 22);
-		contentPane.add(comboBox);
+		JComboBox comboAccount = new JComboBox();
+		comboAccount.addItem("Google");
+		comboAccount.addItem("Facebook");
+		comboAccount.setMaximumRowCount(2);
+		comboAccount.setBounds(174, 36, 185, 22);
+		contentPane.add(comboAccount);
 		
-		textField = new JTextField();
-		textField.setBounds(174, 60, 185, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		emailField = new JTextField();
+		emailField.setBounds(174, 60, 185, 20);
+		contentPane.add(emailField);
+		emailField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(174, 80, 185, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		nameField = new JTextField();
+		nameField.setBounds(174, 80, 185, 20);
+		contentPane.add(nameField);
+		nameField.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(174, 100, 185, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		birthdateField = new JTextField();
+		birthdateField.setBounds(174, 100, 185, 20);
+		contentPane.add(birthdateField);
+		birthdateField.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(174, 120, 185, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		weightField = new JTextField();
+		weightField.setBounds(174, 120, 185, 20);
+		contentPane.add(weightField);
+		weightField.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(174, 140, 185, 20);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		heightField = new JTextField();
+		heightField.setBounds(174, 140, 185, 20);
+		contentPane.add(heightField);
+		heightField.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(174, 160, 185, 20);
-		contentPane.add(textField_5);
-		textField_5.setColumns(10);
+		mbpmField = new JTextField();
+		mbpmField.setBounds(174, 160, 185, 20);
+		contentPane.add(mbpmField);
+		mbpmField.setColumns(10);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(174, 180, 185, 20);
-		contentPane.add(textField_6);
-		textField_6.setColumns(10);
+		bpmField = new JTextField();
+		bpmField.setBounds(174, 180, 185, 20);
+		contentPane.add(bpmField);
+		bpmField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Register");
+		btnNewButton.addActionListener(
+				(e) -> {
+					loginDialog.register();
+					this.dispose();
+					mpw.setVisible(true);
+			});
 		btnNewButton.setBounds(270, 211, 89, 23);
 		contentPane.add(btnNewButton);
 	}

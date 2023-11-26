@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import es.deusto.ingenieria.sd.auctions.client.gui.RegisterWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow2;
 
 
 public class MainProgramWindow extends JFrame {
@@ -15,6 +16,7 @@ public class MainProgramWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private RegisterWindow registerWindow; 
+	private LoginWindow2 loginWindow;
 
 	/**
 	 * Launch the application.
@@ -59,6 +61,11 @@ public class MainProgramWindow extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("Login");
 		btnNewButton_1.setBounds(273, 70, 89, 23);
+		btnNewButton_1.addActionListener(
+				(e) -> {
+					this.dispose();
+					loginWindow.setVisible(true);
+			});
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("Account");

@@ -73,15 +73,23 @@ public class MainProgramWindow extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Functions");
-		lblNewLabel_2.setBounds(200, 123, 46, 14);
+		lblNewLabel_2.setBounds(193, 123, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnNewButton_2 = new JButton("Challenges");
-		btnNewButton_2.setBounds(81, 150, 89, 23);
+		JButton btnNewButton_2 = new JButton("Distance Challenge");
+		btnNewButton_2.setBounds(31, 150, 126, 23);
 		contentPane.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("Training Sessions");
-		btnNewButton_3.setBounds(273, 150, 126, 23);
+		JButton btnNewButton_3 = new JButton("Activity Time Challenge");
+		btnNewButton_3.setBounds(265, 150, 159, 23);
 		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Accept Challenge");
+		btnNewButton_4.setBounds(31, 195, 126, 23);
+		contentPane.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Create session");
+		btnNewButton_5.setBounds(265, 195, 159, 23);
+		contentPane.add(btnNewButton_5);
 	}
 }

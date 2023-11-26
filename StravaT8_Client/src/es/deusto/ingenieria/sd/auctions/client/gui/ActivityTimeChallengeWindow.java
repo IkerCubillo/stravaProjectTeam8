@@ -125,7 +125,7 @@ public class ActivityTimeChallengeWindow extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					mainWindow.setupDistanceChallenge(loginController.getToken(), nameField.getText(), 
+					mainWindow.setupActivityTimeChallenge(loginController.getToken(), nameField.getText(), 
 							st, en, time, comboSport.getSelectedItem().toString());
 					this.dispose();
 					mpw.setVisible(true);

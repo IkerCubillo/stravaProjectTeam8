@@ -30,7 +30,6 @@ public class DistanceChallengeWindow extends JFrame {
 	private JTextField startField;
 	private JTextField endField;
 	private JTextField distanceField;
-	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.
@@ -129,7 +128,6 @@ public DistanceChallengeWindow() {
 					MainProgram.mainWindow.setupDistanceChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
 							st, en, dist, comboSport.getSelectedItem().toString());
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton);
@@ -147,7 +145,6 @@ public DistanceChallengeWindow() {
 		btnNewButton_1.addActionListener(
 				(e) -> {
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton_1.setBounds(85, 240, 89, 23);
 		contentPane.add(btnNewButton_1);

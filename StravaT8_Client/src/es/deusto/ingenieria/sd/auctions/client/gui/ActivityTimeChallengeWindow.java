@@ -28,7 +28,6 @@ public class ActivityTimeChallengeWindow extends JFrame {
 	private JTextField startField;
 	private JTextField endField;
 	private JTextField timeField;
-	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.
@@ -125,7 +124,6 @@ public ActivityTimeChallengeWindow() {
 					MainProgram.mainWindow.setupActivityTimeChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
 							st, en, time, comboSport.getSelectedItem().toString());
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton.setBounds(250, 240, 89, 23);
 		contentPane.add(btnNewButton);
@@ -143,7 +141,6 @@ public ActivityTimeChallengeWindow() {
 		btnNewButton_1.addActionListener(
 				(e) -> {
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton_1.setBounds(85, 240, 89, 23);
 		contentPane.add(btnNewButton_1);

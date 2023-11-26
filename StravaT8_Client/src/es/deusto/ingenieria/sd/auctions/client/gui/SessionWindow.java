@@ -31,7 +31,6 @@ public class SessionWindow extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.
@@ -143,7 +142,6 @@ public SessionWindow() {
 					MainProgram.mainWindow.createSession(MainProgram.loginController.getToken(), titleField.getText(), 
 							comboSport.getSelectedItem().toString(), dist, st, stt, dur);
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton.setBounds(348, 100, 89, 23);
 		contentPane.add(btnNewButton);
@@ -152,7 +150,6 @@ public SessionWindow() {
 		btnNewButton_1.addActionListener(
 				(e) -> {
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton_1.setBounds(347, 198, 89, 23);
 		contentPane.add(btnNewButton_1);

@@ -31,7 +31,6 @@ public class RegisterWindow extends JFrame {
 	private JTextField heightField;
 	private JTextField mbpmField;
 	private JTextField bpmField;
-	private MainProgramWindow mpw = new MainProgramWindow();
 
 	/**
 	 * Launch the application.
@@ -163,7 +162,6 @@ public RegisterWindow() {
 					MainProgram.loginDialog.register(comboAccount.getSelectedItem().toString(), emailField.getText(), nameField.getText(), 
 							bd, w, h, m, b);
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton.setBounds(270, 211, 89, 23);
 		contentPane.add(btnNewButton);
@@ -172,7 +170,6 @@ public RegisterWindow() {
 		btnNewButton_1.addActionListener(
 				(e) -> {
 					this.dispose();
-					mpw.setVisible(true);
 			});
 		btnNewButton_1.setBounds(85, 211, 89, 23);
 		contentPane.add(btnNewButton_1);

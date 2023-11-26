@@ -48,7 +48,7 @@ public class MainProgramWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-public MainProgramWindow() {
+	public MainProgramWindow() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -66,7 +66,6 @@ public MainProgramWindow() {
 		btnNewButton.setBounds(33, 70, 89, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
-					this.dispose();
 					registerWindow.setVisible(true);
 			});
 		contentPane.add(btnNewButton);
@@ -103,7 +102,6 @@ public MainProgramWindow() {
 		btnNewButton_2.setSize(123, 23);
 		btnNewButton_2.addActionListener(
 				(e) -> {
-					this.dispose();
 					distanceChallengeWindow.setVisible(true);
 			});
 		contentPane.add(btnNewButton_2);
@@ -112,7 +110,6 @@ public MainProgramWindow() {
 		btnNewButton_3.setBounds(269, 159, 155, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
-					this.dispose();
 					activityTimeChallengeWindow.setVisible(true);
 			});
 		contentPane.add(btnNewButton_3);
@@ -131,7 +128,6 @@ public MainProgramWindow() {
 		btnNewButton_5.setSize(155, 23);
 		btnNewButton.addActionListener(
 				(e) -> {
-					this.dispose();
 					sessionWindow.setVisible(true);
 			});
 		contentPane.add(btnNewButton_5);

@@ -6,10 +6,10 @@ import java.time.LocalTime;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 
 public class MainAppService {
 

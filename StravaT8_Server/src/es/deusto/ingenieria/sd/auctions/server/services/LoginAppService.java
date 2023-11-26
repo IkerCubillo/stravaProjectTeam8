@@ -1,30 +1,43 @@
 package es.deusto.ingenieria.sd.auctions.server.services;
 
 
-import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
+import es.deusto.ingenieria.sd.auctions.server.gateway.FacebookGateway;
 
 //TODO: Implement Singleton Pattern
 public class LoginAppService {
 		
-	public boolean login(String email, String password) {
+	public boolean login(String email, String password, String account) {
 		//TODO: Get User using DAO and check 
 		//Password always correct
-		boolean correctPasword = true;
-		
-		return correctPasword;
+		if(account.equals("Google")) {
+			return true;
+		} else if(account.equals("Facebook")) {
+			return facebookPasswordValidation(email, password);
+		} else {
+			return false;
+		}
 	}
 	
-	public User register(String email, String account) {
+	public boolean register(String email, String account) {
 		//Check user email exists in service (Google and Facebook always exists
-		User user = new User();
 		
 		if(account.equals("Google")) {
-			return user;
+			return true;
 		} else if(account.equals("Facebook")) {
-			return user;
+			return facebookUserValidation(email);
 		} else {
-			return null;
+			return false;
 		}
+	}
+
+	public boolean facebookUserValidation(String email) {
+		//Get conversion rate from Service Gateway
+		return FacebookGateway.getInstance().facebookUserValidation(email);
+	}
+
+	public boolean facebookPasswordValidation(String email, String password) {
+		//Get conversion rate from Service Gateway
+		return FacebookGateway.getInstance().facebookPasswordValidation(email, password);
 	}
 	
 	public LoginAppService getInstance() {

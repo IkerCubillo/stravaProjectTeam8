@@ -12,7 +12,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
 	public interface IRemoteFacade extends Remote {	
 	
-		public long login(String email, String password) throws RemoteException;
+		public long login(String email, String password, String account) throws RemoteException;
 		
 		public void logout(long token) throws RemoteException;
 		

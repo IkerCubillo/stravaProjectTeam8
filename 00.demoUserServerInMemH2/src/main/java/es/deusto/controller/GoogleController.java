@@ -9,7 +9,7 @@ import es.deusto.service.GoogleServiceImpl;
 import java.rmi.RemoteException;
 
 @RestController
-@RequestMapping("/facebook")
+@RequestMapping("/google")
 public class GoogleController {
 
     @Autowired

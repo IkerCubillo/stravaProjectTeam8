@@ -4,10 +4,16 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.rmi.Naming;
 
-public class GoogleGateway {
+import es.deusto.ingenieria.sd.auctions.currency.remote.IFacebookAuthorization;
+
+public class GoogleGateway implements IGateway {
 	
 	private static GoogleGateway instance;
+	
+	public GoogleGateway() {
+	}
 	
 	public static GoogleGateway getInstance() {
 		if(instance == null) {
@@ -16,7 +22,7 @@ public class GoogleGateway {
 		return instance;
 	}
 
-    public boolean googleUserValidation(String email) {
+    public boolean userValidation(String email) {
         try {
 //            String url = "http://localhost:8080/facebook/validateUser?email=" + email;
 //            String resultado = hacerSolicitud(url);
@@ -28,7 +34,7 @@ public class GoogleGateway {
         }
     }
 
-    public boolean googlePasswordValidation(String email, String password) {
+    public boolean passwordValidation(String email, String password) {
         try {
 //            String url = "http://localhost:8080/facebook/validatePassword?email=" + email + "&password=" + password;
 //            String resultado = hacerSolicitud(url);

@@ -7,7 +7,7 @@ import es.deusto.ingenieria.sd.auctions.server.gateway.GatewayFactory;
 //TODO: Implement Singleton Pattern
 public class LoginAppService {
 	
-	private LoginAppService instance;
+	private static LoginAppService instance;
 		
 	public boolean login(String email, String password, String account) {
 		//TODO: Get User using DAO and check 
@@ -20,7 +20,7 @@ public class LoginAppService {
 		return g.userValidation(email);
 	}
 	
-	public LoginAppService getInstance() {
+	public static LoginAppService getInstance() {
 
 		if(instance == null) {
 			instance = new LoginAppService();

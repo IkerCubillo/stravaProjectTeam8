@@ -29,9 +29,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public Map<String, User> userMap = new HashMap<>();
 	
 	
-	//TODO: Remove this instances when Singleton Pattern is implemented
-	private LoginAppService loginService = new LoginAppService(); // To create on server services
-	private MainAppService mainService = new MainAppService();
+	private LoginAppService loginService = LoginAppService.getInstance(); // To create on server services
+	private MainAppService mainService = MainAppService.getInstance();
 
 	public RemoteFacade() throws RemoteException {
 		super();	
@@ -42,9 +41,9 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private void initilizeData() throws RemoteException {
 		// Create Users
 		
-		register("Facebook", "asier@opendeusto.com", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Google", "kerman@opendeusto.com", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Facebook", "cubillo@opendeusto.com", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		//register("Facebook", "asier@opendeusto.es", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Google", "kerman@opendeusto.es", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		//register("Facebook", "cubillo@opendeusto.es", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
 	}
 	
 	@Override
@@ -105,15 +104,14 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		// creating user
 		try {
 			loginService.register(email, account);
+			// checking user exists in user map
+			if (!this.userMap.containsKey(user.getEmail())) {	
+				this.userMap.put(user.getEmail(), user);
+			} else {
+				throw new RemoteException("Email already on use!");
+			}
 		} catch (Exception e) {
 			throw new RemoteException("Account email invalid");
-		}
-		
-		// checking user exists in user map
-		if (!this.userMap.containsKey(user.getEmail())) {	
-			this.userMap.put(user.getEmail(), user);
-		} else {
-			throw new RemoteException("Email already on use!");
 		}
 	}
 
@@ -205,3 +203,4 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 }
+

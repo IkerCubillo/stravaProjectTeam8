@@ -24,7 +24,7 @@ public class FacebookGateway implements IGateway {
 
 	public boolean userValidation(String email) {
 
-		boolean answer = false;
+		boolean answer = true;
 
 		try (Socket socket = new Socket(serverIP, serverPort);
 				// Streams to send and receive information are created from the Socket
@@ -36,11 +36,11 @@ public class FacebookGateway implements IGateway {
 			System.out.println(" - Verifying Facebook email from '" + socket.getInetAddress().getHostAddress() + ":"
 					+ socket.getPort() + "' -> '" + email + "'");
 
-			// Read response (one String) from the server
+			// Read response (one boolean) from the server
 			answer = in.readBoolean();
 			System.out.println(" - Recieving verification from '" + socket.getInetAddress().getHostAddress() + ":"
 					+ socket.getPort() + "' -> '" + answer + "'");
-
+			return answer;
 		} catch (UnknownHostException e) {
 			System.err.println("# Trans. SocketClient: Socket error: " + e.getMessage());
 			return false;
@@ -51,7 +51,6 @@ public class FacebookGateway implements IGateway {
 			System.err.println("# Trans. SocketClient: IO error: " + e.getMessage());
 			return false;
 		}
-		return answer;
 	}
 
 	public boolean passwordValidation(String email, String password) {

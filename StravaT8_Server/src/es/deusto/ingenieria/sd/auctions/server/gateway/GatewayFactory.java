@@ -4,9 +4,9 @@ public class GatewayFactory {
 	
 	public static IGateway createGateway(String account) {
 		if (account.equals("Facebook")) {
-			return new FacebookGateway();
+			return FacebookGateway.getInstance();
 		} else if (account.equals("Google")) {
-			return new GoogleGateway();
+			return GoogleGateway.getInstance();
 		} else {
 			return null;
 		}

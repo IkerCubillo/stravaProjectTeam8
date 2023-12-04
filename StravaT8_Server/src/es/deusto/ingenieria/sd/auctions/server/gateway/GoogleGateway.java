@@ -1,71 +1,65 @@
 package es.deusto.ingenieria.sd.auctions.server.gateway;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.rmi.Naming;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import es.deusto.ingenieria.sd.auctions.currency.remote.IFacebookAuthorization;
-
+@SpringBootApplication
+@Service
 public class GoogleGateway implements IGateway {
-	
+
 	private static GoogleGateway instance;
-	
+
+	@Bean
+	RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+
+	@Autowired
+	private RestTemplate restTemplate;
+
+	// Host and port NOT hard-coded: Defined in application.properties
+	// @Value("${spring.server.url}")
+	private String serverURL = "http://localhost";
+
+	// @Value("${server.port}")
+	private int serverPort = 8888;
+
 	public GoogleGateway() {
 	}
 	
+	public void setInstance(GoogleGateway googleGateway) {
+		instance = googleGateway;
+	}
+	
 	public static GoogleGateway getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new GoogleGateway();
+			SpringApplication.run(GoogleGateway.class);
 		}
 		return instance;
 	}
 
-    public boolean userValidation(String email) {
-        try {
-//            String url = "http://localhost:8080/facebook/validateUser?email=" + email;
-//            String resultado = hacerSolicitud(url);
-//            return Boolean.parseBoolean(resultado);
-        	return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+	public boolean userValidation(String email) {
+		boolean verified = false;
+		System.out.println("googleGateway: " + serverURL + ":" + String.valueOf(serverPort) + "/user/email/{email}");
+		try {
+			verified = restTemplate.getForObject(serverURL + ":" + String.valueOf(serverPort) + "/user/email/{email}",
+					boolean.class, email);
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
+		}
+		return verified;
+	}
 
-    public boolean passwordValidation(String email, String password) {
-        try {
-//            String url = "http://localhost:8080/facebook/validatePassword?email=" + email + "&password=" + password;
-//            String resultado = hacerSolicitud(url);
-//            return Boolean.parseBoolean(resultado);
-        	return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    private String hacerSolicitud(String url) throws Exception {
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-        // Configurar la solicitud
-        con.setRequestMethod("GET");
-
-        // Obtener la respuesta
-        int responseCode = con.getResponseCode();
-        System.out.println("Código de respuesta: " + responseCode);
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuilder response = new StringBuilder();
-
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-
-        return response.toString();
-    }
+	public boolean passwordValidation(String email, String password) {
+		boolean verified = restTemplate.getForObject(
+				serverURL + ":" + String.valueOf(serverPort) + "/user/verify/{email}/{password}", boolean.class, email,
+				password);
+		return verified;
+	}
 }

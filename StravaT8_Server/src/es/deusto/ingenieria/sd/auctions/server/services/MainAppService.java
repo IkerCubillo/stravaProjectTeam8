@@ -13,7 +13,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 
 public class MainAppService {
 
-	public MainAppService instance;
+	private static MainAppService instance;
 
 	public MainAppService() {
 		this.initilizeData();
@@ -114,12 +114,12 @@ public class MainAppService {
 		return user.getSessions();
 	}
 
-	public MainAppService getInstance() {
+	public static MainAppService getInstance() {
 
-		MainAppService main = new MainAppService();
-
-		return main;
-
+		if(instance == null) {
+			instance = new MainAppService();
+		}
+		return instance;
 	}
 
 }

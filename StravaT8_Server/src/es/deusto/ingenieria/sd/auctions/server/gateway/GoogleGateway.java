@@ -35,7 +35,6 @@ public class GoogleGateway implements IGateway {
 	}
 	
 	public static GoogleGateway getInstance() {
-		System.out.println("Reached Gateway");
 		if (instance == null) {
 			SpringApplication.run(GoogleGateway.class);
 			try {

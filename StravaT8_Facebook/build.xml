@@ -3,7 +3,7 @@
 	<property name="src.dir" location="src" />
 	<property name="bin.dir" location="bin" />
 	<property name="dist.dir" location="dist" />
-	<property name="server.port" value="35600" />
+	<property name="server.port" value="3600" />
 
 	<path id="classpath">
 		<pathelement location="${bin.dir}" />

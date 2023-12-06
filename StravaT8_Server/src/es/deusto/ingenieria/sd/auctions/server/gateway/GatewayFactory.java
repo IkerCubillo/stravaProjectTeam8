@@ -6,7 +6,6 @@ public class GatewayFactory {
 		if (account.equals("Facebook")) {
 			return FacebookGateway.getInstance();
 		} else if (account.equals("Google")) {
-			System.out.println("Reached Factory");
 			return GoogleGateway.getInstance();
 		} else {
 			return null;

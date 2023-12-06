@@ -10,16 +10,19 @@ import java.rmi.Naming;
 import java.util.StringTokenizer;
 
 import es.deusto.ingenieria.sd.auctions.currency.remote.IFacebookAuthorization;
+import es.deusto.ingenieria.sd.auctions.server.MainProgram;
 
 public class FacebookGateway implements IGateway {
 
 	private static FacebookGateway instance;
 
-	private String serverIP = "127.0.0.1";
-	private int serverPort = 35600;
+	private String serverIP;
+	private int serverPort;
 	private static String DELIMITER = "#";
 
 	public FacebookGateway() {
+		serverPort = MainProgram.getSocketPort();
+		serverIP = MainProgram.getServerIP();
 	}
 
 	public boolean userValidation(String email) {

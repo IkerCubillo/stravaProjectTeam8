@@ -9,19 +9,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import es.deusto.ingenieria.sd.auctions.client.gui.RegisterWindow;
-import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow2;
+import es.deusto.ingenieria.sd.auctions.client.gui.RegisterGUI;
+import es.deusto.ingenieria.sd.auctions.client.gui.LoginGUI;
 import es.deusto.ingenieria.sd.auctions.client.gui.MainWindow;
-import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeGUI;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
-import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeGUI;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
-import es.deusto.ingenieria.sd.auctions.client.gui.SessionWindow;
+import es.deusto.ingenieria.sd.auctions.client.gui.SessionGUI;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
 
-public class MainProgramWindow extends JFrame {
+public class MainProgramGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -33,7 +33,7 @@ public class MainProgramWindow extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainProgramWindow frame = new MainProgramWindow();
+					MainProgramGUI frame = new MainProgramGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class MainProgramWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MainProgramWindow() {
+	public MainProgramGUI() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -64,7 +64,7 @@ public class MainProgramWindow extends JFrame {
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
-		    	  RegisterWindow registerWindow = new RegisterWindow();
+		    	  RegisterGUI registerWindow = new RegisterGUI();
 				registerWindow.setVisible(true);
 		      }
 
@@ -90,7 +90,7 @@ public class MainProgramWindow extends JFrame {
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
 		    	  btnNewButton_8.setVisible(true);
-		    	  LoginWindow2 loginWindow = new LoginWindow2();
+		    	  LoginGUI loginWindow = new LoginGUI();
 		    	  loginWindow.setVisible(true);
 		      }
 
@@ -111,7 +111,7 @@ public class MainProgramWindow extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
-		    	  DistanceChallengeWindow distanceChallengeWindow = new DistanceChallengeWindow();
+		    	  DistanceChallengeGUI distanceChallengeWindow = new DistanceChallengeGUI();
 		    	  distanceChallengeWindow.setVisible(true);
 		      }
 
@@ -123,7 +123,7 @@ public class MainProgramWindow extends JFrame {
 		btnNewButton_3.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
-		    	  ActivityTimeChallengeWindow activityTimeChallengeWindow = new ActivityTimeChallengeWindow();
+		    	  ActivityTimeChallengeGUI activityTimeChallengeWindow = new ActivityTimeChallengeGUI();
 		    	  activityTimeChallengeWindow.setVisible(true);
 		      }
 
@@ -150,7 +150,7 @@ public class MainProgramWindow extends JFrame {
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
 		    	  
-		  					SessionWindow sessionWindow = new SessionWindow();
+		  					SessionGUI sessionWindow = new SessionGUI();
 		  					sessionWindow.setVisible(true);
 		  			
 		      }

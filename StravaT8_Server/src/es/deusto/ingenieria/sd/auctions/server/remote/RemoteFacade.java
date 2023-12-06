@@ -41,9 +41,9 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private void initilizeData() throws RemoteException {
 		// Create Users
 		
-		//register("Facebook", "asier@opendeusto.es", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "asier@opendeusto.es", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
 		register("Google", "kerman@opendeusto.es", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		//register("Facebook", "cubillo@opendeusto.es", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
+		register("Facebook", "cubillo@opendeusto.es", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
 	}
 	
 	@Override
@@ -108,7 +108,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 			if (!this.userMap.containsKey(user.getEmail())) {	
 				this.userMap.put(user.getEmail(), user);
 			} else {
-				throw new RemoteException("Email already on use!");
+				throw new RemoteException("Email already in use!");
 			}
 		} catch (Exception e) {
 			throw new RemoteException("Account email invalid");

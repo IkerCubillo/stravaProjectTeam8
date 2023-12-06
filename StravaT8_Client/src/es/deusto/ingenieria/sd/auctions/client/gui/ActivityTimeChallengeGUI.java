@@ -5,33 +5,31 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
+import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-
-public class DistanceChallengeWindow extends JFrame {
+public class ActivityTimeChallengeGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField nameField;
 	private JTextField startField;
 	private JTextField endField;
-	private JTextField distanceField;
+	private JTextField timeField;
 
 	/**
 	 * Launch the application.
@@ -40,7 +38,7 @@ public class DistanceChallengeWindow extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DistanceChallengeWindow frame = new DistanceChallengeWindow();
+					DistanceChallengeGUI frame = new DistanceChallengeGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,8 +50,7 @@ public class DistanceChallengeWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-public DistanceChallengeWindow() {
-		
+public ActivityTimeChallengeGUI() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -63,7 +60,7 @@ public DistanceChallengeWindow() {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Distance Challenge");
+		JLabel lblNewLabel = new JLabel("Activity Time Challenge");
 		lblNewLabel.setBounds(157, 11, 131, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -105,12 +102,11 @@ public DistanceChallengeWindow() {
 		contentPane.add(comboSport);
 		
 		JButton btnNewButton = new JButton("Set up");
-		btnNewButton.setBounds(250, 240, 89, 23);
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
-		    	  String distance = distanceField.getText();
-					float dist = Float.parseFloat(distance);
+		    	  String activityTime = timeField.getText();
+					float time = Float.parseFloat(activityTime);
 					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
 					String end = endField.getText();
@@ -128,24 +124,24 @@ public DistanceChallengeWindow() {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					MainProgram.mainWindow.setupDistanceChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
-							st, en, dist, comboSport.getSelectedItem().toString());
+					MainProgram.mainWindow.setupActivityTimeChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
+							st, en, time, comboSport.getSelectedItem().toString());
 					dispose();
 		      }
 
 		});
 		
-		contentPane.add(btnNewButton);
+		btnNewButton.setBounds(250, 240, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Distance");
+		JLabel lblNewLabel_5 = new JLabel("Time");
 		lblNewLabel_5.setBounds(47, 82, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		distanceField = new JTextField();
-		distanceField.setBounds(177, 82, 160, 20);
-		contentPane.add(distanceField);
-		distanceField.setColumns(10);
+		timeField = new JTextField();
+		timeField.setBounds(177, 81, 160, 20);
+		contentPane.add(timeField);
+		timeField.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Back");
 		btnNewButton_1.addActionListener(
@@ -155,4 +151,5 @@ public DistanceChallengeWindow() {
 		btnNewButton_1.setBounds(85, 240, 89, 23);
 		contentPane.add(btnNewButton_1);
 	}
+
 }

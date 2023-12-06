@@ -6,21 +6,11 @@ import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 
 public class LoginWindow {	
 	private LoginController controller;	
-	private String email = "fletch@opendeusto.es";
-	private String password = "password4";
-	private String account = "Google";
-	private String name = "fletch";
-	private Date birthdate = new Date(25,11,2023);
-	private float weight = 80;
-	private float height = 180;
-	private int mbpm = 120;
-	private int bpm = 70;
 
 	public LoginWindow(LoginController controller) {
 		this.controller = controller;
 	}
 	
-	//temporarily uses predefined user
 	public boolean login(String account, String email, String password) {		
 		System.out.println(" - Login into the server: '" + account + "' - '" + email + "' - '" + password + "' ...");
 //		String sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex(password);
@@ -39,7 +29,6 @@ public class LoginWindow {
 
 	}
 
-	//temporarily uses predefined user
 	public void register(String account, String email, String name, Date birthdate, float weight, float height, int mBPM, int BPM) {
 		System.out.println(" - Registering into the server: '" + account + "' - '" + email
 				+ "' - '" + name + "' - '" + birthdate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 

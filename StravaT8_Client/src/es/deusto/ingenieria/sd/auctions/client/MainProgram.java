@@ -27,7 +27,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		//args[2] = Service Name
 		serviceLocator.setService(args[0], args[1], args[2]);
 		
-		MainProgramWindow mpw = new MainProgramWindow();
+		MainProgramGUI mpw = new MainProgramGUI();
 		mpw.setVisible(true);
 	}
 }

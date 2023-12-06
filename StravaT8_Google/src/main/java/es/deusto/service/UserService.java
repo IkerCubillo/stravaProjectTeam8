@@ -1,10 +1,8 @@
 package es.deusto.service;
 
 import es.deusto.dao.UserRepository;
-import es.deusto.externals.EmailService;
 import es.deusto.model.User;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,20 +17,13 @@ public class UserService {
 		SUCCESS,
 		FAIL;
 	}
- 
-    @Autowired
-    private EmailService emailService;
         
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    /**  Returning User information */
-    public User getUserById(Long id) {
-    	Optional<User> result = userRepository.findById(id);
-    	return result.orElse(null);
-    }
     
-    public boolean getUserByEmail(String email) {
+    //strava methods
+    public boolean checkUserEmail(String email) {
     	Optional<User> result = userRepository.findByEmail(email);
     	if (result != null) {
     		return true;
@@ -50,18 +41,15 @@ public class UserService {
     	}
     }
     
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    
+    /**  Returning User information */
+    public User getUserById(Long id) {
+    	Optional<User> result = userRepository.findById(id);
+    	return result.orElse(null);
     }
     
-    /** Sending an Email to a User */
-    public String sendEmail(Long id) {
-        Optional<User> result = userRepository.findById(id);
-
-        return result.map(theUser -> {
-            emailService.sendSimpleMessage(theUser.getEmail(), "This is a Spring Boot Message");
-            return "Email successfully sent";
-        }).orElse("User does not exist. Operation aborted, check the user and try again");
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
      
     /** Creating a New User */

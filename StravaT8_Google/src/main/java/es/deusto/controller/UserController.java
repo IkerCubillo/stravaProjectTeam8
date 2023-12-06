@@ -20,16 +20,11 @@ public class UserController {
 
     private UserService userService;
     
-    // Example of constructor injection
     public UserController(UserService userService) {
         this.userService = userService;
     }
     
-    @GetMapping("/user/all")
-    public List<User> getUsers() {
-        return userService.getAllUsers();
-    }
-
+    //Strava methods
     @GetMapping("/user/details/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.getUserById(id);
@@ -38,25 +33,18 @@ public class UserController {
     @GetMapping("/user/email/{email}")
     public boolean userValidation(@PathVariable String email) {
     	log.info(email);
-        return userService.getUserByEmail(email);
+        return userService.checkUserEmail(email);
     }
     
     @GetMapping("/user/verify/{email}/{password}")
     public boolean passwordValidation(@PathVariable String email, @PathVariable String password) {
         return userService.checkUserPassword(email, password);
     }
-        
-    @GetMapping("/user/{id}/sendEmail")
-    public ResponseEntity<Object> sendEmail(@PathVariable Long id) {
-    	log.info("Sending an email to a User ...");
-       	switch (userService.sendEmail(id)) {
-       	    case "FAIL":
-    	    	return ResponseEntity.unprocessableEntity().body("User does not exist. Op. aborted, check user and try again");
-    	    
-   	   	    default:
-      	    	return ResponseEntity.ok("Default - Email successfully sent");	
-    	}
-   }
+    
+    @GetMapping("/user/all")
+    public List<User> getUsers() {
+        return userService.getAllUsers();
+    }
        
     @PostMapping("/user/create")
     public ResponseEntity<Object> createUser(@RequestBody User user) {

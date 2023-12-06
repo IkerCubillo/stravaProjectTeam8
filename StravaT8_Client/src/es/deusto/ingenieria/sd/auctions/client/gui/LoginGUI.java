@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
+import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
-public class LoginWindow2 extends JFrame {
+public class LoginGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -34,7 +34,7 @@ public class LoginWindow2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginWindow2 frame = new LoginWindow2();
+					LoginGUI frame = new LoginGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +46,7 @@ public class LoginWindow2 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public LoginWindow2() {
+	public LoginGUI() {
 		ServiceLocator serviceLocator = new ServiceLocator();
 		LoginController loginController = new LoginController(serviceLocator);
 		LoginWindow loginDialog = new LoginWindow(loginController);
@@ -90,6 +90,10 @@ public class LoginWindow2 extends JFrame {
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
+		    	  //if there is already a user logged in, logout before re-logging in
+		    	  if (MainProgram.loginController.getToken() != -1) {
+			    	  MainProgram.loginDialog.logout();
+		    	  }
 		    	  MainProgram.loginDialog.login(comboAccount.getSelectedItem().toString(), emailField.getText(), passwordField.getText());
 		    	  dispose();
 		      }

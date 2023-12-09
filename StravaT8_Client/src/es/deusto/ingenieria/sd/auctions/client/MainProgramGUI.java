@@ -1,179 +1,159 @@
 package es.deusto.ingenieria.sd.auctions.client;
 
-import java.awt.EventQueue;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
+import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeGUI;
+import es.deusto.ingenieria.sd.auctions.client.gui.ChallengesGUI;
+import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeGUI;
+import es.deusto.ingenieria.sd.auctions.client.gui.LoginGUI;
+import es.deusto.ingenieria.sd.auctions.client.gui.RegisterGUI;
+import es.deusto.ingenieria.sd.auctions.client.gui.SessionGUI;
+
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import es.deusto.ingenieria.sd.auctions.client.gui.RegisterGUI;
-import es.deusto.ingenieria.sd.auctions.client.gui.LoginGUI;
-import es.deusto.ingenieria.sd.auctions.client.gui.MainWindow;
-import es.deusto.ingenieria.sd.auctions.client.gui.DistanceChallengeGUI;
-import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
-import es.deusto.ingenieria.sd.auctions.client.gui.ActivityTimeChallengeGUI;
-import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
-import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
-import es.deusto.ingenieria.sd.auctions.client.gui.SessionGUI;
-import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-
-
 public class MainProgramGUI extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+    private static final long serialVersionUID = 1L;
+    private JPanel overallPanel;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainProgramGUI frame = new MainProgramGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    MainProgramGUI frame = new MainProgramGUI();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-	/**
-	 * Create the frame.
-	 */
-	public MainProgramGUI() {
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+    public MainProgramGUI() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 450, 300);
 
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("STRAVA");
-		lblNewLabel.setBounds(200, 11, 39, 14);
-		contentPane.add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("Register");
-		btnNewButton.setBounds(33, 70, 89, 23);
-		btnNewButton.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  RegisterGUI registerWindow = new RegisterGUI();
-				registerWindow.setVisible(true);
-		      }
+        overallPanel = new JPanel();
+        overallPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(overallPanel);
+        overallPanel.setLayout(new BoxLayout(overallPanel, BoxLayout.Y_AXIS));
 
-		});
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_8 = new JButton("Logout");
-		btnNewButton_8.setBounds(313, 70, 89, 23);
-		btnNewButton_8.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  MainProgram.loginDialog.logout();
-		    	  dispose();
-		      }
+        JLabel stravaLabel = new JLabel("STRAVA");
+        stravaLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        overallPanel.add(stravaLabel);
 
-		});
-		contentPane.add(btnNewButton_8);
-		btnNewButton_8.setVisible(false);
-		
-		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.setBounds(173, 70, 89, 23);
-		btnNewButton_1.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  btnNewButton_8.setVisible(true);
-		    	  LoginGUI loginWindow = new LoginGUI();
-		    	  loginWindow.setVisible(true);
-		      }
+        JPanel accountPanel = new JPanel();
+        accountPanel.setLayout(new BoxLayout(accountPanel, BoxLayout.Y_AXIS));
 
-		});
-		contentPane.add(btnNewButton_1);
-		
-		JLabel lblNewLabel_1 = new JLabel("Account");
-		lblNewLabel_1.setBounds(200, 38, 46, 14);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Functions");
-		lblNewLabel_2.setBounds(193, 123, 46, 14);
-		contentPane.add(lblNewLabel_2);
-		
-		JButton btnNewButton_2 = new JButton("Distance Challenge");
-		btnNewButton_2.setLocation(33, 159);
-		btnNewButton_2.setSize(123, 23);
-		btnNewButton_2.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  DistanceChallengeGUI distanceChallengeWindow = new DistanceChallengeGUI();
-		    	  distanceChallengeWindow.setVisible(true);
-		      }
+        JButton registerButton = new JButton("Register");
+        JButton logoutButton = new JButton("Logout");
+        JButton loginButton = new JButton("Login");
+        
+        registerButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, registerButton.getPreferredSize().height));
+        logoutButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, logoutButton.getPreferredSize().height));
+        loginButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, loginButton.getPreferredSize().height));
+        
+        registerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        logoutButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        loginButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-		});
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Activity Time Challenge");
-		btnNewButton_3.setBounds(269, 159, 155, 23);
-		btnNewButton_3.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  ActivityTimeChallengeGUI activityTimeChallengeWindow = new ActivityTimeChallengeGUI();
-		    	  activityTimeChallengeWindow.setVisible(true);
-		      }
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                RegisterGUI registerWindow = new RegisterGUI();
+                registerWindow.setVisible(true);
+            }
+        });
 
-		});
-		
-		contentPane.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("Accept Challenge");
-		btnNewButton_4.setLocation(33, 190);
-		btnNewButton_4.setSize(123, 23);
-		btnNewButton_4.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  MainProgram.mainWindow.acceptChallenge(MainProgram.loginController.getToken());
-		      }
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MainProgram.loginDialog.logout();
+                dispose();
+            }
+        });
 
-		});
-		contentPane.add(btnNewButton_4);
-		
-		JButton btnNewButton_5 = new JButton("Create session");
-		btnNewButton_5.setLocation(269, 190);
-		btnNewButton_5.setSize(155, 23);
-		btnNewButton_5.addActionListener(new ActionListener(){
-		      @Override
-		      public void actionPerformed(ActionEvent evt){
-		    	  
-		  					SessionGUI sessionWindow = new SessionGUI();
-		  					sessionWindow.setVisible(true);
-		  			
-		      }
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                logoutButton.setVisible(true);
+                LoginGUI loginWindow = new LoginGUI();
+                loginWindow.setVisible(true);
+            }
+        });
 
-		});
-		contentPane.add(btnNewButton_5);
-		
-		JButton btnNewButton_6 = new JButton("Get challenges");
-		btnNewButton_6.addActionListener(
-				(e) -> {
-					MainProgram.mainWindow.getChallenges();
-			});
-		btnNewButton_6.setBounds(33, 221, 123, 23);
-		contentPane.add(btnNewButton_6);
-		
-		JButton btnNewButton_7 = new JButton("Get training sessions");
-		btnNewButton_7.addActionListener(
-				(e) -> {
-					MainProgram.mainWindow.getTrainingSession(MainProgram.loginController.getToken());
-			});
-		btnNewButton_7.setBounds(269, 221, 155, 23);
-		contentPane.add(btnNewButton_7);
-		
-		
-	}
+        
+        accountPanel.add(registerButton);
+        accountPanel.add(logoutButton);
+        accountPanel.add(loginButton);
+        logoutButton.setVisible(false);
+
+        JLabel accountLabel = new JLabel("Functions");
+        accountLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        overallPanel.add(accountLabel);
+        overallPanel.add(accountPanel);
+
+        JLabel functionsLabel = new JLabel("Functions");
+        functionsLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        overallPanel.add(functionsLabel);
+
+        JPanel functionPanel = new JPanel();
+        functionPanel.setLayout(new GridLayout(0, 2));
+
+        JButton dChallengeButton = new JButton("Distance Challenge");
+        JButton tChallengeButton = new JButton("Activity Time Challenge");
+        JButton createSessionButton = new JButton("Create Session");
+        JButton getChallengesButton = new JButton("Get Active Challenges");
+        JButton getSessionsButton = new JButton("Get Training Sessions");
+
+        dChallengeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                DistanceChallengeGUI distanceChallengeWindow = new DistanceChallengeGUI();
+                distanceChallengeWindow.setVisible(true);
+            }
+        });
+
+        tChallengeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ActivityTimeChallengeGUI activityTimeChallengeWindow = new ActivityTimeChallengeGUI();
+                activityTimeChallengeWindow.setVisible(true);
+            }
+        });
+
+        createSessionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                SessionGUI sessionWindow = new SessionGUI();
+                sessionWindow.setVisible(true);
+            }
+        });
+
+        getChallengesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ChallengesGUI gui = new ChallengesGUI();
+                gui.setVisible(true);
+            }
+        });
+
+        getSessionsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MainProgram.mainWindow.getTrainingSession(MainProgram.loginController.getToken());
+            }
+        });
+
+        functionPanel.add(getChallengesButton);
+        functionPanel.add(getSessionsButton);
+        functionPanel.add(dChallengeButton);
+        functionPanel.add(createSessionButton);
+        functionPanel.add(tChallengeButton);
+
+        overallPanel.add(functionPanel);
+    }
 }

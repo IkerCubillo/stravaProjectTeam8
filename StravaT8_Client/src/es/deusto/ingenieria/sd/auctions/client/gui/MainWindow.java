@@ -57,10 +57,10 @@ public class MainWindow {
 
 	}
 
-	public boolean acceptChallenge(long token) {
+	public boolean acceptChallenge(long token, ChallengeDTO c) {
 
 		System.out.println(" - Accepting challenge ...");
-		return this.controller.acceptChallenge(token, this.controller.getChallenges().get(0));
+		return this.controller.acceptChallenge(token, c);
 	}
 
 	public void createSession(long token, String title, String sport, float distance, Date startDate,

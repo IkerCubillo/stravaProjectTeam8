@@ -1,17 +1,12 @@
 package es.deusto.ingenieria.sd.auctions.client;
 
 import java.rmi.RemoteException;
-import java.time.LocalTime;
-import java.util.Date;
-import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.gui.MainWindow;
 import es.deusto.ingenieria.sd.auctions.client.gui.LoginWindow;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
 	public class MainProgram {
 		public static ServiceLocator serviceLocator = new ServiceLocator();

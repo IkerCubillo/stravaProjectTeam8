@@ -27,7 +27,7 @@ public class FacebookService extends Thread {
 			this.out = new DataOutputStream(socket.getOutputStream());
 			this.start();
 		} catch (IOException e) {
-			System.err.println("# TranslationService - TCPConnection IO error:" + e.getMessage());
+			System.err.println("# FacebookService - TCPConnection IO error:" + e.getMessage());
 		}
 		initializeData();
 	}

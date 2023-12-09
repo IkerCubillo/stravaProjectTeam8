@@ -22,7 +22,6 @@ public class GoogleGateway implements IGateway {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	// Host and port NOT hard-coded: Defined in application.properties
 	@Value("${spring.server.url}")
 	private String serverURL;
 
@@ -48,11 +47,11 @@ public class GoogleGateway implements IGateway {
 
 	public boolean userValidation(String email) {
 		boolean verified = false;
-		System.out.println("***********GoogleGateway: " + serverURL + ":" + String.valueOf(serverPort) + "/user/email/{email}");
+		System.out.println("- Verifying Google email from '" + serverURL + ":" + String.valueOf(serverPort) + "/user/email/{email}' -> '" + email + "'");
 		try {
 			verified = restTemplate.getForObject(serverURL + ":" + String.valueOf(serverPort) + "/user/email/{email}",
 					boolean.class, email);
-			System.out.println("***************Response: " + verified);
+			System.out.println("Recieving verification from '" + serverURL + ":" + String.valueOf(serverPort) + "/user/email/{email}' -> '" + verified + "'");
 		} catch (Exception e) {
 			System.out.println(e);
 			return false;
@@ -61,9 +60,11 @@ public class GoogleGateway implements IGateway {
 	}
 
 	public boolean passwordValidation(String email, String password) {
+		System.out.println("- Verifying Google password from '" + serverURL + ":" + String.valueOf(serverPort) + "/user/verify/{email}/{password}' -> '" + email + "' : '" + password + "'");
 		boolean verified = restTemplate.getForObject(
 				serverURL + ":" + String.valueOf(serverPort) + "/user/verify/{email}/{password}", boolean.class, email,
 				password);
+		System.out.println("Recieving verification from '" + serverURL + ":" + String.valueOf(serverPort) + "/user/verify/{email}/{password}' -> '" + verified + "'");
 		return verified;
 	}
 }

@@ -35,6 +35,5 @@ public class LoginWindow {
 				+ "' - '" + BPM + "' ...");
 		this.controller.register(account, email, name, birthdate, weight, height, mBPM, BPM);
 		System.out.println("\t* Registration success!");
-		
 	}
 }

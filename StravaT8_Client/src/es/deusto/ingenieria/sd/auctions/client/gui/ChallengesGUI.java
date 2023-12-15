@@ -24,7 +24,6 @@ public class ChallengesGUI extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // set challenges
         challenges = MainProgram.mainWindow.getChallenges();
 
         // Display challenges in a combo box
@@ -34,7 +33,7 @@ public class ChallengesGUI extends JFrame {
         }
         panel.add(challengeComboBox, BorderLayout.NORTH);
 
-        // Button panel with FlowLayout
+        // Button panel
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
         // Accept Challenge button
@@ -61,7 +60,6 @@ public class ChallengesGUI extends JFrame {
         });
         buttonPanel.add(backButton);
 
-        // Add button panel to the main panel
         panel.add(buttonPanel, BorderLayout.CENTER);
 
         getContentPane().add(panel);

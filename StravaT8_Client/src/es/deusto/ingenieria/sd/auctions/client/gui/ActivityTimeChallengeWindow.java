@@ -17,12 +17,12 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
+import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
-public class ActivityTimeChallengeGUI extends JFrame {
+public class ActivityTimeChallengeWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -38,7 +38,7 @@ public class ActivityTimeChallengeGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DistanceChallengeGUI frame = new DistanceChallengeGUI();
+					DistanceChallengeWindow frame = new DistanceChallengeWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class ActivityTimeChallengeGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-public ActivityTimeChallengeGUI() {
+public ActivityTimeChallengeWindow() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -68,11 +68,11 @@ public ActivityTimeChallengeGUI() {
 		lblNewLabel_1.setBounds(47, 41, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Start Date (dd-MM-yyyy)");
+		JLabel lblNewLabel_2 = new JLabel("Start");
 		lblNewLabel_2.setBounds(47, 123, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("End Date (dd-MM-yyyy)");
+		JLabel lblNewLabel_3 = new JLabel("End");
 		lblNewLabel_3.setBounds(47, 164, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -134,7 +134,7 @@ public ActivityTimeChallengeGUI() {
 		btnNewButton.setBounds(250, 240, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Total Activity Time (minutes)");
+		JLabel lblNewLabel_5 = new JLabel("Time");
 		lblNewLabel_5.setBounds(47, 82, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		

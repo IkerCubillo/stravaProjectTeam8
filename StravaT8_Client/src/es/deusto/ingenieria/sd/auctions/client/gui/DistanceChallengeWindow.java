@@ -5,31 +5,33 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
+import es.deusto.ingenieria.sd.auctions.client.MainProgramWindow;
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
-public class ActivityTimeChallengeGUI extends JFrame {
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+
+public class DistanceChallengeWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField nameField;
 	private JTextField startField;
 	private JTextField endField;
-	private JTextField timeField;
+	private JTextField distanceField;
 
 	/**
 	 * Launch the application.
@@ -38,7 +40,7 @@ public class ActivityTimeChallengeGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DistanceChallengeGUI frame = new DistanceChallengeGUI();
+					DistanceChallengeWindow frame = new DistanceChallengeWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +52,8 @@ public class ActivityTimeChallengeGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-public ActivityTimeChallengeGUI() {
+public DistanceChallengeWindow() {
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -60,7 +63,7 @@ public ActivityTimeChallengeGUI() {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Activity Time Challenge");
+		JLabel lblNewLabel = new JLabel("Distance Challenge");
 		lblNewLabel.setBounds(157, 11, 131, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -68,11 +71,11 @@ public ActivityTimeChallengeGUI() {
 		lblNewLabel_1.setBounds(47, 41, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Start Date (dd-MM-yyyy)");
+		JLabel lblNewLabel_2 = new JLabel("Start");
 		lblNewLabel_2.setBounds(47, 123, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("End Date (dd-MM-yyyy)");
+		JLabel lblNewLabel_3 = new JLabel("End");
 		lblNewLabel_3.setBounds(47, 164, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -102,11 +105,12 @@ public ActivityTimeChallengeGUI() {
 		contentPane.add(comboSport);
 		
 		JButton btnNewButton = new JButton("Set up");
+		btnNewButton.setBounds(250, 240, 89, 23);
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
-		    	  String activityTime = timeField.getText();
-					float time = Float.parseFloat(activityTime);
+		    	  String distance = distanceField.getText();
+					float dist = Float.parseFloat(distance);
 					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
 					String end = endField.getText();
@@ -124,24 +128,24 @@ public ActivityTimeChallengeGUI() {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					MainProgram.mainWindow.setupActivityTimeChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
-							st, en, time, comboSport.getSelectedItem().toString());
+					MainProgram.mainWindow.setupDistanceChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
+							st, en, dist, comboSport.getSelectedItem().toString());
 					dispose();
 		      }
 
 		});
 		
-		btnNewButton.setBounds(250, 240, 89, 23);
+		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Total Activity Time (minutes)");
+		JLabel lblNewLabel_5 = new JLabel("Distance");
 		lblNewLabel_5.setBounds(47, 82, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		timeField = new JTextField();
-		timeField.setBounds(177, 81, 160, 20);
-		contentPane.add(timeField);
-		timeField.setColumns(10);
+		distanceField = new JTextField();
+		distanceField.setBounds(177, 82, 160, 20);
+		contentPane.add(distanceField);
+		distanceField.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Back");
 		btnNewButton_1.addActionListener(
@@ -151,5 +155,4 @@ public ActivityTimeChallengeGUI() {
 		btnNewButton_1.setBounds(85, 240, 89, 23);
 		contentPane.add(btnNewButton_1);
 	}
-
 }

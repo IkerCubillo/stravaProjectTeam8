@@ -71,11 +71,11 @@ public DistanceChallengeGUI() {
 		lblNewLabel_1.setBounds(47, 41, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Start");
+		JLabel lblNewLabel_2 = new JLabel("Start Date (dd-MM-yyyy)");
 		lblNewLabel_2.setBounds(47, 123, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("End");
+		JLabel lblNewLabel_3 = new JLabel("End Date (dd-MM-yyyy)");
 		lblNewLabel_3.setBounds(47, 164, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -138,7 +138,7 @@ public DistanceChallengeGUI() {
 		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Distance");
+		JLabel lblNewLabel_5 = new JLabel("Distance (m)");
 		lblNewLabel_5.setBounds(47, 82, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		

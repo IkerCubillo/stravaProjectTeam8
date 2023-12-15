@@ -87,8 +87,8 @@ public class MainProgramGUI extends JFrame {
 
         
         accountPanel.add(registerButton);
-        accountPanel.add(logoutButton);
         accountPanel.add(loginButton);
+        accountPanel.add(logoutButton);
         logoutButton.setVisible(false);
 
         JLabel accountLabel = new JLabel("Functions");

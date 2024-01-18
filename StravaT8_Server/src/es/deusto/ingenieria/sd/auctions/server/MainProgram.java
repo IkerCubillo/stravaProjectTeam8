@@ -10,6 +10,7 @@ public class MainProgram {
 	private static int socketPort;
 	private static String serverIP;
 
+	@SuppressWarnings({ "removal", "deprecation" })
 	public static void main(String[] args) {
 		// Activate Security Manager. It is needed for RMI.
 		if (System.getSecurityManager() == null) {

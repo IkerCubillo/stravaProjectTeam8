@@ -22,6 +22,7 @@ public class MainAppService {
 	public List<Challenge> listChallenges = new ArrayList<Challenge>();
 
 	// TODO: remove when DAO Pattern is implemented
+	@SuppressWarnings("deprecation")
 	private void initilizeData() {		
 		// challenges
 		Challenge cha1 = new Challenge();

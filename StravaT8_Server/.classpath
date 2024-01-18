@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="lib/spring-core-6.0.11.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-6.0.11.jar"/>
 	<classpathentry kind="lib" path="lib/spring-web-6.0.11.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/StravaT8_MailSender"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

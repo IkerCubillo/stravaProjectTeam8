@@ -15,8 +15,9 @@ public class FacebookService extends Thread {
 	private DataInputStream in;
 	private DataOutputStream out;
 	private Socket fbSocket;
-	private static int serverPort;
+	
 	private static String DELIMITER = "#";
+	
 	public Map<String, String> userMap = new HashMap<>();
 
 	public FacebookService(Socket socket) {

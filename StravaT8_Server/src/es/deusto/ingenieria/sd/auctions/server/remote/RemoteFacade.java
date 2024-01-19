@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import es.deusto.ingenieria.sd.auctions.server.data.dao.UserDAO;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
@@ -99,6 +99,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 			// checking user exists in user map
 			if (!this.userMap.containsKey(user.getEmail())) {	
 				this.userMap.put(user.getEmail(), user);
+				UserDAO.getInstance().save(user);
 			} else {
 				throw new RemoteException("Email already in use!");
 			}

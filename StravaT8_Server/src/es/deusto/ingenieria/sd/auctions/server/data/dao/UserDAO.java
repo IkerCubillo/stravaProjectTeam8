@@ -41,7 +41,7 @@ public class UserDAO extends DataAccessObject implements IDataAccessObject<User>
 			
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("  $ Error storing User: " + ex.getMessage());
+			System.out.println("  $ Error storing user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -64,7 +64,7 @@ public class UserDAO extends DataAccessObject implements IDataAccessObject<User>
 			
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("  $ Error removing User: " + ex.getMessage());
+			System.out.println("  $ Error removing user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -116,7 +116,7 @@ public class UserDAO extends DataAccessObject implements IDataAccessObject<User>
 			
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("  $ Error querying User by email: " + ex.getMessage());
+			System.out.println("  $ Error querying user by email: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

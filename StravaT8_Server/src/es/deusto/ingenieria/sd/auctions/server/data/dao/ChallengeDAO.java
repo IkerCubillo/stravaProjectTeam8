@@ -91,7 +91,7 @@ private static ChallengeDAO instance;
 						
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("  $ Error querying challenges: " + ex.getMessage());
+			System.out.println("  $ Error retrieving challenges: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

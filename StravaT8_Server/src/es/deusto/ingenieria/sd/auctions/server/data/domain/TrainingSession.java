@@ -21,6 +21,7 @@ public class TrainingSession implements Serializable {
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
+	@ManyToOne
 	private String user;
 	
 	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, String user) {

@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import es.deusto.ingenieria.sd.auctions.server.data.dao.TrainingSessionDAO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
 @Entity
@@ -112,7 +113,9 @@ public class User {
 	}
 
 	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
-		return userSessions.add(new TrainingSession(title, sport, distance, startDate, timeStart, duration));
+		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration);
+		TrainingSessionDAO.getInstance().save(tr);
+		return userSessions.add(tr);
 	}
 	
 	public List<TrainingSession> getSessions() {

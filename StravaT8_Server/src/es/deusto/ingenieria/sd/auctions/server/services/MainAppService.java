@@ -9,38 +9,16 @@ import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+import es.deusto.ingenieria.sd.auctions.server.data.dao.ChallengeDAO;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 
 public class MainAppService {
 
 	private static MainAppService instance;
 
-	public MainAppService() {
-		this.initilizeData();
-	};
+	public MainAppService() { }
 
 	public List<Challenge> listChallenges = new ArrayList<Challenge>();
-
-	// TODO: remove when DAO Pattern is implemented
-	@SuppressWarnings("deprecation")
-	private void initilizeData() {		
-		// challenges
-		Challenge cha1 = new Challenge();
-		cha1.setName("Test1");
-		cha1.setStart(new Date(1, 1, 2023));
-		cha1.setEnd(new Date(1, 2, 2023));
-		cha1.setMetric(100);
-		cha1.setSportType("Swimming");
-		listChallenges.add(cha1);
-
-		Challenge cha2 = new Challenge();
-		cha1.setName("Test1");
-		cha1.setStart(new Date(2, 1, 2023));
-		cha1.setEnd(new Date(2, 2, 2023));
-		cha1.setMetric(200);
-		cha1.setSportType("Flying");
-		listChallenges.add(cha2);
-	}
 
 	public boolean setUpDistanceChallenge(String name, Date start, Date end, Float metric, String sportType) {
 
@@ -63,6 +41,7 @@ public class MainAppService {
 
 		} else {
 			listChallenges.add(distCha);
+			ChallengeDAO.getInstance().save(distCha);
 			return true;
 		}
 
@@ -90,6 +69,7 @@ public class MainAppService {
 		} else {
 
 			listChallenges.add(actCha);
+			ChallengeDAO.getInstance().save(actCha);
 			return true;
 		}
 
@@ -97,7 +77,7 @@ public class MainAppService {
 
 	public List<Challenge> getChallenges() {
 
-		return listChallenges;
+		return ChallengeDAO.getInstance().getAll();
 	}
 
 	public boolean acceptChallenge(User user, Challenge c) {

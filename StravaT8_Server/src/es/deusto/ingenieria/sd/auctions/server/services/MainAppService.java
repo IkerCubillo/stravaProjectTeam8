@@ -62,6 +62,7 @@ public class MainAppService {
 		actCha.setMetric(metric);
 
 		actCha.setSportType(sportType);
+		
 
 		if (actCha.getName() == null || actCha.getStart() == null || actCha.getEnd() == null
 				|| actCha.getSportType() == null) {

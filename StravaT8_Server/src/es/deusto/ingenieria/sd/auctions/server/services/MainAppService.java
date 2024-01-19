@@ -10,6 +10,8 @@ import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dao.ChallengeDAO;
+import es.deusto.ingenieria.sd.auctions.server.data.dao.TrainingSessionDAO;
+import es.deusto.ingenieria.sd.auctions.server.data.dao.UserDAO;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 
 public class MainAppService {
@@ -92,7 +94,7 @@ public class MainAppService {
 
 	public List<TrainingSession> getTrainingSessions(User user) {
 
-		return user.getSessions();
+		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getSessions());
 	}
 
 	public static MainAppService getInstance() {

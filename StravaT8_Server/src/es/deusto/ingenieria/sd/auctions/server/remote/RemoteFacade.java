@@ -34,17 +34,9 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	public RemoteFacade() throws RemoteException {
 		super();	
-		this.initilizeData();
 	}
 
-	// TODO: remove when DAO Pattern is implemented
-	private void initilizeData() throws RemoteException {
-		// Create Users
-		
-		register("Facebook", "asier@opendeusto.es", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Google", "kerman@opendeusto.es", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Facebook", "cubillo@opendeusto.es", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-	}
+	
 	
 	@Override
 	public synchronized long login(String account, String email, String password) throws RemoteException {

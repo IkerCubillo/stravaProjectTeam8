@@ -17,7 +17,8 @@ public class ChallengesGUI extends JFrame {
     private List<ChallengeDTO> challenges;
 
     public ChallengesGUI() {
-        setTitle("Challenge Selection");
+        
+    	setTitle("Challenge Selection");
         setSize(300, 175);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

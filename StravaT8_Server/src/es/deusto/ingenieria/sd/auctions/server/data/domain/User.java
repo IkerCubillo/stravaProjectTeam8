@@ -32,6 +32,7 @@ public class User {
 	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
+	private ArrayList<Float> challengesPercentages = new ArrayList<Float>();
 	
 	public User(String account, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
 		this.email = email;

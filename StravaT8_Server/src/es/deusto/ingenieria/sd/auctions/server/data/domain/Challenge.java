@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+import es.deusto.ingenieria.sd.sms.server.gateway.MailSender;
 
 
 //This class implements DTO pattern
@@ -23,6 +24,7 @@ public class Challenge implements Serializable {
 		this.end = end;
 		this.metric = metric;
 		this.sportType = sportType;
+		new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
 	}
 	
 	public Challenge(ChallengeDTO c) {

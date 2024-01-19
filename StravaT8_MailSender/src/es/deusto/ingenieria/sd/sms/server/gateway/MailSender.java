@@ -17,7 +17,7 @@ public class MailSender {
 
 	private final String host = "smtp.gmail.com";
 	private final String port = "587";
-	private final String subject = "Testing the Java MailSender: Sending a message by email ...";
+	private final String subject = "New challenge info";
 	private String to;
 	
 	private Properties props;

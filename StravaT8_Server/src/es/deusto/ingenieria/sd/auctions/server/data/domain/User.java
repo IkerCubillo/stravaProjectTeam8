@@ -5,9 +5,18 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
+@Entity
 public class User {
+	
+	@Id
 	private String email;
 	private String name;
 	private String account;
@@ -17,7 +26,10 @@ public class User {
 	private float height;
 	private int mBPM;
 	private int bpm;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
 	
 	public User(String account, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {

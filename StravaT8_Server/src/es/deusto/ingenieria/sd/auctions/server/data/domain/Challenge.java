@@ -7,10 +7,17 @@ import java.util.Date;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.sms.server.gateway.MailSender;
 
-
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 //This class implements DTO pattern
+@Entity
 public class Challenge implements Serializable {
 	//This attribute is needed to implement the "Serializable" interface.
+	@Id
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private Date start;

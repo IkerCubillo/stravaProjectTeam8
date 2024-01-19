@@ -21,14 +21,16 @@ public class TrainingSession implements Serializable {
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
+	private String user;
 	
-	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
+	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, String user) {
 		this.title = title;
 		this.sport = sport;
 		this.distance = distance;
 		this.startDate = startDate;
 		this.startTime = timeStart;
 		this.duration = duration;
+		this.user = user;
 	}
 	
 	public TrainingSession() {
@@ -72,6 +74,14 @@ public class TrainingSession implements Serializable {
 		this.duration = duration;
 	}
 	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+	
 	@Override
 	public String toString() {
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-YY - hh:mm");
@@ -90,6 +100,8 @@ public class TrainingSession implements Serializable {
 		result.append(this.duration);
 		result.append("| Sport: ");
 		result.append(this.sport);
+		result.append("| User: ");
+		result.append(this.user);
 		
 		return result.toString();
 	}

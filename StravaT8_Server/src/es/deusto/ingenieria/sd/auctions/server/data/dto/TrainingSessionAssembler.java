@@ -27,6 +27,7 @@ public class TrainingSessionAssembler {
 		dto.setStartDate(trainingSession.getStartDate());
 		dto.setStartTime(trainingSession.getStartTime());
 		dto.setDuration(trainingSession.getDuration());
+		dto.setUser(trainingSession.getUser());
 		
 		return dto;
 	}

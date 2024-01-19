@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import es.deusto.ingenieria.sd.auctions.server.data.dao.UserDAO;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
@@ -34,17 +34,9 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	public RemoteFacade() throws RemoteException {
 		super();	
-		this.initilizeData();
 	}
 
-	// TODO: remove when DAO Pattern is implemented
-	private void initilizeData() throws RemoteException {
-		// Create Users
-		
-		register("Facebook", "asier@opendeusto.es", "Asier", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Google", "kerman@opendeusto.es", "Kerman", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-		register("Facebook", "cubillo@opendeusto.es", "Iker", new Date(1 / 1 / 2003), 80, 180, 100, 100);
-	}
+	
 	
 	@Override
 	public synchronized long login(String account, String email, String password) throws RemoteException {
@@ -107,6 +99,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 			// checking user exists in user map
 			if (!this.userMap.containsKey(user.getEmail())) {	
 				this.userMap.put(user.getEmail(), user);
+				UserDAO.getInstance().save(user);
 			} else {
 				throw new RemoteException("Email already in use!");
 			}

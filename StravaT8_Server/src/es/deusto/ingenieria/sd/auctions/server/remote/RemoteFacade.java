@@ -43,8 +43,14 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		System.out.println(" * RemoteFacade login(): " + account + " / " + email + " / " + password);
 				
 		//If login() success user is stored in the Server State
-		if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
-			User user = UserDAO.getInstance().find(email);
+		if (this.userMap.containsKey(email)) {
+			User user = this.userMap.get(email);
+			
+			//////////////////////////////
+			//if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
+			//	User user = UserDAO.getInstance().find(email);
+			//////////////////////////////
+			
 			// Check if password is correct
 			boolean correctPassword = loginService.login(email, password, account);
 			if(correctPassword) {
@@ -99,6 +105,11 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 			// checking user exists in user map
 			if (!this.userMap.containsKey(user.getEmail())) {	
 				this.userMap.put(user.getEmail(), user);
+			///////////////////////////////////////////////////////////////
+			////if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
+			////	UserDAO.getInstance().save(user);
+			///////////////////////////////////////////////////////////	
+				
 				UserDAO.getInstance().save(user);
 			} else {
 				throw new RemoteException("Email already in use!");

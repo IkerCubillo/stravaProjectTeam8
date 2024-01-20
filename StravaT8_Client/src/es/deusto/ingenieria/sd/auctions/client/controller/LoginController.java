@@ -41,10 +41,10 @@ public class LoginController {
 		return token;
 	}
 
-	public boolean register(String account, String email, String name, Date birthdate, float weight, float height,
+	public boolean register(String email, String name, String account, Date birthdate, float weight, float height,
 			int mbpm, int bpm) {
 		try {
-			this.serviceLocator.getService().register(account, email, name, birthdate, weight, height, mbpm, bpm);
+			this.serviceLocator.getService().register(email, name, account, birthdate, weight, height, mbpm, bpm);
 			return true;
 		} catch (RemoteException e) {
 			System.out.println("# Error during registration: " + e);

@@ -21,7 +21,6 @@ public class User {
 	private String email;
 	private String name;
 	private String account;
-	private String password;
 	private Date birthDate;
 	private float weight;
 	private float height;
@@ -29,14 +28,15 @@ public class User {
 	private int bpm;
 	
 
-	
-
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
-	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
-	private ArrayList<Float> challengesPercentages = new ArrayList<Float>();
 	
-	public User(String account, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {
+	//private ArrayList<Float> challengesPercentages = new ArrayList<Float>();
+		
+	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
+	
+	
+	public User(String email, String name, String account, Date birthDate, float weight, float height, int mBPM, int bpm) {
 		this.email = email;
 		this.name = name;
 		this.account = account;
@@ -51,10 +51,6 @@ public class User {
 		
 	}
 	
-	public String getName() {
-		return name;
-	}
-	
 	public String getEmail() {
 		return email;
 	}
@@ -63,6 +59,15 @@ public class User {
 		this.email = email;
 	}
 
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public String getAccount() {
 		return account;
 	}
@@ -81,10 +86,6 @@ public class User {
 
 	public float getWeight() {
 		return weight;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 	public void setWeight(float weight) {
@@ -140,13 +141,5 @@ public class User {
 		ArrayList<Challenge> result = new ArrayList<Challenge>();
 		result = userChallenges;
 		return result;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 }

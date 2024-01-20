@@ -162,7 +162,7 @@ public RegisterGUI() {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					MainProgram.loginDialog.register(comboAccount.getSelectedItem().toString(), emailField.getText(), nameField.getText(), 
+					MainProgram.loginDialog.register(emailField.getText(), nameField.getText(), comboAccount.getSelectedItem().toString(), 
 							bd, w, h, m, b);
 					dispose();
 		      }

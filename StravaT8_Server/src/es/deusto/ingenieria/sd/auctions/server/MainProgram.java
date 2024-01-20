@@ -56,8 +56,7 @@ public class MainProgram {
 			user0.setWeight(80);
 			user0.setHeight(180);
 			user0.setBpm(100);
-			user0.setmBPM(100);
-			user0.setPassword("password");			
+			user0.setmBPM(100);		
 							
 			User user1 = new User();
 			user1.setEmail("kerman.bruna@opendeusto.es");
@@ -68,7 +67,6 @@ public class MainProgram {
 			user1.setHeight(180);
 			user1.setBpm(100);
 			user1.setmBPM(100);
-			user1.setPassword("password");
 			
 			User user2 = new User();
 			user2.setEmail("i.cubillo@opendeusto.es");
@@ -78,8 +76,7 @@ public class MainProgram {
 			user2.setWeight(80);
 			user2.setHeight(180);
 			user2.setBpm(100);
-			user2.setmBPM(100);
-			user2.setPassword("password");			
+			user2.setmBPM(100);		
 			
 			//Store Users in the DB
 			UserDAO.getInstance().save(user0);

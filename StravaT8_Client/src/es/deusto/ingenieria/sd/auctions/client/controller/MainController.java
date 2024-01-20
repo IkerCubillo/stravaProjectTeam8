@@ -29,15 +29,24 @@ public class MainController{
 		}
 	}
 	
-	public List<ChallengeDTO> getUserChallenges() {
+	public List<ChallengeDTO> getUserChallenges(long token) {
 		try {
-			return this.ServiceLocator.getService().getUserChallenges();
+			return this.ServiceLocator.getService().getUserChallenges(token);
 		} catch (RemoteException e) {
 			System.out.println("# Error getting all challenges: " + e);
 			return null;
 		}
 	}
-
+	
+	public boolean acceptChallenge(long token, ChallengeDTO c) {
+		try {
+			return this.ServiceLocator.getService().acceptChallenge(token, c);
+		} catch (RemoteException e) {
+			System.err.println("# Error accepting challenge: " + e);	
+			return false;
+		}
+	}
+	
 	public List<TrainingSessionDTO> getTrainingSessions(long token) {
 		try {
 			return this.ServiceLocator.getService().getTrainingSessions(token);
@@ -61,15 +70,6 @@ public class MainController{
 			return this.ServiceLocator.getService().setupActivityTimeChallenge(token, name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error setting up activity challenge: " + e);
-			return false;
-		}
-	}
-	
-	public boolean acceptChallenge(long token, ChallengeDTO c) {
-		try {
-			return this.ServiceLocator.getService().acceptChallenge(token, c);
-		} catch (RemoteException e) {
-			System.err.println("# Error accepting challenge: " + e);	
 			return false;
 		}
 	}

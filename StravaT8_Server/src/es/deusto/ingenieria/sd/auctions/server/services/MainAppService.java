@@ -17,11 +17,50 @@ import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
 public class MainAppService {
 
 	private static MainAppService instance;
-
+	
 	public MainAppService() { }
+	
+	public static MainAppService getInstance() {
 
-	public List<Challenge> listChallenges = new ArrayList<Challenge>();
+		if(instance == null) {
+			instance = new MainAppService();
+		}
+		return instance;
+	}
+	
+	public List<Challenge> getChallenges() {
+		return ChallengeDAO.getInstance().getAll();
+	}
+	
+	public List<Challenge> getActiveChallenges(User user) {
+		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getChallenges());
+	}
+	
+	public boolean acceptChallenge(Challenge c) {
+		try {
+			ChallengeDAO.getInstance().save(c);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public List<TrainingSession> getTrainingSessions(User user) {
 
+		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getTrainingSessions());
+	}
+	
+	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
+			LocalTime startTime, float duration) {
+		try {
+			TrainingSession tr = new TrainingSession(title, sport, distance, startDate, startTime, duration, user);
+			TrainingSessionDAO.getInstance().save(tr);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
 	public boolean setUpDistanceChallenge(String name, Date start, Date end, Float metric, String sportType) {
 
 		Challenge distCha = new Challenge();
@@ -42,7 +81,6 @@ public class MainAppService {
 			return false;
 
 		} else {
-			listChallenges.add(distCha);
 			ChallengeDAO.getInstance().save(distCha);
 			return true;
 		}
@@ -70,51 +108,14 @@ public class MainAppService {
 			return false;
 
 		} else {
-
-			listChallenges.add(actCha);
 			ChallengeDAO.getInstance().save(actCha);
 			return true;
 		}
 
 	}
 
-	public List<Challenge> getChallenges() {
-
-		return ChallengeDAO.getInstance().getAll();
-	}
 	
-	public List<Challenge> getChallenge2() {
-		
-		return ChallengeDAO.getInstance().getAll();
-	}
+	
 
-	public boolean acceptChallenge(User user, Challenge c) {
-
-		return user.acceptChallenge(c);
-	}
-
-	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
-			LocalTime startTime, float duration) {
-		try {
-			TrainingSession tr = new TrainingSession(title, sport, distance, startDate, startTime, duration, user);
-			TrainingSessionDAO.getInstance().save(tr);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
-	public List<TrainingSession> getTrainingSessions(User user) {
-
-		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getSessions());
-	}
-
-	public static MainAppService getInstance() {
-
-		if(instance == null) {
-			instance = new MainAppService();
-		}
-		return instance;
-	}
-
+	
 }

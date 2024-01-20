@@ -25,9 +25,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private static final long serialVersionUID = 1L;
 
 	//Data structure for manage Server State
-	private Map<Long, User> serverState = new HashMap<>();
-	public Map<String, User> userMap = new HashMap<>();
-	
+	private Map<Long, User> serverState = new HashMap<>();	
 	
 	private LoginAppService loginService = LoginAppService.getInstance(); // To create on server services
 	private MainAppService mainService = MainAppService.getInstance();
@@ -43,13 +41,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		System.out.println(" * RemoteFacade login(): " + account + " / " + email + " / " + password);
 				
 		//If login() success user is stored in the Server State
-		if (this.userMap.containsKey(email)) {
-			User user = this.userMap.get(email);
-			
-			//////////////////////////////
-			//if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
-			//	User user = UserDAO.getInstance().find(email);
-			//////////////////////////////
+		if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
+			User user = UserDAO.getInstance().find(email);
 			
 			// Check if password is correct
 			boolean correctPassword = loginService.login(email, password, account);
@@ -82,6 +75,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 	
+	@Override
 	public void register(String account, String email, String name, Date birthDate, float weight, float height,
 			int mBPM, int bpm) throws RemoteException {
 		System.out.println(" * RemoteFacade register(): " + account + "' - '" + email 
@@ -103,13 +97,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		try {
 			loginService.register(email, account);
 			// checking user exists in user map
-			if (!this.userMap.containsKey(user.getEmail())) {	
-				this.userMap.put(user.getEmail(), user);
-			///////////////////////////////////////////////////////////////
-			////if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
-			////	UserDAO.getInstance().save(user);
-			///////////////////////////////////////////////////////////	
-				
+			
+			if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
 				UserDAO.getInstance().save(user);
 			} else {
 				throw new RemoteException("Email already in use!");
@@ -118,7 +107,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 			throw new RemoteException("Account email invalid");
 		}
 	}
-
+	
+	@Override
 	public List<ChallengeDTO> getChallenges() throws RemoteException {
 
 		System.out.println(" * RemoteFacade getChallenges()");
@@ -134,38 +124,28 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 	}
 	
-	public List<ChallengeDTO> getUserChallenges() throws RemoteException {
-		
-		System.out.println(" * RemoteFacade getChallenges()");
-		
-		
-		List<Challenge> challenges = User.getUserChallenges();
-		
-		if (challenges != null) {
-			//Convert domain object to DTO
-			return ChallengeAssembler.getInstance().challengeToDTO(challenges);
-		} else {
-			throw new RemoteException("getChallenges() fails!");
-		}
-	}
-
 	@Override
-
-	public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException {
-
-		if (this.serverState.containsKey(token)) {						
-				return TrainingSessionAssembler.getInstance().trainingSessionToDTO(mainService.getTrainingSessions(this.serverState.get(token)));
+	public List<ChallengeDTO> getUserChallenges(long token) throws RemoteException {
+		
+		if (this.serverState.containsKey(token)) {		
+			List<Challenge> challenges = mainService.getActiveChallenges(this.serverState.get(token));
+			
+			if (challenges != null) {
+				//Convert domain object to DTO
+				return ChallengeAssembler.getInstance().challengeToDTO(challenges);
+			} else {
+				throw new RemoteException("getChallenges() fails!");
+			}
 		} else {
-			throw new RemoteException("You must be logged in to see training sessions");
+			throw new RemoteException("You must be logged in to see your active challenges");
 		}
 	}
-
-
-
+	
+	@Override
 	public boolean acceptChallenge(long token, ChallengeDTO c) throws RemoteException {
 
 		if (this.serverState.containsKey(token)) {						
-			if (mainService.acceptChallenge(this.serverState.get(token), new Challenge(c))) {
+			if (mainService.acceptChallenge(new Challenge(c, this.serverState.get(token)))) {
 				return true;
 			} else {
 				throw new RemoteException("acceptChallenge() fails!");
@@ -175,8 +155,23 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 
-
-
+	@Override
+	public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException {
+		if (this.serverState.containsKey(token)) {		
+			List<TrainingSession> trainingSessions = mainService.getTrainingSessions(this.serverState.get(token));
+			
+			if (trainingSessions != null) {
+				//Convert domain object to DTO
+				return TrainingSessionAssembler.getInstance().trainingSessionToDTO(trainingSessions);
+			} else {
+				throw new RemoteException("getTrainingSessions() fails!");
+			}
+		} else {
+			throw new RemoteException("You must be logged in to see your training sessions");
+		}
+	}
+	
+	@Override
 	public boolean createSession(long token, String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException {
 
 		if (this.serverState.containsKey(token)) {						
@@ -190,12 +185,11 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 
-
-
-	public boolean setupDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
+	@Override
+	public boolean setUpDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
 		if (this.serverState.containsKey(token)) {						
-			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType)) {
+			if (mainService.setUpDistanceChallenge(name, start, end, metric, sportType)) {
 				return true;
 			} else {
 				throw new RemoteException("setupDistanceTimeChallenge() fails!");
@@ -205,9 +199,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 	}
 
-
-
-	public boolean setupActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
+	@Override
+	public boolean setUpActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
 		if (this.serverState.containsKey(token)) {						
 			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType)) {

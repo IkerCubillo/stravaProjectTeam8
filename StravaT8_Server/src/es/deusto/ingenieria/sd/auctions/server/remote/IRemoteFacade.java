@@ -20,7 +20,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		public List<ChallengeDTO> getChallenges() throws RemoteException;
 		
-		public List<ChallengeDTO> getUserChallenges() throws RemoteException;
+		public List<ChallengeDTO> getUserChallenges(long token) throws RemoteException;
 		
 		public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException;
 		
@@ -28,8 +28,8 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		public boolean createSession(long token, String title, String sport, float Distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException;
 		
-		public boolean setupDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException;
+		public boolean setUpDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException;
 		
-		public boolean setupActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException;
+		public boolean setUpActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException;
 
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
+
 //This class implements DTO pattern
 public class ChallengeDTO implements Serializable {
 	//This attribute is needed to implement the "Serializable" interface.
@@ -13,6 +15,7 @@ public class ChallengeDTO implements Serializable {
 	private Date end;
 	private float metric;
 	private String sportType;
+	private User user;
 	
 	public String getName() {
 		return name;
@@ -54,6 +57,14 @@ public class ChallengeDTO implements Serializable {
 		this.sportType = sportType;
 	}
 	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 	@Override
 	public String toString() {
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-YY - hh:mm");
@@ -70,6 +81,8 @@ public class ChallengeDTO implements Serializable {
 		result.append(this.metric);
 		result.append("| Sport: ");
 		result.append(this.sportType);
+		result.append("| User: ");
+		result.append(this.user);
 		
 		return result.toString();
 	}

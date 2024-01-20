@@ -26,6 +26,7 @@ public class ChallengeAssembler {
 		dto.setEnd(challenge.getEnd());
 		dto.setMetric(challenge.getMetric());
 		dto.setSportType(challenge.getSportType());
+		dto.setUser(challenge.getUser());
 				
 		return dto;
 	}

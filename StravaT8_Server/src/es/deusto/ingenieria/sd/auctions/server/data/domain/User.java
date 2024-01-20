@@ -30,10 +30,10 @@ public class User {
 	
 
 	
-	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
+	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	private ArrayList<Float> challengesPercentages = new ArrayList<Float>();
 	
 	public User(String account, String email, String name, Date birthDate, float weight, float height, int mBPM, int bpm) {

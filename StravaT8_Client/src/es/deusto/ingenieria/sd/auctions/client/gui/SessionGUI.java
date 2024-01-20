@@ -9,6 +9,7 @@ import java.time.LocalTime;
 import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -55,74 +56,64 @@ public class SessionGUI extends JFrame {
 	 */
 public SessionGUI() {
 		
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+	
+	//Configuracion de la ventana
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   
+		setSize(750, 500);
+		setLocationRelativeTo(null);
+	    getContentPane().setLayout(null);
 		
+	    //Fondo Blanco
+	    JLabel labelBlanco = new JLabel("");
+        JLabel labelFondo = new JLabel("");
+        labelBlanco.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/Blanco.PNG")));
+        labelFondo.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/imagenCiclista.jpg")));
+	    
+	    //Labels
 		JLabel lblNewLabel = new JLabel("Distance Challenge");
-		lblNewLabel.setBounds(157, 11, 131, 14);
-		contentPane.add(lblNewLabel);
-		
 		JLabel lblNewLabel_1 = new JLabel("Title");
-		lblNewLabel_1.setBounds(47, 35, 46, 14);
-		contentPane.add(lblNewLabel_1);
-		
 		JLabel lblNewLabel_2 = new JLabel("Sport");
-		lblNewLabel_2.setBounds(47, 76, 46, 14);
-		contentPane.add(lblNewLabel_2);
-		
 		JLabel distanceField = new JLabel("Distance");
-		distanceField.setBounds(47, 117, 46, 14);
-		contentPane.add(distanceField);
-		
 		JLabel startDateField = new JLabel("Start date");
-		startDateField.setBounds(47, 158, 57, 14);
-		contentPane.add(startDateField);
+		JLabel startTimeField = new JLabel("Start time");
+		JLabel durationField = new JLabel("Duration");
 		
+		//TextFields
 		titleField = new JTextField();
-		titleField.setBounds(177, 35, 160, 20);
-		contentPane.add(titleField);
-		titleField.setColumns(10);
-		
 		textField_1 = new JTextField();
-		textField_1.setBounds(177, 158, 160, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
 		textField_2 = new JTextField();
-		textField_2.setBounds(178, 117, 160, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		textField_3 = new JTextField();
+		textField_4 = new JTextField();
 		
+		//ComboBox
 		JComboBox comboSport = new JComboBox();
 		comboSport.setModel(new DefaultComboBoxModel(new String[] {"Running", "Cycling"}));
 		comboSport.setMaximumRowCount(3);
-		comboSport.setBounds(177, 76, 160, 20);
-		contentPane.add(comboSport);
-		
-		JLabel startTimeField = new JLabel("Start time");
-		startTimeField.setBounds(47, 199, 57, 14);
-		contentPane.add(startTimeField);
-		
-		JLabel durationField = new JLabel("Duration");
-		durationField.setBounds(47, 240, 46, 14);
-		contentPane.add(durationField);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(177, 199, 160, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(177, 240, 160, 20);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
-		
+	    
+	    //Botones
 		JButton btnNewButton = new JButton("Create");
+		JButton btnNewButton_1 = new JButton("Back");
+
+		//setBounds
+		labelFondo.setBounds(0, 0, getWidth(), getHeight());
+        labelBlanco.setBounds(190, 66, 382, 330);
+		lblNewLabel.setBounds(340, 88, 131, 14);
+		lblNewLabel_1.setBounds(230, 118, 46, 14);
+		lblNewLabel_2.setBounds(230, 159, 46, 14);
+		distanceField.setBounds(230, 200, 46, 14);
+		startDateField.setBounds(230, 241, 57, 14);
+		titleField.setBounds(377, 118, 160, 20);
+		textField_1.setBounds(377, 200, 160, 20);
+		textField_2.setBounds(377, 241, 160, 20);
+		comboSport.setBounds(377, 159, 160, 20);
+		startTimeField.setBounds(230, 282, 57, 14);
+		durationField.setBounds(230, 323, 46, 14);
+		textField_3.setBounds(377, 282, 160, 20);
+		textField_4.setBounds(377, 323, 160, 20);
+		btnNewButton.setBounds(420, 364, 89, 23);
+		btnNewButton_1.setBounds(275, 364, 89, 23);
+
+		//Listeners
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
@@ -148,18 +139,54 @@ public SessionGUI() {
 
 		});
 		
-		btnNewButton.setBounds(348, 100, 89, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Back");
 		btnNewButton_1.addActionListener(
 				(e) -> {
 					this.dispose();
 			});
-		btnNewButton_1.setBounds(347, 198, 89, 23);
-		contentPane.add(btnNewButton_1);
-	}
-	
-	
+		
+	    
+		//Anyadir al contentPane
+        labelFondo.setBounds(0, 0, 734, 461);
+	    contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(lblNewLabel);
+		contentPane.add(lblNewLabel_1);
+		contentPane.add(lblNewLabel_2);
+		contentPane.add(distanceField);
+		contentPane.add(startDateField);
+		
+		contentPane.add(titleField);
+		titleField.setColumns(10);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		contentPane.add(labelBlanco);
+		//contentPane.add(labelFondo);
+		
+		contentPane.add(comboSport);
+		contentPane.add(startTimeField);
+		contentPane.add(durationField);
+		
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+		contentPane.add(textField_4);
+		textField_4.setColumns(10);
+		
+		contentPane.add(btnNewButton);
+		contentPane.add(btnNewButton_1);
+		
+		contentPane.setComponentZOrder(durationField, 0);
+		contentPane.setComponentZOrder(startTimeField, 0);
+		contentPane.setComponentZOrder(textField_4, 0);
+		contentPane.setComponentZOrder(textField_3, 0);
+		contentPane.setComponentZOrder(comboSport, 0);
+		contentPane.setComponentZOrder(btnNewButton, 0);
+		//contentPane.setComponentZOrder(lblNewLabel_5, 0);
+		contentPane.setComponentZOrder(btnNewButton_1, 0);
+	}
 }

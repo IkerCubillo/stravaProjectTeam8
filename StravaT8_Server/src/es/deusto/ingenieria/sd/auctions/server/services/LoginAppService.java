@@ -31,21 +31,16 @@ public class LoginAppService {
 	}
 	
 	public void register(String email, String account, String name, Date birthDate, float weight, float height, int mBPM, int bpm) throws RemoteException {		
-		IGateway g = GatewayFactory.createGateway(account);
-		System.out.println("MARKER 3 /////////////////////////////////////////////////////");		
+		IGateway g = GatewayFactory.createGateway(account);		
 		// checking user exists in user map
 		if(g.userValidation(email)) {
-			System.out.println("MARKER 4 /////////////////////////////////////////////////////");
 			User user = new User(email, account, name, birthDate, weight, height, mBPM, bpm);
-			System.out.println("/////////////////////////////////////////////////////////:" + UserDAO.getInstance().find(email));
 			if (UserDAO.getInstance().find(email)== null) { /// CHECK on DB
 				UserDAO.getInstance().save(user);
 			} else {
-				System.out.println("MARKER 5 /////////////////////////////////////////////////////");
 				throw new RemoteException("Email already in use!");
 			}
 		} else {
-			System.out.println("MARKER 6 /////////////////////////////////////////////////////");
 			throw new RemoteException("Account doesn't exist");
 		}
 		

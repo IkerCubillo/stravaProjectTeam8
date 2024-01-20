@@ -76,7 +76,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 	
 	@Override
-	public void register(String account, String email, String name, Date birthDate, float weight, float height,
+	public void register(String email, String name, String account, Date birthDate, float weight, float height,
 			int mBPM, int bpm) throws RemoteException {
 		System.out.println(" * RemoteFacade register(): " + account + "' - '" + email 
 				+ "' - '"  + name + "' - '" + birthDate + "' - '" + weight + "' - '" + height + "' - '" + mBPM 

@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.Properties;
 import java.sql.Date;
 
 import javax.swing.DefaultComboBoxModel;
@@ -29,11 +30,11 @@ public class SessionGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField titleField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField titleTf;
+	private JTextField distanceTf;
+	private JTextField startDateTf;
+	private JTextField startTimeTf;
+	private JTextField durationTf;
 
 	/**
 	 * Launch the application.
@@ -42,7 +43,7 @@ public class SessionGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DistanceChallengeGUI frame = new DistanceChallengeGUI();
+					SessionGUI frame = new SessionGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -79,11 +80,11 @@ public SessionGUI() {
 		JLabel durationField = new JLabel("Duration");
 		
 		//TextFields
-		titleField = new JTextField();
-		textField_1 = new JTextField();
-		textField_2 = new JTextField();
-		textField_3 = new JTextField();
-		textField_4 = new JTextField();
+		titleTf = new JTextField();
+		distanceTf = new JTextField();
+		startDateTf = new JTextField();
+		startTimeTf = new JTextField();
+		durationTf = new JTextField();
 		
 		//ComboBox
 		JComboBox comboSport = new JComboBox();
@@ -92,8 +93,9 @@ public SessionGUI() {
 	    
 	    //Botones
 		JButton btnNewButton = new JButton("Create");
-		JButton btnNewButton_1 = new JButton("Back");
-
+		JButton btnNewButton_1 = new JButton("Back");		 
+		
+		
 		//setBounds
 		labelFondo.setBounds(0, 0, getWidth(), getHeight());
         labelBlanco.setBounds(190, 66, 382, 330);
@@ -102,14 +104,14 @@ public SessionGUI() {
 		lblNewLabel_2.setBounds(230, 159, 46, 14);
 		distanceField.setBounds(230, 200, 46, 14);
 		startDateField.setBounds(230, 241, 57, 14);
-		titleField.setBounds(377, 118, 160, 20);
-		textField_1.setBounds(377, 200, 160, 20);
-		textField_2.setBounds(377, 241, 160, 20);
+		titleTf.setBounds(377, 118, 160, 20);
+		distanceTf.setBounds(377, 200, 160, 20);
+		startDateTf.setBounds(377, 238, 160, 20);
 		comboSport.setBounds(377, 159, 160, 20);
 		startTimeField.setBounds(230, 282, 57, 14);
 		durationField.setBounds(230, 323, 46, 14);
-		textField_3.setBounds(377, 282, 160, 20);
-		textField_4.setBounds(377, 323, 160, 20);
+		startTimeTf.setBounds(377, 282, 160, 20);
+		durationTf.setBounds(377, 323, 160, 20);
 		btnNewButton.setBounds(420, 364, 89, 23);
 		btnNewButton_1.setBounds(275, 364, 89, 23);
 
@@ -117,24 +119,24 @@ public SessionGUI() {
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
 		      public void actionPerformed(ActionEvent evt){
-		    	  String distance = textField_2.getText();
-					float dist = Float.parseFloat(distance);
-					String duration = textField_4.getText();
+		    	  	String distance = distanceTf.getText();
+					float dist = Float.parseFloat(distance); 
+					String duration = durationTf.getText();
 					float dur = Float.parseFloat(duration);
-					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
-					String startDate = textField_1.getText();
-					String startTime = textField_3.getText();
+					SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
+					String startDate = startDateTf.getText();
+					String startTime = startTimeTf.getText();
 					java.util.Date date = null;
 					try {
 						date = sdf1.parse(startDate);
 					} catch (ParseException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
+					
 					LocalTime stt = null;
 					stt = LocalTime.parse(startTime);
-					MainProgram.mainWindow.createSession(MainProgram.loginController.getToken(), titleField.getText(), 
+					MainProgram.mainWindow.createSession(MainProgram.loginController.getToken(), titleTf.getText(), 
 							comboSport.getSelectedItem().toString(), dist, sqlStartDate, stt, dur);
 					dispose();
 		      }
@@ -160,12 +162,12 @@ public SessionGUI() {
 		contentPane.add(distanceField);
 		contentPane.add(startDateField);
 		
-		contentPane.add(titleField);
-		titleField.setColumns(10);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		contentPane.add(titleTf);
+		titleTf.setColumns(10);
+		contentPane.add(distanceTf);
+		distanceTf.setColumns(10);
+		contentPane.add(startDateTf);
+		startDateTf.setColumns(10);
 		
 		contentPane.add(labelBlanco);
 		//contentPane.add(labelFondo);
@@ -174,18 +176,18 @@ public SessionGUI() {
 		contentPane.add(startTimeField);
 		contentPane.add(durationField);
 		
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		contentPane.add(startTimeTf);
+		startTimeTf.setColumns(10);
+		contentPane.add(durationTf);
+		durationTf.setColumns(10);
 		
 		contentPane.add(btnNewButton);
 		contentPane.add(btnNewButton_1);
 		
 		contentPane.setComponentZOrder(durationField, 0);
 		contentPane.setComponentZOrder(startTimeField, 0);
-		contentPane.setComponentZOrder(textField_4, 0);
-		contentPane.setComponentZOrder(textField_3, 0);
+		contentPane.setComponentZOrder(durationTf, 0);
+		contentPane.setComponentZOrder(startTimeTf, 0);
 		contentPane.setComponentZOrder(comboSport, 0);
 		contentPane.setComponentZOrder(btnNewButton, 0);
 		//contentPane.setComponentZOrder(lblNewLabel_5, 0);

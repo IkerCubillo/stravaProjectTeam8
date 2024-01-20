@@ -115,7 +115,7 @@ public DistanceChallengeGUI() {
 		      public void actionPerformed(ActionEvent evt){
 		    	  String distance = distanceField.getText();
 					float dist = Float.parseFloat(distance);
-					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
+					SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
 					String end = endField.getText();
 					java.util.Date date = null;

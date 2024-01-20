@@ -39,7 +39,7 @@ public class ActivityTimeChallengeGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DistanceChallengeGUI frame = new DistanceChallengeGUI();
+					ActivityTimeChallengeGUI frame = new ActivityTimeChallengeGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -102,8 +102,8 @@ public ActivityTimeChallengeGUI() {
 		lblNewLabel_5.setBounds(230, 159, 150, 14);
 		nameField.setBounds(377, 118, 160, 20);
 		timeField.setBounds(377, 159, 160, 20);
-		startField.setBounds(377, 241, 160, 20);
-		endField.setBounds(377, 159, 160, 20);
+		startField.setBounds(377, 197, 160, 20);
+		endField.setBounds(377, 238, 160, 20);
 		comboSport.setBounds(377, 282, 160, 20);
 		btnNewButton.setBounds(440, 317, 89, 23);
 		btnNewButton_1.setBounds(275, 317, 89, 23);
@@ -114,7 +114,7 @@ public ActivityTimeChallengeGUI() {
 		      public void actionPerformed(ActionEvent evt){
 		    	  String activityTime = timeField.getText();
 					float time = Float.parseFloat(activityTime);
-					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
+					SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
 					String start = startField.getText();
 					String end = endField.getText();
 					java.util.Date date = null;

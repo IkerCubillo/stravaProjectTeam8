@@ -3,7 +3,9 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 import java.sql.Date;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -29,27 +31,25 @@ public class User {
 	
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
+	private Set<TrainingSession> userSessions = new HashSet<>();
 	
-	//private ArrayList<Float> challengesPercentages = new ArrayList<Float>();
-		
-	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+	private Set<Challenge> userActiveChallenges = new HashSet<>();
 	
-	
-	public User(String email, String name, String account, Date birthDate, float weight, float height, int mBPM, int bpm) {
-		this.email = email;
-		this.name = name;
-		this.account = account;
-		this.birthDate = birthDate;
-		this.weight = weight;
-		this.height = height;
-		this.mBPM = mBPM;
-		this.bpm = bpm;
-	}
-	
-	public User() {
-		
-	}
+//	public User(String email, String name, String account, Date birthDate, float weight, float height, int mBPM, int bpm) {
+//		this.email = email;
+//		this.name = name;
+//		this.account = account;
+//		this.birthDate = birthDate;
+//		this.weight = weight;
+//		this.height = height;
+//		this.mBPM = mBPM;
+//		this.bpm = bpm;
+//	}
+//	
+//	public User() {
+//		
+//	}
 	
 	public String getEmail() {
 		return email;
@@ -115,31 +115,59 @@ public class User {
 	public void setBpm(int bpm) {
 		this.bpm = bpm;
 	}
-
-	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
-		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this);
-		TrainingSessionDAO.getInstance().save(tr);
-		return userSessions.add(tr);
-	}
 	
-	public List<TrainingSession> getSessions() {
+	public Set<TrainingSession> getTrainingSessions() {
 		return userSessions;
 	}
-
-	//takes in challenge and adds it if the user doesn't already have it
-	public boolean acceptChallenge(Challenge c) {
-		for (Challenge temp : userChallenges) {
-			if (c.equals(temp)) {
-				return false;
-			}
-		}
-		userChallenges.add(c);
-		return true;
+	
+	public void setTrainingSessions(Set<TrainingSession> trainingSession) {
+		this.userSessions = trainingSession;
 	}
 	
-	public static ArrayList<Challenge> getUserChallenges() {
-		ArrayList<Challenge> result = new ArrayList<Challenge>();
-		result = userChallenges;
-		return result;
+	public void addTrainingSession(TrainingSession trainingSession) {
+		if (userSessions != null) {
+			this.userSessions.add(trainingSession);
+		}
 	}
+	
+	public Set<Challenge> getChallenges() {
+		return userActiveChallenges;
+	}
+	
+	public void setChallenges(Set<Challenge> challenge) {
+		this.userActiveChallenges = challenge;
+	}
+	
+	public void addChallenge(Challenge challenge) {
+		if (userActiveChallenges != null) {
+			this.userActiveChallenges.add(challenge);
+		}
+	}
+	
+//	public ArrayList<TrainingSession> getSessions() {
+//		return userSessions;
+//	}
+//
+//	//takes in challenge and adds it if the user doesn't already have it
+//	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
+//		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this);
+//		TrainingSessionDAO.getInstance().save(tr);
+//		return userSessions.add(tr);
+//	}
+//	
+//	public boolean acceptChallenge(Challenge c) {
+//		for (Challenge temp : userChallenges) {
+//			if (c.equals(temp)) {
+//				return false;
+//			}
+//		}
+//		userChallenges.add(c);
+//		return true;
+//	}
+//	
+//	public static ArrayList<Challenge> getUserChallenges() {
+//		ArrayList<Challenge> result = new ArrayList<Challenge>();
+//		result = userChallenges;
+//		return result;
+//	}
 }

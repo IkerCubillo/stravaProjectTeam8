@@ -117,7 +117,7 @@ public class User {
 	}
 
 	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
-		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this.getEmail());
+		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this);
 		TrainingSessionDAO.getInstance().save(tr);
 		return userSessions.add(tr);
 	}

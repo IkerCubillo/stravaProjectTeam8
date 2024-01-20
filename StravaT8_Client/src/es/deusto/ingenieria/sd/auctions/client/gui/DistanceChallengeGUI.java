@@ -64,8 +64,8 @@ public DistanceChallengeGUI() {
         //Fondo blanco
         JLabel labelBlanco = new JLabel("");
         JLabel labelFondo = new JLabel("");
-        labelBlanco.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/Blanco.PNG")));
-        labelFondo.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/como-medir-distancias-en-google-maps-1200x675.jpg")));
+//        labelBlanco.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("Blanco.PNG")));
+//        labelFondo.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("como-medir-distancias-en-google-maps-1200x675.jpg")));
         
         //Labels
 		JLabel lblNewLabel = new JLabel("Distance Challenge");

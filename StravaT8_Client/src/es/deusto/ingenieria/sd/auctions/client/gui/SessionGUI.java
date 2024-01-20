@@ -66,8 +66,8 @@ public SessionGUI() {
 	    //Fondo Blanco
 	    JLabel labelBlanco = new JLabel("");
         JLabel labelFondo = new JLabel("");
-        labelBlanco.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/Blanco.PNG")));
-        labelFondo.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/imagenCiclista.jpg")));
+//        labelBlanco.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/Blanco.PNG")));
+//        labelFondo.setIcon(new ImageIcon(DistanceChallengeGUI.class.getResource("/images/imagenCiclista.jpg")));
 	    
 	    //Labels
 		JLabel lblNewLabel = new JLabel("Distance Challenge");

@@ -58,7 +58,7 @@ public class MainController{
 
 	public boolean setupDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) {
 		try {
-			return this.ServiceLocator.getService().setupDistanceChallenge(token, name, start, end, metric, sportType);
+			return this.ServiceLocator.getService().setUpDistanceChallenge(token, name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error setting up distance challenge: " + e);
 			return false;
@@ -67,7 +67,7 @@ public class MainController{
 	
 	public boolean setupActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) {
 		try {
-			return this.ServiceLocator.getService().setupActivityTimeChallenge(token, name, start, end, metric, sportType);
+			return this.ServiceLocator.getService().setUpActivityTimeChallenge(token, name, start, end, metric, sportType);
 		} catch (RemoteException e) {
 			System.out.println("# Error setting up activity challenge: " + e);
 			return false;

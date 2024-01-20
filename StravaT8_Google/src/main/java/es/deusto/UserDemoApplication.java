@@ -62,7 +62,7 @@ public class UserDemoApplication {
       return (args) -> {
           // INIT data ... some Users
     	    	  
-    	  User kerman = new User ("kerman@opendeusto.es", "password");
+    	  User kerman = new User ("kerman.bruna@opendeusto.es", "password");
     	  User fletch = new User ("fletch@opendeusto.es", "password");
     	   
     	  repository.save(kerman);

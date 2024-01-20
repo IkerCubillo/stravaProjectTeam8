@@ -34,8 +34,8 @@ public class FacebookService extends Thread {
 	}
 
 	private void initializeData() {
-		userMap.put("asier@opendeusto.es", "password");
-		userMap.put("cubillo@opendeusto.es", "password");
+		userMap.put("asier.castrillejo@opendeusto.es", "password");
+		userMap.put("i.cubillo@opendeusto.es", "password");
 	}
 
 	public void run() {

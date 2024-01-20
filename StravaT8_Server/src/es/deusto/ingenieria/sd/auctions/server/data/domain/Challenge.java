@@ -23,8 +23,10 @@ public class Challenge implements Serializable {
 	private Date end;
 	private float metric;
 	private String sportType;
-	private User user = null;
 	private static final long serialVersionUID = 1L;
+	
+	@ManyToOne
+	private User user = null;
 	
 	public Challenge(String name, Date start, Date end, float metric, String sportType, User user) {
 		this.name = name;
@@ -33,16 +35,15 @@ public class Challenge implements Serializable {
 		this.metric = metric;
 		this.sportType = sportType;
 		this.user = user;
-		//new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
 	}
 	
-	public Challenge(ChallengeDTO c) {
+	public Challenge(ChallengeDTO c, User user) {
 		this.name = c.getName();
 		this.start = (Date) c.getStart();
 		this.end = (Date) c.getEnd();
 		this.metric = c.getMetric();
 		this.sportType = c.getSportType();
-		this.user = c.getUser();
+		this.user = user;
 	}
 	
 	public Challenge() {

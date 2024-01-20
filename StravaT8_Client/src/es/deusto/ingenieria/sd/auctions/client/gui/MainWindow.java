@@ -29,8 +29,8 @@ public class MainWindow {
 		return challenges;
 	}
 	
-	public List<ChallengeDTO> getUserChallenges() {
-		List<ChallengeDTO> challenges = this.controller.getUserChallenges();
+	public List<ChallengeDTO> getUserChallenges(long token) {
+		List<ChallengeDTO> challenges = this.controller.getUserChallenges(token);
 		System.out.println(" - Getting all the challenges ...");
 		
 		for (ChallengeDTO challenge : challenges) {

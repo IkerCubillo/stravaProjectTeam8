@@ -25,19 +25,19 @@ public class TrainingSession {
 	private User user;
 
 	
-//	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, User user) {
-//		this.title = title;
-//		this.sport = sport;
-//		this.distance = distance;
-//		this.startDate = startDate;
-//		this.startTime = timeStart;
-//		this.duration = duration;
-//		this.user = user;
-//	}
-//	
-//	public TrainingSession() {
-//		
-//	}
+	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, User user) {
+		this.title = title;
+		this.sport = sport;
+		this.distance = distance;
+		this.startDate = startDate;
+		this.startTime = timeStart;
+		this.duration = duration;
+		this.user = user;
+	}
+	
+	public TrainingSession() {
+		
+	}
 	
 	public String getTitle() {
 		return title;

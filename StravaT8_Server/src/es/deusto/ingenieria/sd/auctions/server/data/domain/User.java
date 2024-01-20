@@ -36,20 +36,20 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private Set<Challenge> userActiveChallenges = new HashSet<>();
 	
-//	public User(String email, String name, String account, Date birthDate, float weight, float height, int mBPM, int bpm) {
-//		this.email = email;
-//		this.name = name;
-//		this.account = account;
-//		this.birthDate = birthDate;
-//		this.weight = weight;
-//		this.height = height;
-//		this.mBPM = mBPM;
-//		this.bpm = bpm;
-//	}
-//	
-//	public User() {
-//		
-//	}
+	public User(String email, String name, String account, Date birthDate, float weight, float height, int mBPM, int bpm) {
+		this.email = email;
+		this.name = name;
+		this.account = account;
+		this.birthDate = birthDate;
+		this.weight = weight;
+		this.height = height;
+		this.mBPM = mBPM;
+		this.bpm = bpm;
+	}
+	
+	public User() {
+		
+	}
 	
 	public String getEmail() {
 		return email;

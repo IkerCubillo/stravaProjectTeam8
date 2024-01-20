@@ -25,15 +25,15 @@ public class Challenge implements Serializable {
 	private String sportType;
 	private static final long serialVersionUID = 1L;
 	
-//	public Challenge(String name, Date start, Date end, float metric, String sportType) {
-//		this.name = name;
-//		this.start = start;
-//		this.end = end;
-//		this.metric = metric;
-//		this.sportType = sportType;
-//		//new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
-//	}
-//	
+	public Challenge(String name, Date start, Date end, float metric, String sportType) {
+		this.name = name;
+		this.start = start;
+		this.end = end;
+		this.metric = metric;
+		this.sportType = sportType;
+		//new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
+	}
+	
 	public Challenge(ChallengeDTO c) {
 		this.name = c.getName();
 		this.start = (Date) c.getStart();

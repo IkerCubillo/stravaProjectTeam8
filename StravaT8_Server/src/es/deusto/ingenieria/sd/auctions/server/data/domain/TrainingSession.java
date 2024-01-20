@@ -13,14 +13,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class TrainingSession implements Serializable {
-	@Id
-	private static final long serialVersionUID = 1L;
+	@Id	
 	private String title;
 	private String sport;
 	private float distance;
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
+	private static final long serialVersionUID = 1L;
 	@ManyToOne
 	private String user;
 	

@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
-import es.deusto.ingenieria.sd.sms.server.gateway.MailSender;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -18,12 +18,12 @@ import javax.persistence.OneToMany;
 public class Challenge implements Serializable {
 	//This attribute is needed to implement the "Serializable" interface.
 	@Id
-	private static final long serialVersionUID = 1L;
 	private String name;
 	private Date start;
 	private Date end;
 	private float metric;
 	private String sportType;
+	private static final long serialVersionUID = 1L;
 	
 	public Challenge(String name, Date start, Date end, float metric, String sportType) {
 		this.name = name;
@@ -31,7 +31,7 @@ public class Challenge implements Serializable {
 		this.end = end;
 		this.metric = metric;
 		this.sportType = sportType;
-		new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
+		//new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
 	}
 	
 	public Challenge(ChallengeDTO c) {

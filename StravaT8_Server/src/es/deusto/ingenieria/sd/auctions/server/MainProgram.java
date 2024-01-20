@@ -49,7 +49,7 @@ public class MainProgram {
 		try { 
 			//Create Users
 			User user0 = new User();
-			user0.setEmail("asier@opendeusto.es");
+			user0.setEmail("asier.castrillejo@opendeusto.es");
 			user0.setName("Asier");
 			user0.setAccount("Facebook");
 			user0.setBirthDate(new Date(1 / 1 / 2003));
@@ -60,7 +60,7 @@ public class MainProgram {
 			user0.setPassword("password");			
 							
 			User user1 = new User();
-			user1.setEmail("kerman@opendeusto.es");
+			user1.setEmail("kerman.bruna@opendeusto.es");
 			user1.setName("Kerman");
 			user1.setAccount("Google");
 			user1.setBirthDate(new Date(1 / 1 / 2003));
@@ -71,7 +71,7 @@ public class MainProgram {
 			user1.setPassword("password");
 			
 			User user2 = new User();
-			user2.setEmail("cubillo@opendeusto.es");
+			user2.setEmail("i.cubillo@opendeusto.es");
 			user2.setName("Iker");
 			user2.setAccount("Facebook");
 			user2.setBirthDate(new Date(1 / 1 / 2003));

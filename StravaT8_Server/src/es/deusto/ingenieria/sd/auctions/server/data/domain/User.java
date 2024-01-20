@@ -28,7 +28,7 @@ public class User {
 	private int mBPM;
 	private int bpm;
 	
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+	
 	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();

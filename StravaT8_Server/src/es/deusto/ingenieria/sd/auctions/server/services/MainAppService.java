@@ -95,9 +95,13 @@ public class MainAppService {
 
 	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
 			LocalTime startTime, float duration) {
-		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, startTime, duration, user);
-		TrainingSessionDAO.getInstance().save(tr);
-		return user.createSession(title, sport, distance, startDate, startTime, duration);
+		try {
+			TrainingSession tr = new TrainingSession(title, sport, distance, startDate, startTime, duration, user);
+			TrainingSessionDAO.getInstance().save(tr);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	public List<TrainingSession> getTrainingSessions(User user) {

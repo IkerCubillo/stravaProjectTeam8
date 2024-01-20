@@ -30,7 +30,7 @@ public class User {
 	
 
 	
-	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
+	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
@@ -136,11 +136,11 @@ public class User {
 		return true;
 	}
 	
-	//public static ArrayList<Challenge> getUserChallenges() {
-	//	ArrayList<Challenge> result = new ArrayList<Challenge>();
-	//	result = userChallenges;
-	//	return result;
-	//}
+	public static ArrayList<Challenge> getUserChallenges() {
+		ArrayList<Challenge> result = new ArrayList<Challenge>();
+		result = userChallenges;
+		return result;
+	}
 
 	public String getPassword() {
 		return password;

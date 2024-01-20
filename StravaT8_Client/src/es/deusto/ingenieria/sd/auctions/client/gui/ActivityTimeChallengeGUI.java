@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -114,25 +114,28 @@ public ActivityTimeChallengeGUI() {
 		      public void actionPerformed(ActionEvent evt){
 		    	  String activityTime = timeField.getText();
 					float time = Float.parseFloat(activityTime);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
 					String start = startField.getText();
 					String end = endField.getText();
-					Date st = null;
+					java.util.Date date = null;
 					try {
-						st = formatter.parse(start);
-					} catch (ParseException e1) {
+						date = sdf1.parse(start);
+					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e.printStackTrace();
 					}
-					Date en = null;
+					java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
+					java.util.Date date1 = null;
 					try {
-						en = formatter.parse(end);
-					} catch (ParseException e1) {
+						date1 = sdf1.parse(end);
+					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e.printStackTrace();
 					}
+					java.sql.Date sqlEndDate = new java.sql.Date(date1.getTime());
+					
 					MainProgram.mainWindow.setupActivityTimeChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
-							st, en, time, comboSport.getSelectedItem().toString());
+							sqlStartDate, sqlEndDate, time, comboSport.getSelectedItem().toString());
 					dispose();
 		      }
 

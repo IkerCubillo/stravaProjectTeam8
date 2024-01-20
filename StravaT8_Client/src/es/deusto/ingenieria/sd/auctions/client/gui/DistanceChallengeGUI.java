@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -115,25 +115,27 @@ public DistanceChallengeGUI() {
 		      public void actionPerformed(ActionEvent evt){
 		    	  String distance = distanceField.getText();
 					float dist = Float.parseFloat(distance);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
 					String start = startField.getText();
 					String end = endField.getText();
-					Date st = null;
+					java.util.Date date = null;
 					try {
-						st = formatter.parse(start);
-					} catch (ParseException e1) {
+						date = sdf1.parse(start);
+					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e.printStackTrace();
 					}
-					Date en = null;
+					java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
+					java.util.Date date1 = null;
 					try {
-						en = formatter.parse(end);
-					} catch (ParseException e1) {
+						date1 = sdf1.parse(end);
+					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e.printStackTrace();
 					}
+					java.sql.Date sqlEndDate = new java.sql.Date(date1.getTime());
 					MainProgram.mainWindow.setupDistanceChallenge(MainProgram.loginController.getToken(), nameField.getText(), 
-							st, en, dist, comboSport.getSelectedItem().toString());
+							sqlStartDate, sqlEndDate, dist, comboSport.getSelectedItem().toString());
 					dispose();
 		      }
 

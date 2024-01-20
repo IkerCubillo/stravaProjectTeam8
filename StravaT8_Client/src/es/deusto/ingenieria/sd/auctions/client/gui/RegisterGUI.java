@@ -153,17 +153,18 @@ public RegisterGUI() {
 		    	  int m = Integer.parseInt(mBPM);
 		    	  String BPM = bpmField.getText();
 		    	  int b = Integer.parseInt(BPM);
-		    	  SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		    	  SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
 		    	  String birthdate = birthdateField.getText();
-		    	  Date bd = null;
+		    	  java.util.Date date = null;
 					try {
-						bd = formatter.parse(birthdate);
-					} catch (ParseException e1) {
+						date = sdf1.parse(birthdate);
+					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e.printStackTrace();
 					}
+					java.sql.Date sqlBirthDate = new java.sql.Date(date.getTime());
 					MainProgram.loginDialog.register(emailField.getText(), nameField.getText(), comboAccount.getSelectedItem().toString(), 
-							bd, w, h, m, b);
+							sqlBirthDate, w, h, m, b);
 					dispose();
 		      }
 

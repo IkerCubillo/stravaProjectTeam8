@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -121,19 +121,21 @@ public SessionGUI() {
 					float dist = Float.parseFloat(distance);
 					String duration = textField_4.getText();
 					float dur = Float.parseFloat(duration);
-					SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
 					String startDate = textField_1.getText();
 					String startTime = textField_3.getText();
-					Date st = null;
+					java.util.Date date = null;
 					try {
-						st = formatter.parse(startDate);
-					} catch (ParseException e1) {
-						e1.printStackTrace();
+						date = sdf1.parse(startDate);
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
+					java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
 					LocalTime stt = null;
 					stt = LocalTime.parse(startTime);
 					MainProgram.mainWindow.createSession(MainProgram.loginController.getToken(), titleField.getText(), 
-							comboSport.getSelectedItem().toString(), dist, st, stt, dur);
+							comboSport.getSelectedItem().toString(), dist, sqlStartDate, stt, dur);
 					dispose();
 		      }
 

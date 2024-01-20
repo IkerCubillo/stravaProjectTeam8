@@ -20,7 +20,7 @@ public class TrainingSession {
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
-	private String user;
+	private User user;
 
 	
 //	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, String user) {
@@ -74,11 +74,11 @@ public class TrainingSession {
 		this.duration = duration;
 	}
 	
-	public String getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(String user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	

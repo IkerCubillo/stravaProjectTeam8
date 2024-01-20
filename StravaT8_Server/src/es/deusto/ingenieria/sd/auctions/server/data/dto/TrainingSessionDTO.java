@@ -5,6 +5,8 @@ import java.time.LocalTime;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
+
 public class TrainingSessionDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String title;
@@ -13,7 +15,7 @@ public class TrainingSessionDTO implements Serializable {
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
-	private String user;
+	private User user;
 	
 	public String getTitle() {
 		return title;
@@ -52,11 +54,11 @@ public class TrainingSessionDTO implements Serializable {
 		this.duration = duration;
 	}
 	
-	public String getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(String user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	

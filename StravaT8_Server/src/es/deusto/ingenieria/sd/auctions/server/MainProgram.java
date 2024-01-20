@@ -132,7 +132,7 @@ public class MainProgram {
 			LocalTime lt1 = LocalTime.of(15, 20, 45);
 			t1.setStartTime(lt1);
 			t1.setDuration(60);
-			t1.setUser("Kerman");
+			t1.setUser(user1);
 			TrainingSession t2 = new TrainingSession();
 			t2.setTitle("Session 2");
 			t2.setSport("Cycling");
@@ -141,7 +141,7 @@ public class MainProgram {
 			LocalTime lt2 = LocalTime.of(18, 30, 0);
 			t2.setStartTime(lt2);
 			t2.setDuration(90);
-			t2.setUser("Kerman");
+			t2.setUser(user1);
 			TrainingSession t3 = new TrainingSession();
 			t3.setTitle("Session 3");
 			t3.setSport("Running");
@@ -150,7 +150,7 @@ public class MainProgram {
 			LocalTime lt3 = LocalTime.of(12, 0, 0);
 			t3.setStartTime(lt3);
 			t3.setDuration(60);
-			t3.setUser("Kerman");
+			t3.setUser(user1);
 			
 			//Store sessions in the DB
 			TrainingSessionDAO.getInstance().save(t1);

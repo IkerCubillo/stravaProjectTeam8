@@ -9,7 +9,6 @@ import java.net.UnknownHostException;
 import java.rmi.Naming;
 import java.util.StringTokenizer;
 
-import es.deusto.ingenieria.sd.auctions.currency.remote.IFacebookAuthorization;
 import es.deusto.ingenieria.sd.auctions.server.MainProgram;
 
 public class FacebookGateway implements IGateway {
@@ -26,7 +25,7 @@ public class FacebookGateway implements IGateway {
 	}
 
 	public boolean userValidation(String email) {
-
+		System.out.println("/////////////Marker INFINITO");
 		boolean answer = true;
 
 		try (Socket socket = new Socket(serverIP, serverPort);

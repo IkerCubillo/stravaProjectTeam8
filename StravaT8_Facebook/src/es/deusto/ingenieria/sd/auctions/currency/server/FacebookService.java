@@ -36,7 +36,7 @@ public class FacebookService extends Thread {
 	private void initializeData() {
 		userMap.put("asier.castrillejo@opendeusto.es", "password");
 		userMap.put("i.cubillo@opendeusto.es", "password");
-		userMap.put("ikercubilloe@gmail.es", "password");
+		userMap.put("ikercubilloe@gmail.com", "password");
 	}
 
 	public void run() {

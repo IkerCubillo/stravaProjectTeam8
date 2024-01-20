@@ -93,10 +93,10 @@ public class MainAppService {
 		return user.acceptChallenge(c);
 	}
 
-//	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
-//			LocalTime startTime, float duration) {
-//		return user.createSession(title, sport, distance, startDate, startTime, duration);
-//	}
+	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
+			LocalTime startTime, float duration) {
+		return user.createSession(title, sport, distance, startDate, startTime, duration);
+	}
 
 	public List<TrainingSession> getTrainingSessions(User user) {
 

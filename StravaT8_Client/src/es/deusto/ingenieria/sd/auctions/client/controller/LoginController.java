@@ -1,7 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.client.controller;
 
 import java.rmi.RemoteException;
-import java.util.Date;
+import java.sql.Date;
 
 import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 

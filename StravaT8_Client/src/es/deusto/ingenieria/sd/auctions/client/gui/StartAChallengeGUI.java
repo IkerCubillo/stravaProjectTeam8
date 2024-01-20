@@ -3,23 +3,35 @@ package es.deusto.ingenieria.sd.auctions.client.gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+
+import es.deusto.ingenieria.sd.auctions.client.MainProgram;
+import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
+import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
 public class StartAChallengeGUI extends JFrame{
 	
 	private JTable tabla;
+	private int prueba;
+	private List<ChallengeDTO> listaChallenges;
+	private ChallengeDTO challenge;
 	
 	public StartAChallengeGUI() {
 		
-		
+		setSize(1200,600);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		// Establecer el diseño a AbsoluteLayout
@@ -31,7 +43,7 @@ public class StartAChallengeGUI extends JFrame{
         
         //Creacion del modelo de la tabla
         DefaultTableModel m = new DefaultTableModel();
-        m.addColumn("Reserva");
+        m.addColumn("Challenges");
         
         //Tabla y ScrollPane
         tabla = new JTable(m) {
@@ -45,6 +57,7 @@ public class StartAChallengeGUI extends JFrame{
         scrollPane.setBounds(0, 128, 1187, 304);
         
         //Cargar Challenges en la tabla
+        listaChallenges = MainProgram.mainWindow.getChallenges();
         
         //Tamaños de los elemenetos
         scrollPane.setPreferredSize(new Dimension(1187, 304));
@@ -72,28 +85,59 @@ public class StartAChallengeGUI extends JFrame{
 				// TODO Auto-generated method stub
 				
 			}
-			
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int filaSeleccionada = tabla.getSelectedRow();
+				prueba = filaSeleccionada;
+					if(filaSeleccionada != 1) {
+					challenge = listaChallenges.get(filaSeleccionada);
+					}
+				}
+
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				
 			}
+				
+			});
+        
+        //Listeners
+        ListSelectionListener l = new ListSelectionListener() {
+        	
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				if(!e.getValueIsAdjusting()) {
+					int filaSelec = tabla.getSelectedRow();
+					if (filaSelec >= 0) {
+						for (int i = 0; i < tabla.getColumnCount(); i++) {
+							tabla.setValueAt(tabla.getValueAt(filaSelec, i), filaSelec, i);
+						}
+						tabla.setSelectionBackground(Color.GREEN);
+					}
+				}				
+			}
+        };
+        
+        tabla.getSelectionModel().addListSelectionListener(l);
+        
+        botonAceptar.addActionListener(new ActionListener() {
 			
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					int filaSeleccionada = tabla.getSelectedRow();
-					prueba = filaSeleccionada;
-					
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(challenge != null) {
+					//MainProgram.mainWindow.acceptChallenge( /*token*/ , challenge);
 				}
-				
 			}
 		});
         
+        //Add
+        add(scrollPane);
+        add(botonAceptar);
         
-        
+        setVisible(true);
         
 	}
 }

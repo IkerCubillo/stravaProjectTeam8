@@ -29,7 +29,7 @@ public class User {
 	private int bpm;
 	
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-	private ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
+	private static ArrayList<Challenge> userChallenges = new ArrayList<Challenge>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private ArrayList<TrainingSession> userSessions = new ArrayList<TrainingSession>();
 	private ArrayList<Float> challengesPercentages = new ArrayList<Float>();
@@ -132,6 +132,12 @@ public class User {
 		}
 		userChallenges.add(c);
 		return true;
+	}
+	
+	public static ArrayList<Challenge> getUserChallenges() {
+		ArrayList<Challenge> result = new ArrayList<Challenge>();
+		result = userChallenges;
+		return result;
 	}
 
 	public String getPassword() {

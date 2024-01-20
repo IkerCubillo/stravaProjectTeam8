@@ -122,8 +122,20 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		}
 
 	}
-
-
+	
+	public List<ChallengeDTO> getUserChallenges() throws RemoteException {
+		
+		System.out.println(" * RemoteFacade getChallenges()");
+		
+		List<Challenge> challenges = User.getUserChallenges();
+		
+		if (challenges != null) {
+			//Convert domain object to DTO
+			return ChallengeAssembler.getInstance().challengeToDTO(challenges);
+		} else {
+			throw new RemoteException("getChallenges() fails!");
+		}
+	}
 
 	@Override
 

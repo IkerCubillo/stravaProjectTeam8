@@ -28,6 +28,15 @@ public class MainController{
 			return null;
 		}
 	}
+	
+	public List<ChallengeDTO> getUserChallenges() {
+		try {
+			return this.ServiceLocator.getService().getUserChallenges();
+		} catch (RemoteException e) {
+			System.out.println("# Error getting all challenges: " + e);
+			return null;
+		}
+	}
 
 	public List<TrainingSessionDTO> getTrainingSessions(long token) {
 		try {

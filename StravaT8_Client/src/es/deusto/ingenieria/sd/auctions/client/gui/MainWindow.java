@@ -28,6 +28,17 @@ public class MainWindow {
 
 		return challenges;
 	}
+	
+	public List<ChallengeDTO> getUserChallenges() {
+		List<ChallengeDTO> challenges = this.controller.getUserChallenges();
+		System.out.println(" - Getting all the challenges ...");
+		
+		for (ChallengeDTO challenge : challenges) {
+			System.out.println("\t* " + challenge.getName());
+		}
+		
+		return challenges;
+	}
 
 	public List<TrainingSessionDTO> getTrainingSession(long token) {
 		System.out.println(" - Getting training sessions '" + "' ...");

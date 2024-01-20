@@ -82,6 +82,11 @@ public class MainAppService {
 
 		return ChallengeDAO.getInstance().getAll();
 	}
+	
+	public List<Challenge> getChallenge2() {
+		
+		return ChallengeDAO.getInstance().getAll();
+	}
 
 	public boolean acceptChallenge(User user, Challenge c) {
 

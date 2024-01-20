@@ -12,8 +12,8 @@
         <exclude-unlisted-classes/>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/auctionsDB?verifyServerCertificate=false&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/>
-            <property name="javax.persistence.jdbc.user" value="auctions_user" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/stravaDB?verifyServerCertificate=false&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/>
+            <property name="javax.persistence.jdbc.user" value="strava_user" />
             <property name="javax.persistence.jdbc.password" value="password"/>
             <property name="datanucleus.schema.autoCreateAll" value="true"/>
         </properties>

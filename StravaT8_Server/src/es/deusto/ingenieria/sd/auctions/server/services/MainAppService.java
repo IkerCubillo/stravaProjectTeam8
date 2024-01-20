@@ -1,7 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.server.services;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -93,10 +93,10 @@ public class MainAppService {
 		return user.acceptChallenge(c);
 	}
 
-	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
-			LocalTime startTime, float duration) {
-		return user.createSession(title, sport, distance, startDate, startTime, duration);
-	}
+//	public boolean createSession(User user, String title, String sport, float distance, Date startDate,
+//			LocalTime startTime, float duration) {
+//		return user.createSession(title, sport, distance, startDate, startTime, duration);
+//	}
 
 	public List<TrainingSession> getTrainingSessions(User user) {
 

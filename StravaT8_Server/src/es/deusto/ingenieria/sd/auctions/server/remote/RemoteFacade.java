@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Date;
+import java.sql.Date;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -177,18 +177,18 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 
 
-	public boolean createSession(long token, String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException {
-
-		if (this.serverState.containsKey(token)) {						
-			if (mainService.createSession(this.serverState.get(token), title, sport, distance, startDate, timeStart, duration)) {
-				return true;
-			} else {
-				throw new RemoteException("createSession() fails!");
-			}
-		} else {
-			throw new RemoteException("You must be logged in to create a session");
-		}
-	}
+//	public boolean createSession(long token, String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) throws RemoteException {
+//
+//		if (this.serverState.containsKey(token)) {						
+//			if (mainService.createSession(this.serverState.get(token), title, sport, distance, startDate, timeStart, duration)) {
+//				return true;
+//			} else {
+//				throw new RemoteException("createSession() fails!");
+//			}
+//		} else {
+//			throw new RemoteException("You must be logged in to create a session");
+//		}
+//	}
 
 
 

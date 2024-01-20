@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class TrainingSession implements Serializable {
+public class TrainingSession {
 	@Id	
 	private String title;
 	private String sport;
@@ -20,24 +20,23 @@ public class TrainingSession implements Serializable {
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
-	private static final long serialVersionUID = 1L;
-	@ManyToOne
 	private String user;
+
 	
-	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, String user) {
-		this.title = title;
-		this.sport = sport;
-		this.distance = distance;
-		this.startDate = startDate;
-		this.startTime = timeStart;
-		this.duration = duration;
-		this.user = user;
-	}
-	
-	public TrainingSession() {
-		
-	}
-	
+//	public TrainingSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration, String user) {
+//		this.title = title;
+//		this.sport = sport;
+//		this.distance = distance;
+//		this.startDate = startDate;
+//		this.startTime = timeStart;
+//		this.duration = duration;
+//		this.user = user;
+//	}
+//	
+//	public TrainingSession() {
+//		
+//	}
+//	
 	public String getTitle() {
 		return title;
 	}

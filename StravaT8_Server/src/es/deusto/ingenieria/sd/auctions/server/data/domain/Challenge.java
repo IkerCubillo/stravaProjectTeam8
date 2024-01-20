@@ -2,7 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
@@ -25,19 +25,19 @@ public class Challenge implements Serializable {
 	private String sportType;
 	private static final long serialVersionUID = 1L;
 	
-	public Challenge(String name, Date start, Date end, float metric, String sportType) {
-		this.name = name;
-		this.start = start;
-		this.end = end;
-		this.metric = metric;
-		this.sportType = sportType;
-		//new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
-	}
-	
+//	public Challenge(String name, Date start, Date end, float metric, String sportType) {
+//		this.name = name;
+//		this.start = start;
+//		this.end = end;
+//		this.metric = metric;
+//		this.sportType = sportType;
+//		//new MailSender("kerman.bruna@opendeusto.es").sendMessage("cubillo es un cuajado");
+//	}
+//	
 	public Challenge(ChallengeDTO c) {
 		this.name = c.getName();
-		this.start = c.getStart();
-		this.end = c.getEnd();
+		this.start = (Date) c.getStart();
+		this.end = (Date) c.getEnd();
 		this.metric = c.getMetric();
 		this.sportType = c.getSportType();
 	}

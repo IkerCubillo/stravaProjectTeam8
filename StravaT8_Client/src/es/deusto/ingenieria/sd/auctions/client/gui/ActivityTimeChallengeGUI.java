@@ -108,8 +108,6 @@ public ActivityTimeChallengeGUI() {
 		btnNewButton.setBounds(440, 317, 89, 23);
 		btnNewButton_1.setBounds(275, 317, 89, 23);
 
-        
-		
 		//Listeners
 		btnNewButton.addActionListener(new ActionListener(){
 		      @Override
@@ -141,7 +139,6 @@ public ActivityTimeChallengeGUI() {
 		});
 		
 		//Anyadir al contentPane
-        
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

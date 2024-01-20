@@ -127,6 +127,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		
 		System.out.println(" * RemoteFacade getChallenges()");
 		
+		
 		List<Challenge> challenges = User.getUserChallenges();
 		
 		if (challenges != null) {

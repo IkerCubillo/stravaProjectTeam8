@@ -1,7 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.time.LocalTime;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.MainController;

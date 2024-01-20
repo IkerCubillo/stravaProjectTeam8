@@ -116,11 +116,11 @@ public class User {
 		this.bpm = bpm;
 	}
 
-//	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
-//		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this.getEmail());
-//		TrainingSessionDAO.getInstance().save(tr);
-//		return userSessions.add(tr);
-//	}
+	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
+		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this.getEmail());
+		TrainingSessionDAO.getInstance().save(tr);
+		return userSessions.add(tr);
+	}
 	
 	public List<TrainingSession> getSessions() {
 		return userSessions;

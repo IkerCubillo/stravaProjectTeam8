@@ -1,6 +1,6 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
-import java.util.Date;
+import java.sql.Date;
 
 import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
 

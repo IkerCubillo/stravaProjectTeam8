@@ -43,8 +43,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		System.out.println(" * RemoteFacade login(): " + account + " / " + email + " / " + password);
 				
 		//If login() success user is stored in the Server State
-		if (this.userMap.containsKey(email)) {
-			User user = this.userMap.get(email);
+		if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
+			User user = UserDAO.getInstance().find(email);
 			// Check if password is correct
 			boolean correctPassword = loginService.login(email, password, account);
 			if(correctPassword) {

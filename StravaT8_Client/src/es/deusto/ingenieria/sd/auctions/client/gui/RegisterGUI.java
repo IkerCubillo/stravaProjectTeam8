@@ -153,7 +153,7 @@ public RegisterGUI() {
 		    	  int m = Integer.parseInt(mBPM);
 		    	  String BPM = bpmField.getText();
 		    	  int b = Integer.parseInt(BPM);
-		    	  SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy, MM, dd");
+		    	  SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
 		    	  String birthdate = birthdateField.getText();
 		    	  java.util.Date date = null;
 					try {

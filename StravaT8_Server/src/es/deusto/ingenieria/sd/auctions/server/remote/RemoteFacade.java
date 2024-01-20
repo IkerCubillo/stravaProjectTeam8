@@ -94,14 +94,17 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		user.setBpm(bpm);
 		
 		// creating user
-		try {
-			loginService.register(email, account);
+		try {			
 			// checking user exists in user map
-			
-			if (UserDAO.getInstance().find(email)!= null) { /// CHECK on DB
-				UserDAO.getInstance().save(user);
+			if(loginService.register(email, account)) {
+				System.out.println(UserDAO.getInstance().find(email));
+				if (UserDAO.getInstance().find(email)== null) { /// CHECK on DB
+					UserDAO.getInstance().save(user);
+				} else {
+					throw new RemoteException("Email already in use!");
+				}
 			} else {
-				throw new RemoteException("Email already in use!");
+				throw new RemoteException("Account doesn't exist");
 			}
 		} catch (Exception e) {
 			throw new RemoteException("Account email invalid");

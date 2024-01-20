@@ -20,6 +20,8 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 		
 		public List<ChallengeDTO> getChallenges() throws RemoteException;
 		
+		public List<ChallengeDTO> getUserChallenges() throws RemoteException;
+		
 		public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException;
 		
 		public boolean acceptChallenge(long token, ChallengeDTO c) throws RemoteException;

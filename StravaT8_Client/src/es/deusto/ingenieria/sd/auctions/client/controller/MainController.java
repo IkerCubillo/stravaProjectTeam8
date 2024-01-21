@@ -36,7 +36,12 @@ public class MainController{
 	
 	public List<ChallengeDTO> getUserChallenges(long token) {
 		try {
-			return this.ServiceLocator.getService().getUserChallenges(token);
+			if(this.ServiceLocator.getService().getUserChallenges(token) != null) {
+				return this.ServiceLocator.getService().getUserChallenges(token);
+			} else {
+				System.out.println("ALERT NULL LIST");
+				return this.ServiceLocator.getService().getUserChallenges(token);
+			}
 		} catch (RemoteException e) {
 			System.out.println("# Error getting all challenges: " + e);
 			return null;

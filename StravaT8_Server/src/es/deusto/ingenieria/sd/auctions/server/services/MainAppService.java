@@ -36,9 +36,11 @@ public class MainAppService {
 		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getChallenges());
 	}
 	
-	public boolean acceptChallenge(Challenge c) {
+	public boolean acceptChallenge(ChallengeDTO c, User user) {
 		try {
-			ChallengeDAO.getInstance().save(c);
+			Challenge challenge = new Challenge(c, user);
+			ChallengeDAO.getInstance().save(challenge);
+			user.addChallenge(challenge);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -54,13 +56,14 @@ public class MainAppService {
 		try {
 			TrainingSession tr = new TrainingSession(title, sport, distance, startDate, startTime, duration, user);
 			TrainingSessionDAO.getInstance().save(tr);
+			user.addTrainingSession(tr);
 			return true;
 		} catch (Exception e) {
 			return false;
 		}
 	}
 	
-	public boolean setUpDistanceChallenge(String name, Date start, Date end, Float metric, String sportType) {
+	public boolean setUpDistanceChallenge(String name, Date start, Date end, Float metric, String sportType, User user) {
 
 		Challenge distCha = new Challenge();
 
@@ -86,7 +89,7 @@ public class MainAppService {
 
 	}
 
-	public boolean setupActivityTimeChallenge(String name, Date start, Date end, Float metric, String sportType) {
+	public boolean setupActivityTimeChallenge(String name, Date start, Date end, Float metric, String sportType, User user) {
 
 		Challenge actCha = new Challenge();
 

@@ -35,11 +35,17 @@ public class MainWindow {
 	}
 	
 	public List<ChallengeDTO> getUserChallenges(long token) {
-		List<ChallengeDTO> challenges = this.controller.getUserChallenges(token);
 		System.out.println(" - Getting all the challenges ...");
 		
-		for (ChallengeDTO challenge : challenges) {
-			System.out.println("\t* " + challenge.getName());
+		List<ChallengeDTO> challenges = this.controller.getUserChallenges(token);
+		
+		if(challenges != null) {
+			for (ChallengeDTO challenge : challenges) {
+				System.out.println("\t* " + challenge.getName());
+				System.out.println(challenge.toString()); 
+			}
+		} else {
+			System.out.println("There is no active challenge");
 		}
 		
 		return challenges;

@@ -108,16 +108,17 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	
 	@Override
 	public List<ChallengeDTO> getUserChallenges(long token) throws RemoteException {
-		
 		if (this.serverState.containsKey(token)) {		
 			List<Challenge> challenges = mainService.getActiveChallenges(this.serverState.get(token));
-			
 			if (challenges != null) {
-				//Convert domain object to DTO
-				return ChallengeAssembler.getInstance().challengeToDTO(challenges);
+				for (Challenge challenge : challenges) {
+					System.out.println("\t* " + challenge.getName());
+				}
 			} else {
 				throw new RemoteException("getChallenges() fails!");
 			}
+			//Convert domain object to DTO
+			return ChallengeAssembler.getInstance().challengeToDTO(challenges);
 		} else {
 			throw new RemoteException("You must be logged in to see your active challenges");
 		}
@@ -125,9 +126,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	
 	@Override
 	public boolean acceptChallenge(long token, ChallengeDTO c) throws RemoteException {
-
 		if (this.serverState.containsKey(token)) {						
-			if (mainService.acceptChallenge(new Challenge(c, this.serverState.get(token)))) {
+			if (mainService.acceptChallenge(c, this.serverState.get(token))) {
 				return true;
 			} else {
 				throw new RemoteException("acceptChallenge() fails!");
@@ -177,7 +177,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public boolean setUpDistanceChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
 		if (this.serverState.containsKey(token)) {						
-			if (mainService.setUpDistanceChallenge(name, start, end, metric, sportType)) {
+			if (mainService.setUpDistanceChallenge(name, start, end, metric, sportType, this.serverState.get(token))) {
 				return true;
 			} else {
 				throw new RemoteException("setupDistanceTimeChallenge() fails!");
@@ -191,7 +191,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public boolean setUpActivityTimeChallenge(long token, String name, Date start, Date end, float metric, String sportType) throws RemoteException {
 
 		if (this.serverState.containsKey(token)) {						
-			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType)) {
+			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType, this.serverState.get(token))) {
 				return true;
 			} else {
 				throw new RemoteException("setupActivityTimeChallenge() fails!");

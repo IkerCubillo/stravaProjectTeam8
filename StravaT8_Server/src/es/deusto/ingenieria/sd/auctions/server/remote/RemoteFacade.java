@@ -17,6 +17,7 @@ import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeAssembler;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionAssembler;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
+import es.deusto.ingenieria.sd.auctions.server.mailsender.MailSenderGateway;
 import es.deusto.ingenieria.sd.auctions.server.services.LoginAppService;
 import es.deusto.ingenieria.sd.auctions.server.services.MainAppService;
 
@@ -178,6 +179,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 		if (this.serverState.containsKey(token)) {						
 			if (mainService.setUpDistanceChallenge(name, start, end, metric, sportType, this.serverState.get(token))) {
+				Challenge emailDetails = new Challenge(name, start, end, metric, sportType, this.serverState.get(token));
+				new MailSenderGateway(this.serverState.get(token).getEmail()).sendMessage(emailDetails.toString());
 				return true;
 			} else {
 				throw new RemoteException("setupDistanceTimeChallenge() fails!");

@@ -10,7 +10,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class MailSenderGateway implements IGateway{
+public class MailSenderGateway implements ISenderGateway{
 	private final String from = "deusto.sd@gmail.com";
 	//private final String password = "uueupflwlxesvdhz";
 	private final String password = "oralkudjrkgjmuxn";

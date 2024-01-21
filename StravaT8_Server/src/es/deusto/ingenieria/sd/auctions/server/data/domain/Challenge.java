@@ -46,6 +46,14 @@ public class Challenge implements Serializable {
 		this.user = user;
 	}
 	
+	public Challenge(String name, Date start, Date end, float metric, String sportType) {
+		this.name = name;
+		this.start = start;
+		this.end = end;
+		this.metric = metric;
+		this.sportType = sportType;
+	}
+	
 	public Challenge() {
 		
 	}

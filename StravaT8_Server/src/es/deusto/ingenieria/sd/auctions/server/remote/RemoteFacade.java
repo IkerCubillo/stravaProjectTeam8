@@ -179,7 +179,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 		if (this.serverState.containsKey(token)) {						
 			if (mainService.setUpDistanceChallenge(name, start, end, metric, sportType, this.serverState.get(token))) {
-				Challenge emailDetails = new Challenge(name, start, end, metric, sportType, this.serverState.get(token));
+				Challenge emailDetails = new Challenge(name, start, end, metric, sportType);
 				new MailSenderGateway(this.serverState.get(token).getEmail()).sendMessage(emailDetails.toString());
 				return true;
 			} else {
@@ -195,7 +195,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 
 		if (this.serverState.containsKey(token)) {						
 			if (mainService.setupActivityTimeChallenge(name, start, end, metric, sportType, this.serverState.get(token))) {
-				Challenge emailDetails = new Challenge(name, start, end, metric, sportType, this.serverState.get(token));
+				Challenge emailDetails = new Challenge(name, start, end, metric, sportType);
 				new MailSenderGateway(this.serverState.get(token).getEmail()).sendMessage(emailDetails.toString());
 				return true;
 			} else {

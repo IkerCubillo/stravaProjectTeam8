@@ -15,7 +15,7 @@ public class ChallengeDTO implements Serializable {
 	private Date end;
 	private float metric;
 	private String sportType;
-	private User user;
+//	private User user;
 	
 	public String getName() {
 		return name;
@@ -57,13 +57,13 @@ public class ChallengeDTO implements Serializable {
 		this.sportType = sportType;
 	}
 	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 	
 	@Override
 	public String toString() {
@@ -81,8 +81,8 @@ public class ChallengeDTO implements Serializable {
 		result.append(this.metric);
 		result.append("| Sport: ");
 		result.append(this.sportType);
-		result.append("| User: ");
-		result.append(this.user);
+//		result.append("| User: ");
+//		result.append(this.user);
 		
 		return result.toString();
 	}

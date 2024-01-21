@@ -21,9 +21,14 @@ public class MainWindow {
 		System.out.println(" - Getting all the challenges ...");
 
 		List<ChallengeDTO> challenges = this.controller.getChallenges();
-
-		for (ChallengeDTO challenge : challenges) {
-			System.out.println("\t* " + challenge.getName());
+		
+		if(challenges != null) {
+			for (ChallengeDTO challenge : challenges) {
+				System.out.println("\t* " + challenge.getName());
+				System.out.println(challenge.toString()); 
+			}
+		} else {
+			System.out.println("There is no challenge");
 		}
 
 		return challenges;
@@ -44,9 +49,14 @@ public class MainWindow {
 		System.out.println(" - Getting training sessions '" + "' ...");
 
 		List<TrainingSessionDTO> TrainingSessions = this.controller.getTrainingSessions(token);
-
-		for (TrainingSessionDTO TrainingSession : TrainingSessions) {
-			System.out.println("\t* " + TrainingSession.getTitle());
+		
+		if(TrainingSessions != null) {
+			for (TrainingSessionDTO trainingSession : TrainingSessions) {
+				System.out.println("\t* " + trainingSession.getTitle());
+				System.out.println(trainingSession.toString()); 
+			}
+		} else {
+			System.out.println("There is no Training Session");
 		}
 
 		return TrainingSessions;

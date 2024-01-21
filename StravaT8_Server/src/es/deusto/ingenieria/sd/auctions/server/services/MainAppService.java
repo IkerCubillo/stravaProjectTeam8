@@ -46,7 +46,6 @@ public class MainAppService {
 	}
 	
 	public List<TrainingSession> getTrainingSessions(User user) {
-
 		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getTrainingSessions());
 	}
 	

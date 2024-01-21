@@ -125,7 +125,7 @@ public class User {
 	}
 	
 	public void addTrainingSession(TrainingSession trainingSession) {
-		if (userSessions != null) {
+		if (trainingSession != null) {
 			this.userSessions.add(trainingSession);
 		}
 	}
@@ -139,35 +139,17 @@ public class User {
 	}
 	
 	public void addChallenge(Challenge challenge) {
-		if (userActiveChallenges != null) {
+		if (challenge != null) {
 			this.userActiveChallenges.add(challenge);
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", name=" + name + ", account=" + account + ", birthDate=" + birthDate
+				+ ", weight=" + weight + ", height=" + height + ", mBPM=" + mBPM + ", bpm=" + bpm + ", userSessions="
+				+ userSessions;
+	}
 	
-//	public ArrayList<TrainingSession> getSessions() {
-//		return userSessions;
-//	}
-//
-//	//takes in challenge and adds it if the user doesn't already have it
-//	public boolean createSession(String title, String sport, float distance, Date startDate, LocalTime timeStart, float duration) {
-//		TrainingSession tr = new TrainingSession(title, sport, distance, startDate, timeStart, duration, this);
-//		TrainingSessionDAO.getInstance().save(tr);
-//		return userSessions.add(tr);
-//	}
-//	
-//	public boolean acceptChallenge(Challenge c) {
-//		for (Challenge temp : userChallenges) {
-//			if (c.equals(temp)) {
-//				return false;
-//			}
-//		}
-//		userChallenges.add(c);
-//		return true;
-//	}
-//	
-//	public static ArrayList<Challenge> getUserChallenges() {
-//		ArrayList<Challenge> result = new ArrayList<Challenge>();
-//		result = userChallenges;
-//		return result;
-//	}
+	
 }

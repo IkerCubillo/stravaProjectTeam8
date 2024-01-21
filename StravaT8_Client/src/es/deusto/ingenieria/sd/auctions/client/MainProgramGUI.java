@@ -34,7 +34,7 @@ public class MainProgramGUI extends JFrame {
 
     public MainProgramGUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 598, 398);
 
         overallPanel = new JPanel();
         overallPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -105,8 +105,6 @@ public class MainProgramGUI extends JFrame {
 
         JButton dChallengeButton = new JButton("Distance Challenge");
         JButton tChallengeButton = new JButton("Activity Time Challenge");
-        JButton createSessionButton = new JButton("Create Session");
-        JButton getChallengesButton = new JButton("Get Active Challenges");
         JButton getSessionsButton = new JButton("Get Training Sessions");
 
         dChallengeButton.addActionListener(new ActionListener() {
@@ -125,33 +123,44 @@ public class MainProgramGUI extends JFrame {
             }
         });
 
-        createSessionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                SessionGUI sessionWindow = new SessionGUI();
-                sessionWindow.setVisible(true);
-            }
-        });
-
-        getChallengesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                ChallengesGUI gui = new ChallengesGUI();
-                gui.setVisible(true);
-            }
-        });
-
         getSessionsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 MainProgram.mainWindow.getTrainingSession(MainProgram.loginController.getToken());
             }
         });
-
-        functionPanel.add(getChallengesButton);
+        
+        JButton getActiveChallengesButton = new JButton("Get Active Challenges");
+        getActiveChallengesButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		MainProgram.mainWindow.getChallenges();
+        	}
+        });
+        functionPanel.add(getActiveChallengesButton);
         functionPanel.add(getSessionsButton);
-        functionPanel.add(dChallengeButton);
+        JButton getChallengesButton = new JButton("Get Challenges");
+        
+        getChallengesButton.addActionListener(new ActionListener() {
+        	@Override
+            public void actionPerformed(ActionEvent evt) {
+        		ChallengesGUI gui = new ChallengesGUI();
+                gui.setVisible(true);
+            }
+        });
+                
+        functionPanel.add(getChallengesButton);
+                        
+        JButton createSessionButton = new JButton("Create Session");
+        
+        createSessionButton.addActionListener(new ActionListener() {
+        	@Override
+            public void actionPerformed(ActionEvent evt) {
+        		SessionGUI sessionWindow = new SessionGUI();
+        		sessionWindow.setVisible(true);
+            }
+        });
         functionPanel.add(createSessionButton);
+        functionPanel.add(dChallengeButton);
         functionPanel.add(tChallengeButton);
 
         overallPanel.add(functionPanel);

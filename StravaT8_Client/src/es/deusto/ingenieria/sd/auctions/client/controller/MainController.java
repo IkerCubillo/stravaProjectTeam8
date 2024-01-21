@@ -22,7 +22,12 @@ public class MainController{
 
 	public List<ChallengeDTO> getChallenges() {
 		try {
-			return this.ServiceLocator.getService().getChallenges();
+			if(this.ServiceLocator.getService().getChallenges() != null) {
+				return this.ServiceLocator.getService().getChallenges();
+			} else {
+				System.out.println("ALERT NULL LIST");
+				return this.ServiceLocator.getService().getChallenges();
+			}
 		} catch (RemoteException e) {
 			System.out.println("# Error getting all challenges: " + e);
 			return null;
@@ -49,7 +54,12 @@ public class MainController{
 	
 	public List<TrainingSessionDTO> getTrainingSessions(long token) {
 		try {
-			return this.ServiceLocator.getService().getTrainingSessions(token);
+			if(this.ServiceLocator.getService().getTrainingSessions(token) != null) {
+				return this.ServiceLocator.getService().getTrainingSessions(token);
+			} else {
+				System.out.println("ALERT NULL LIST");
+				return this.ServiceLocator.getService().getTrainingSessions(token);
+			}
 		} catch (RemoteException e) {
 			System.out.println("# Error getting all training sessions: " + e);
 			return null;

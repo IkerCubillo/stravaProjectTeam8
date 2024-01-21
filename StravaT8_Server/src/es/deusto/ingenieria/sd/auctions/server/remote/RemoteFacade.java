@@ -4,7 +4,6 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.Date;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -141,11 +140,17 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	@Override
 	public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException {
 		if (this.serverState.containsKey(token)) {		
-			List<TrainingSession> trainingSessions = mainService.getTrainingSessions(this.serverState.get(token));
-			
-			if (trainingSessions != null) {
+			List<TrainingSession> TrainingSessions = mainService.getTrainingSessions(this.serverState.get(token));
+			if(TrainingSessions != null) {
+				for (TrainingSession trainingSession : TrainingSessions) {
+					System.out.println("\t* " + trainingSession.getTitle());
+				}
+			} else {
+				System.out.println("There is no Training Session");
+			}
+			if (TrainingSessions != null) {
 				//Convert domain object to DTO
-				return TrainingSessionAssembler.getInstance().trainingSessionToDTO(trainingSessions);
+				return TrainingSessionAssembler.getInstance().trainingSessionToDTO(TrainingSessions);
 			} else {
 				throw new RemoteException("getTrainingSessions() fails!");
 			}

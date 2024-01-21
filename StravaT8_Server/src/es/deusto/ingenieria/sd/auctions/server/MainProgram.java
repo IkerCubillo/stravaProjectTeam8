@@ -150,13 +150,19 @@ public class MainProgram {
 			LocalTime lt3 = LocalTime.of(12, 0, 0);
 			t3.setStartTime(lt3);
 			t3.setDuration(60);
-			t3.setUser(user1);
+			t3.setUser(user2);
+			
+			// Storing into Users
+			user1.addTrainingSession(t1);
+			user1.addTrainingSession(t2);
+			user2.addTrainingSession(t3);
 			
 			//Store sessions in the DB
 			TrainingSessionDAO.getInstance().save(t1);
 			TrainingSessionDAO.getInstance().save(t2);
 			TrainingSessionDAO.getInstance().save(t3);
 							
+			
 			
 			
 		} catch (Exception ex) {

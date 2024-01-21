@@ -15,7 +15,7 @@ public class TrainingSessionDTO implements Serializable {
 	private Date startDate;
 	private LocalTime startTime;
 	private float duration;
-	private User user;
+//	private User user;
 	
 	public String getTitle() {
 		return title;
@@ -53,14 +53,14 @@ public class TrainingSessionDTO implements Serializable {
 	public void setDuration(float duration) {
 		this.duration = duration;
 	}
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 	
 	
 	@Override
@@ -81,8 +81,8 @@ public class TrainingSessionDTO implements Serializable {
 		result.append(this.duration);
 		result.append("| Sport: ");
 		result.append(this.sport);
-		result.append("| User: ");
-		result.append(this.user);
+//		result.append("| User: ");
+//		result.append(this.user);
 		
 		return result.toString();
 	}

@@ -3,12 +3,10 @@ package es.deusto.ingenieria.sd.auctions.currency.server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.EOFException;
 
 public class FacebookService extends Thread {
 

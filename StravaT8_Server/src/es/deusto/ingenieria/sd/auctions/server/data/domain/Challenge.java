@@ -1,18 +1,14 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.sql.Date;
 
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 //This class implements DTO pattern
 @Entity
 public class Challenge implements Serializable {

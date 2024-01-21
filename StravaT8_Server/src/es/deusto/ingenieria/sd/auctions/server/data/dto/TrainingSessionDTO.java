@@ -5,7 +5,6 @@ import java.time.LocalTime;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 
 public class TrainingSessionDTO implements Serializable {
 	private static final long serialVersionUID = 1L;

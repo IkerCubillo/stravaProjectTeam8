@@ -5,10 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.sql.Date;
 
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -18,10 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
-import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
-import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
-import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
 public class ActivityTimeChallengeGUI extends JFrame {
 
@@ -51,6 +45,7 @@ public class ActivityTimeChallengeGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+@SuppressWarnings({ "unchecked", "rawtypes" })
 public ActivityTimeChallengeGUI() {
 		
 		//Configuracion de la ventana

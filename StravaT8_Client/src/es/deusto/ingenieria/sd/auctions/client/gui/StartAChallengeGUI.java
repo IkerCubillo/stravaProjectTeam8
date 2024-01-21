@@ -19,16 +19,18 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 
+@SuppressWarnings("serial")
 public class StartAChallengeGUI extends JFrame{
 	
 	private JTable tabla;
+	@SuppressWarnings("unused")
 	private int prueba;
 	private List<ChallengeDTO> listaChallenges;
 	private ChallengeDTO challenge;
 	
+	@SuppressWarnings("unused")
 	public StartAChallengeGUI() {
 		
 		setSize(1200,600);

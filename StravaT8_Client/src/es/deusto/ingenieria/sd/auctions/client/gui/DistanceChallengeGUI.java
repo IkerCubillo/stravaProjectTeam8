@@ -5,24 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.sql.Date;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
-import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
-import es.deusto.ingenieria.sd.auctions.client.controller.MainController;
-import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class DistanceChallengeGUI extends JFrame {
@@ -53,6 +46,7 @@ public class DistanceChallengeGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public DistanceChallengeGUI() {
 		
 		//Configuracion de la ventana

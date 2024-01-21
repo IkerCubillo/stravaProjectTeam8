@@ -1,10 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.server.data.domain;
 
 import java.sql.Date;
-import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,8 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import es.deusto.ingenieria.sd.auctions.server.data.dao.TrainingSessionDAO;
-import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
+
 
 @Entity
 public class User {

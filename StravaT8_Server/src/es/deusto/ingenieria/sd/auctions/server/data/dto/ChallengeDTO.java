@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 
 //This class implements DTO pattern
 public class ChallengeDTO implements Serializable {
@@ -67,6 +66,7 @@ public class ChallengeDTO implements Serializable {
 	
 	@Override
 	public String toString() {
+		@SuppressWarnings("unused")
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-YY - hh:mm");
 
 		StringBuffer result = new StringBuffer();

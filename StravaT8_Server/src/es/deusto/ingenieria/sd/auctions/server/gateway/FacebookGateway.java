@@ -6,8 +6,6 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.rmi.Naming;
-import java.util.StringTokenizer;
 
 import es.deusto.ingenieria.sd.auctions.server.MainProgram;
 

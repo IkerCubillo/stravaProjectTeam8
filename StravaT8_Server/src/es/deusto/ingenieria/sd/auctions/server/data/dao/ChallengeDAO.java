@@ -8,7 +8,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge;
-import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 
 public class ChallengeDAO extends DataAccessObject implements IDataAccessObject<Challenge> {
 

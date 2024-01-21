@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.time.LocalTime;
 import java.util.List;
 
-import es.deusto.ingenieria.sd.auctions.server.remote.RemoteFacade;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession;
 import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;

@@ -3,18 +3,12 @@ package es.deusto.ingenieria.sd.auctions.client.gui;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
-import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
-import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -46,10 +40,8 @@ public class LoginGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public LoginGUI() {
-		ServiceLocator serviceLocator = new ServiceLocator();
-		LoginController loginController = new LoginController(serviceLocator);
-		LoginWindow loginDialog = new LoginWindow(loginController);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

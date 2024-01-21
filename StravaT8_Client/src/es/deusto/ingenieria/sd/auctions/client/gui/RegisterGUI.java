@@ -5,18 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.ingenieria.sd.auctions.client.MainProgram;
-import es.deusto.ingenieria.sd.auctions.client.MainProgramGUI;
-import es.deusto.ingenieria.sd.auctions.client.controller.LoginController;
-import es.deusto.ingenieria.sd.auctions.client.remote.ServiceLocator;
-
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -53,6 +47,7 @@ public class RegisterGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public RegisterGUI() {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

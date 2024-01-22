@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="2.server" name="StravaT8_MailSender">    
+	<property environment="env"/>
+	<property name="source.dir" location="src"/>
+   	<property name="build.dir" location="bin"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="receiverEmail" value="i.cubillo@opendeusto.es"/>
+	<property name="messageEmail" value="This is a testing message that sends details using Gmail. Useful for Java projects!"/>
+	 
+	<path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement location="${build.dir}"/>    	
+    </path>
+	
+	<target name="help">
+		<echo>Usage: ant [build]</echo>
+	</target>
+	
+	<target name="1.build" description="Builds the project">
+		<delete dir="${build.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="${source.dir}" destdir="${build.dir}" classpathref="classpath" deprecation="true" fork="true" includeantruntime="false"/>
+	 </target>
+	 
+	 <target name="2.server" depends="1.build" description="Runs the Java Mail Sender">
+		<java classname="es.deusto.ingenieria.sd.sms.server.gateway.MailSenderTester" classpathref="classpath" fork="true">
+			<arg value="${receiverEmail}"/> 
+	 		<arg value="${messageEmail}"/> 
+        </java>
+    </target>
+	
+</project>

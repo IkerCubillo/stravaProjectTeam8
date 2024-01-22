@@ -126,6 +126,24 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	}
 	
 	@Override
+	public List<Float> getPercentages(long token) throws RemoteException {
+		if (this.serverState.containsKey(token)) {		
+			List<Float> percentages = mainService.getPercentages(this.serverState.get(token));
+			if (percentages != null) {
+				for (Float p : percentages) {
+					System.out.println("\t* " + p);
+				}
+			} else {
+				throw new RemoteException("getPercentages() fails!");
+			}
+			//Convert domain object to DTO
+			return percentages;
+		} else {
+			throw new RemoteException("You must be logged in to see the percentages");
+		}
+	}
+	
+	@Override
 	public boolean acceptChallenge(long token, ChallengeDTO c) throws RemoteException {
 		if (this.serverState.containsKey(token)) {						
 			if (mainService.acceptChallenge(c, this.serverState.get(token))) {

@@ -133,6 +133,7 @@ public class MainProgramGUI extends JFrame {
         JButton getActiveChallengesButton = new JButton("Get Active Challenges");
         getActiveChallengesButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		MainProgram.mainWindow.getPercentages(MainProgram.loginController.getToken());
         		MainProgram.mainWindow.getUserChallenges(MainProgram.loginController.getToken());
         	}
         });

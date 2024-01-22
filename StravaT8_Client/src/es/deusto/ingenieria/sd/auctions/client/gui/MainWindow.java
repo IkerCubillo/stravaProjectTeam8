@@ -1,6 +1,7 @@
 package es.deusto.ingenieria.sd.auctions.client.gui;
 
 import java.time.LocalTime;
+import java.rmi.RemoteException;
 import java.sql.Date;
 import java.util.List;
 
@@ -49,6 +50,22 @@ public class MainWindow {
 		}
 		
 		return challenges;
+	}
+	
+	public List<Float> getPercentages(long token){
+		System.out.println(" - Getting all the percentages ...");
+		
+		List<Float> percentages = this.controller.getPercentages(token);
+		
+		if(percentages != null) {
+			for (Float p : percentages) {
+				System.out.println("\t* " + p);
+			}
+		} else {
+			System.out.println("There is no active challenge");
+		}
+		
+		return percentages;
 	}
 
 	public List<TrainingSessionDTO> getTrainingSession(long token) {

@@ -137,6 +137,12 @@ public class User {
 			this.userActiveChallenges.add(challenge);
 		}
 	}
+	
+	public void removeChallenge(Challenge challenge) {
+		if (challenge != null) {
+			this.userActiveChallenges.remove(challenge);
+		}
+	}
 
 	@Override
 	public String toString() {

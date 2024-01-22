@@ -2,6 +2,7 @@ package es.deusto.ingenieria.sd.auctions.server.services;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -35,6 +36,45 @@ public class MainAppService {
 	public List<Challenge> getActiveChallenges(User user) {
 		return new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getChallenges());
 	}
+	
+	public List<Float> getPercentages(User user) {
+		List<Float> percentages = new ArrayList<>();
+		
+		List<Challenge> challenges = new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getChallenges());
+		List<TrainingSession> trainingSessions = new ArrayList<>(UserDAO.getInstance().find(user.getEmail()).getTrainingSessions());
+		for(Challenge c: challenges) {
+			
+			float goal = 0;
+			if (c.getSportType().equals("Running")) {
+				for(TrainingSession ts: trainingSessions) {
+					if(ts.getSport().equals("Running")&&(ts.getStartDate().after(c.getStart()) && ts.getStartDate().before(c.getEnd()))) {
+						goal += ts.getDistance();
+					}
+				}
+			} else if (c.getSportType().equals("Cycling")){
+				for(TrainingSession ts: trainingSessions) {
+					if(ts.getSport().equals("Running")&&(ts.getStartDate().after(c.getStart()) && ts.getStartDate().before(c.getEnd()))) {
+						goal += ts.getDistance();
+					}
+				}
+			}else if (c.getSportType().equals("Both")) {
+				for(TrainingSession ts: trainingSessions) {
+					if((ts.getStartDate().after(c.getStart()) && ts.getStartDate().before(c.getEnd()))) {
+						goal += ts.getDistance();
+					}
+				}
+			}
+			if(goal >= c.getMetric()) {
+				user.removeChallenge(c);
+				UserDAO.getInstance().save(user);
+				ChallengeDAO.getInstance().delete(c);
+			} else {
+				float p = goal/c.getMetric();
+				percentages.add(p);
+			}
+		}
+		return percentages;
+	}	
 	
 	public boolean acceptChallenge(ChallengeDTO c, User user) {
 		try {

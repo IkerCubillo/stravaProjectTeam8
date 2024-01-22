@@ -48,6 +48,20 @@ public class MainController{
 		}
 	}
 	
+	public List<Float> getPercentages(long token){
+		try {
+			if(this.ServiceLocator.getService().getPercentages(token) != null) {
+				return this.ServiceLocator.getService().getPercentages(token);
+			} else {
+				System.out.println("ALERT NULL LIST");
+				return this.ServiceLocator.getService().getPercentages(token);
+			}
+		} catch (RemoteException e) {
+			System.out.println("# Error getting percentages: " + e);
+			return null;
+		}
+	}
+	
 	public boolean acceptChallenge(long token, ChallengeDTO c) {
 		try {
 			return this.ServiceLocator.getService().acceptChallenge(token, c);

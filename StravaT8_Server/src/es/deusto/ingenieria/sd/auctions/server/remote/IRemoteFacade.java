@@ -6,6 +6,7 @@ import java.util.Date;
 import java.time.LocalTime;
 import java.util.List;
 
+import es.deusto.ingenieria.sd.auctions.server.data.domain.User;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.ChallengeDTO;
 import es.deusto.ingenieria.sd.auctions.server.data.dto.TrainingSessionDTO;
 
@@ -21,6 +22,8 @@ public interface IRemoteFacade extends Remote {
 	public List<ChallengeDTO> getChallenges() throws RemoteException;
 	
 	public List<ChallengeDTO> getUserChallenges(long token) throws RemoteException;
+	
+	public List<Float> getPercentages(long token) throws RemoteException;
 	
 	public List<TrainingSessionDTO> getTrainingSessions(long token) throws RemoteException;
 	

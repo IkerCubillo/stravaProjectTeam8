@@ -71,13 +71,11 @@ public class LoginGUI extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		emailField = new JTextField();
-		emailField.setText("kerman.bruna@opendeusto.es");
 		emailField.setBounds(169, 85, 161, 20);
 		contentPane.add(emailField);
 		emailField.setColumns(10);
 		
 		passwordField = new JTextField();
-		passwordField.setText("password");
 		passwordField.setBounds(169, 129, 161, 20);
 		contentPane.add(passwordField);
 		passwordField.setColumns(10);

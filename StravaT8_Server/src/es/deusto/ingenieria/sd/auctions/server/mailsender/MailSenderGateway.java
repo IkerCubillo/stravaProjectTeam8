@@ -1,16 +1,16 @@
-package es.deusto.ingenieria.sd.sms.server.gateway;
+package es.deusto.ingenieria.sd.auctions.server.mailsender;
 
+import javax.mail.PasswordAuthentication;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class MailSender {
+public class MailSenderGateway implements ISenderGateway{
 	private final String from = "deusto.sd@gmail.com";
 	//private final String password = "uueupflwlxesvdhz";
 	private final String password = "oralkudjrkgjmuxn";
@@ -22,7 +22,7 @@ public class MailSender {
 	
 	private Properties props;
 
-	public MailSender(String receiverEmail) {
+	public MailSenderGateway(String receiverEmail) {
 		to = receiverEmail;
 		props = new Properties();
 		props.put("mail.smtp.user", from);

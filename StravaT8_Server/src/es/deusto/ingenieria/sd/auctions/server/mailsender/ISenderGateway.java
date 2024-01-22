@@ -1,6 +1,6 @@
 package es.deusto.ingenieria.sd.auctions.server.mailsender;
 
-public interface IGateway {
+public interface ISenderGateway {
 
 	public String sendMessage(String text);
 }

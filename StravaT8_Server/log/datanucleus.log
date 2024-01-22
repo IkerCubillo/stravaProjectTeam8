@@ -1,0 +1,1282 @@
+23:33:12,882 (main) ERROR [DataNucleus.Enhancer] - Enhance of persistence-unit threw exception
+No hemos encontrado ningun archivo "persistence.xml" en el CLASSPATH. Debes poner esos ficheros en la carpeta META-INF/ de los JARs.
+org.datanucleus.exceptions.NucleusUserException: No hemos encontrado ningun archivo "persistence.xml" en el CLASSPATH. Debes poner esos ficheros en la carpeta META-INF/ de los JARs.
+	at org.datanucleus.metadata.MetaDataUtils.getMetaDataForPersistenceUnit(MetaDataUtils.java:947)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:773)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+23:33:12,883 (main) ERROR [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con un error. Por favor lee el LOG para los detalles. Habia errores con algunas de las clases
+Ningun archivo "persistence.xml" ha sido encontrado en el CLASSPATH pero entro el nombre ("Strava") de un "persistence-unit". Tiene que tener el archivo "persistence.xml" en el CLASSPATH en una carpeta valida para esta opción.
+org.datanucleus.enhancer.NucleusEnhanceException: Ningun archivo "persistence.xml" ha sido encontrado en el CLASSPATH pero entro el nombre ("Strava") de un "persistence-unit". Tiene que tener el archivo "persistence.xml" en el CLASSPATH en una carpeta valida para esta opción.
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:784)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+23:36:56,144 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+23:36:56,145 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+23:36:56,146 (main) ERROR [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con un error. Por favor lee el LOG para los detalles. Habia errores con algunas de las clases
+Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+org.datanucleus.exceptions.NucleusUserException: Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1372)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Caused by: org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	... 4 more
+Nested Throwables StackTrace:
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+23:38:10,085 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+23:38:10,086 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+23:38:10,086 (main) ERROR [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con un error. Por favor lee el LOG para los detalles. Habia errores con algunas de las clases
+Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+org.datanucleus.exceptions.NucleusUserException: Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1372)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Caused by: org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	... 4 more
+Nested Throwables StackTrace:
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+23:52:24,807 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+23:52:24,808 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+23:52:24,808 (main) ERROR [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con un error. Por favor lee el LOG para los detalles. Habia errores con algunas de las clases
+Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+org.datanucleus.exceptions.NucleusUserException: Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1372)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Caused by: org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	... 4 more
+Nested Throwables StackTrace:
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+00:23:59,195 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+00:23:59,196 (main) ERROR [DataNucleus.MetaData] - Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+
+00:23:59,196 (main) ERROR [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con un error. Por favor lee el LOG para los detalles. Habia errores con algunas de las clases
+Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+org.datanucleus.exceptions.NucleusUserException: Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1372)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Caused by: org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	... 4 more
+Nested Throwables StackTrace:
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+org.datanucleus.metadata.InvalidClassMetaDataException: Clase "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge" ha sido definido con el object-id class org.datanucleus.identity.LongId pero no hay ningun campo como "primary key". Por favor debes anotar con el tag "primary-key" los campos usar como parte de la llave primaria
+	at org.datanucleus.metadata.AbstractClassMetaData.initialiseMemberPositionInformation(AbstractClassMetaData.java:1522)
+	at org.datanucleus.metadata.ClassMetaData.initialise(ClassMetaData.java:982)
+	at org.datanucleus.metadata.MetaDataManagerImpl$2.run(MetaDataManagerImpl.java:2865)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseAbstractClassMetaData(MetaDataManagerImpl.java:2859)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2719)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetaDataForInput(DataNucleusEnhancer.java:791)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:505)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1160)
+00:35:10,358 (main) ERROR [DataNucleus.Datastore.Schema] - La inicialización del base de datos ha fallado.
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+org.datanucleus.exceptions.NucleusDataStoreException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 13 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+Nested Throwables StackTrace:
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+00:35:10,360 (main) ERROR [DataNucleus.Datastore] - Exception thrown creating StoreManager : Connection refused: connect
+00:35:10,360 (main) ERROR [DataNucleus.SchemaTool] - Error creating NucleusContext
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+org.datanucleus.exceptions.NucleusException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:98)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: org.datanucleus.exceptions.NucleusDataStoreException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	... 3 more
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 13 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+Nested Throwables StackTrace:
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+org.datanucleus.exceptions.NucleusDataStoreException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 13 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+Nested Throwables StackTrace:
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+00:35:32,568 (main) ERROR [DataNucleus.Datastore.Schema] - La inicialización del base de datos ha fallado.
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+org.datanucleus.exceptions.NucleusDataStoreException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 13 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+Nested Throwables StackTrace:
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+00:35:32,570 (main) ERROR [DataNucleus.Datastore] - Exception thrown creating StoreManager : Connection refused: connect
+00:35:32,570 (main) ERROR [DataNucleus.SchemaTool] - Error creating NucleusContext
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+org.datanucleus.exceptions.NucleusException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:98)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: org.datanucleus.exceptions.NucleusDataStoreException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	... 3 more
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 13 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+Nested Throwables StackTrace:
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+org.datanucleus.exceptions.NucleusDataStoreException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 13 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+Nested Throwables StackTrace:
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:285)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.datanucleus.util.ClassUtils.newInstance(ClassUtils.java:81)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:592)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:296)
+	at org.datanucleus.store.StoreManagerHelper.createStoreManagerForProperties(StoreManagerHelper.java:77)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:424)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:740)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:295)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:939)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:809)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 28 more
+23:08:33,100 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,101 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,123 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,123 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,123 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,156 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,156 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,156 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:08:33,687 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:08:33,692 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:08:33,693 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+23:08:34,327 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@37f21974" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:08:34,334 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@40dd3977" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:08:34,339 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@64bc21ac" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:25:03,258 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,258 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,258 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,283 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,283 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,283 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,305 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,305 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,305 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:25:03,918 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:25:03,924 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:25:03,925 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+23:25:04,542 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@f9879ac" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:25:04,550 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@63cd604c" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:25:04,554 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@6d8792db" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:25:04,581 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@5db4c359" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:25:04,586 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@2fab4aff" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:25:04,590 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@1922e6d" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:25:04,594 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@7807ac2c" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:25:04,601 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@372ea2bc" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:37:14,069 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,070 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,070 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,097 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,097 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,097 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,120 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,121 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,121 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:37:14,748 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:37:14,753 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:37:14,754 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+23:37:15,363 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@40dd3977" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:37:15,370 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@61078690" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:37:15,376 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@664a9613" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:37:15,388 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@2c177f9e" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:37:15,393 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@b672aa8" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:37:15,400 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@4a8ab068" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:37:15,405 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@f19c9d2" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:37:15,411 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@2b52c0d6" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:37:15,422 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@724f138e" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'STARTDATE' at row 1
+23:37:15,428 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@22c86919" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'STARTDATE' at row 1
+23:37:15,433 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@2fd1731c" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'STARTDATE' at row 1
+23:40:58,767 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,768 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,768 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,801 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,801 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,801 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,821 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,821 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:58,821 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:40:59,478 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:40:59,483 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:40:59,484 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+23:41:00,111 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@40dd3977" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:41:00,118 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@61078690" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:41:00,124 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.User@664a9613" con SQL "INSERT INTO `USER` (`ACCOUNT`,`BIRTHDATE`,`BPM`,`HEIGHT`,`MBPM`,`NAME`,`WEIGHT`,`EMAIL`) VALUES (?,?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'BIRTHDATE' at row 1
+23:41:00,134 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@2c177f9e" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:41:00,140 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@b672aa8" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:41:00,145 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@4a8ab068" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:41:00,150 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@f19c9d2" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:41:00,156 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@2b52c0d6" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'END' at row 1
+23:41:00,168 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@724f138e" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'STARTDATE' at row 1
+23:41:00,173 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@22c86919" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'STARTDATE' at row 1
+23:41:00,179 (main) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@2fd1731c" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '1970-01-01 01:00:00' for column 'STARTDATE' at row 1
+23:42:26,405 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,406 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,406 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,432 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,432 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,432 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,454 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,455 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:26,455 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:42:27,107 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:42:27,111 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:42:27,112 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+23:54:23,616 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,617 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,617 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,655 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,655 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,655 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,701 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,701 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:23,701 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:54:24,417 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:54:24,422 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:54:24,423 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+23:58:14,279 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,279 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,280 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,315 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,316 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,316 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,345 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,345 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:14,345 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+23:58:15,028 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:58:15,033 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+23:58:15,034 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:01:28,513 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,514 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,514 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,535 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,535 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,535 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,557 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,557 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:28,557 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:01:29,235 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:01:29,241 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:01:29,242 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:04:36,283 (RMI TCP Connection(4)-192.168.0.21) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@1f0198c4" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Duplicate entry 'Challenge 2' for key 'challenge.PRIMARY'
+00:06:53,747 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,747 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,747 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,786 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,786 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,786 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,815 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,815 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:53,815 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:06:54,516 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:06:54,522 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:06:54,523 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:15:00,504 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,504 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,504 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,526 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,526 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,526 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,547 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,547 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:00,547 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+00:15:01,208 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:15:01,213 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:15:01,215 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:21:54,360 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:21:54,365 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:21:54,366 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:21:54,484 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2713)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.initialiseNucleusContext(JPAEntityManagerFactory.java:921)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.initialise(JPAEntityManagerFactory.java:513)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.<init>(JPAEntityManagerFactory.java:417)
+	at org.datanucleus.api.jpa.PersistenceProviderImpl.createEntityManagerFactory(PersistenceProviderImpl.java:104)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:49)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:33)
+	at es.deusto.ingenieria.sd.auctions.server.data.dao.DataAccessObject.<clinit>(Unknown Source)
+	at es.deusto.ingenieria.sd.auctions.server.MainProgram.initDB(Unknown Source)
+	at es.deusto.ingenieria.sd.auctions.server.MainProgram.main(Unknown Source)
+
+00:21:54,484 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.ingenieria.sd.auctions.server.data.domain.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.ingenieria.sd.auctions.server.data.domain.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2713)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.initialiseNucleusContext(JPAEntityManagerFactory.java:921)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.initialise(JPAEntityManagerFactory.java:513)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.<init>(JPAEntityManagerFactory.java:417)
+	at org.datanucleus.api.jpa.PersistenceProviderImpl.createEntityManagerFactory(PersistenceProviderImpl.java:104)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:49)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:33)
+	at es.deusto.ingenieria.sd.auctions.server.data.dao.DataAccessObject.<clinit>(Unknown Source)
+	at es.deusto.ingenieria.sd.auctions.server.MainProgram.initDB(Unknown Source)
+	at es.deusto.ingenieria.sd.auctions.server.MainProgram.main(Unknown Source)
+
+00:21:54,484 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2713)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2647)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1361)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadPersistenceUnit(MetaDataManagerImpl.java:1124)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.initialiseNucleusContext(JPAEntityManagerFactory.java:921)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.initialise(JPAEntityManagerFactory.java:513)
+	at org.datanucleus.api.jpa.JPAEntityManagerFactory.<init>(JPAEntityManagerFactory.java:417)
+	at org.datanucleus.api.jpa.PersistenceProviderImpl.createEntityManagerFactory(PersistenceProviderImpl.java:104)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:49)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:33)
+	at es.deusto.ingenieria.sd.auctions.server.data.dao.DataAccessObject.<clinit>(Unknown Source)
+	at es.deusto.ingenieria.sd.auctions.server.MainProgram.initDB(Unknown Source)
+	at es.deusto.ingenieria.sd.auctions.server.MainProgram.main(Unknown Source)
+
+00:22:33,006 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:22:33,011 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:22:33,013 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:36:29,627 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:36:29,632 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:36:29,633 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:47:51,316 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:47:51,322 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:47:51,324 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:49:48,323 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:49:48,327 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:49:48,329 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:54:40,744 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:54:40,749 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:54:40,751 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:55:56,932 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:55:56,937 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:55:56,938 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+00:58:33,049 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:58:33,055 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+00:58:33,056 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:08:03,122 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:08:03,127 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:08:03,128 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:12:51,691 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:12:51,698 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:12:51,699 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:19:25,892 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,893 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,893 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,927 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,927 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,927 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,951 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,951 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:19:25,951 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:20:05,403 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:20:05,408 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:20:05,410 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:24:54,017 (RMI TCP Connection(9)-192.168.0.21) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@be3765d" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '0021-08-01 00:00:00' for column 'STARTDATE' at row 1
+01:24:54,022 (RMI TCP Connection(9)-192.168.0.21) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@be3765d" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '0021-08-01 00:00:00' for column 'STARTDATE' at row 1
+01:26:05,138 (RMI TCP Connection(12)-192.168.0.21) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@be3765d" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '0021-08-01 00:00:00' for column 'STARTDATE' at row 1
+01:26:05,206 (RMI TCP Connection(12)-192.168.0.21) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.TrainingSession@be3765d" con SQL "INSERT INTO `TRAININGSESSION` (`DISTANCE`,`DURATION`,`SPORT`,`STARTDATE`,`STARTTIME`,`USER_EMAIL`,`TITLE`) VALUES (?,?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '0021-08-01 00:00:00' for column 'STARTDATE' at row 1
+01:34:40,610 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,610 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,610 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,633 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,633 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,633 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,651 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,651 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:40,651 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:34:46,928 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:34:46,933 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:34:46,934 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:44:26,931 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,931 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,931 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,955 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,955 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,955 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,976 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,976 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:26,976 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:44:32,041 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:44:32,047 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:44:32,049 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:47:21,576 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:47:21,581 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:47:21,582 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:47:37,462 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,463 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,463 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,492 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,492 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,492 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,517 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,517 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:37,517 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:47:38,275 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:47:38,280 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:47:38,281 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:50:59,299 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,300 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,300 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,321 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,322 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,322 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,341 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,341 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,341 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:50:59,991 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:50:59,996 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:50:59,997 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:53:15,810 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,811 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,811 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,835 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,835 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,835 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,855 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,855 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:15,855 (main) WARN  [DataNucleus.Datastore] - SQL Warning : 'BINARY as attribute of a type' is deprecated and will be removed in a future release. Please use a CHARACTER SET clause with _bin collation instead
+01:53:16,513 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:53:16,518 (main) WARN  [DataNucleus.MetaData] - Error en el analizo del archivo "file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d/META-INF/persistence.xml" a la linea 5, columna 23 : cvc-elt.1.a: No se ha encontrado la declaración del elemento 'persistence'. - Por favor compruebe el DTD y la validad de este MetaData.
+01:53:16,519 (main) WARN  [DataNucleus.JPA] - Found persistence-unit with name "Strava" at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/$%7bbuild.dir%7d but already found one with same name at file:/C:/Users/Usuario/Desktop/stravaProjectTeam8-57bd1e8185132f37584cbdb896859babde119251/StravaT8_Server/resources
+01:55:33,303 (RMI TCP Connection(5)-192.168.0.21) WARN  [DataNucleus.Datastore.Persist] - Persistencia del objeto "es.deusto.ingenieria.sd.auctions.server.data.domain.Challenge@747d2837" con SQL "INSERT INTO `CHALLENGE` (`END`,`METRIC`,`SPORTTYPE`,`START`,`USER_EMAIL`,`NAME`) VALUES (?,?,?,?,?,?)" ha tirado un error : Data truncation: Incorrect datetime value: '2100-12-23 00:00:00' for column 'END' at row 1
